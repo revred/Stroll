@@ -1,0 +1,3 @@
+symbol: symbol
+expiry: [expiry, expiration, exp_date]
+bars_time: [t, time, timestamp, ts, datetime]

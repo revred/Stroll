@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stroll.Historical", "Stroll.Historical\Stroll.Historical.csproj", "{B1118E41-0E2B-43E4-B4B0-5CBE0C2D3399}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stroll.Storage", "Stroll.Storage\Stroll.Storage.csproj", "{16D98C63-5D5B-4C80-AB18-7F82BA18A1E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stroll.Dataset", "Stroll.Dataset\Stroll.Dataset.csproj", "{DB1F3F20-8BB4-4E63-94E6-2E66E0E3A9A5}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {B1118E41-0E2B-43E4-B4B0-5CBE0C2D3399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {B1118E41-0E2B-43E4-B4B0-5CBE0C2D3399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {B1118E41-0E2B-43E4-B4B0-5CBE0C2D3399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {B1118E41-0E2B-43E4-B4B0-5CBE0C2D3399}.Release|Any CPU.Build.0 = Release|Any CPU
+        {16D98C63-5D5B-4C80-AB18-7F82BA18A1E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {16D98C63-5D5B-4C80-AB18-7F82BA18A1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {16D98C63-5D5B-4C80-AB18-7F82BA18A1E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {16D98C63-5D5B-4C80-AB18-7F82BA18A1E6}.Release|Any CPU.Build.0 = Release|Any CPU
+        {DB1F3F20-8BB4-4E63-94E6-2E66E0E3A9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {DB1F3F20-8BB4-4E63-94E6-2E66E0E3A9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {DB1F3F20-8BB4-4E63-94E6-2E66E0E3A9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {DB1F3F20-8BB4-4E63-94E6-2E66E0E3A9A5}.Release|Any CPU.Build.0 = Release|Any CPU
+    EndGlobalSection
+EndGlobal

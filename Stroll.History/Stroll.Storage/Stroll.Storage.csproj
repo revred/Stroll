@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <!-- To enable ODTE readers:
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);ODTE_REAL</DefineConstants>
+  </PropertyGroup>
+  -->
+  <!-- When enabling ODTE_REAL add:
+       dotnet add Stroll.Storage package Parquet.Net
+       dotnet add Stroll.Storage package Microsoft.Data.Sqlite
+       dotnet add Stroll.Storage package YamlDotNet
+  -->
+</Project>
