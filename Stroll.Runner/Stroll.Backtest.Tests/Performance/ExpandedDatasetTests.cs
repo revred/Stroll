@@ -36,13 +36,13 @@ public class ExpandedDatasetTests
         
         // Verify expanded dataset performance
         var expanded = result.ExpandedResult!;
-        Assert.That(expanded.BarCount, Is.GreaterThan(80000), "Should process at least 80,000 bars");
-        Assert.That(expanded.TimeMs, Is.LessThan(5000), "Should complete in under 5 seconds");
+        Assert.That(expanded.BarCount, Is.GreaterThan(180000), "Should process at least 180,000 bars");
+        Assert.That(expanded.TimeMs, Is.LessThan(8000), "Should complete in under 8 seconds");
         
         // Verify processing speed
         var yearsProcessed = expanded.BarCount / 19656.0; // ~19,656 bars per year
         var processingSpeed = yearsProcessed / (expanded.TimeMs / 1000.0);
-        Assert.That(processingSpeed, Is.GreaterThan(2.0), "Should process at least 2 years per second");
+        Assert.That(processingSpeed, Is.GreaterThan(4.0), "Should process at least 4 years per second");
         
         // Log performance metrics
         _logger?.LogInformation("📊 Expanded Dataset Performance Test Results:");
@@ -115,20 +115,20 @@ public class ExpandedDatasetTests
         var expanded = result.ExpandedResult!;
         
         // Verify data integrity
-        Assert.That(expanded.BarCount, Is.EqualTo(88610).Within(100), 
-            "Should have approximately 88,610 bars as expected");
+        Assert.That(expanded.BarCount, Is.EqualTo(188162).Within(500), 
+            "Should have approximately 188,162 bars as expected");
         
-        // Verify date range (approximately 22 months)
+        // Verify date range (approximately 47 months)
         var monthsCovered = (expanded.EndDate - expanded.StartDate).Days / 30.0;
-        Assert.That(monthsCovered, Is.GreaterThan(21).And.LessThan(24), 
-            "Should cover approximately 22 months of data");
+        Assert.That(monthsCovered, Is.GreaterThan(45).And.LessThan(50), 
+            "Should cover approximately 47 months of data");
         
         // Verify final portfolio value is reasonable
         Assert.That(expanded.FinalValue, Is.GreaterThan(50000).And.LessThan(200000),
             "Final portfolio value should be within reasonable range");
         
         _logger?.LogInformation("✅ Data Integrity Verification:");
-        _logger?.LogInformation("   • Bar Count: {BarCount:N0} (expected ~88,610)", expanded.BarCount);
+        _logger?.LogInformation("   • Bar Count: {BarCount:N0} (expected ~188,162)", expanded.BarCount);
         _logger?.LogInformation("   • Date Range: {StartDate:yyyy-MM-dd} to {EndDate:yyyy-MM-dd}", 
             expanded.StartDate, expanded.EndDate);
         _logger?.LogInformation("   • Months Covered: {Months:F1}", monthsCovered);

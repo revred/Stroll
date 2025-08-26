@@ -20,14 +20,16 @@ public class ExpandedDatasetRunner
             builder.AddConsole().SetMinimumLevel(LogLevel.Information));
         _logger = logger ?? loggerFactory.CreateLogger<ExpandedDatasetRunner>();
         
-        _originalDbPath = Path.GetFullPath(@"Stroll.History\Stroll.Historical\historical_archive\historical_archive.db");
-        _expandedDbPath = Path.GetFullPath(@"Stroll.History\data\expanded_backtest.db");
+        // Navigate up to solution root and find the database files
+        var solutionRoot = FindSolutionRoot();
+        _originalDbPath = Path.Combine(solutionRoot, @"Stroll.History\Stroll.Historical\historical_archive\historical_archive.db");
+        _expandedDbPath = Path.Combine(solutionRoot, @"Stroll.History\data\consolidated_backtest.db");
     }
 
     public async Task<PerformanceComparisonResult> RunPerformanceComparisonAsync()
     {
         _logger.LogInformation("🚀 EXPANDED DATASET BACKTEST PERFORMANCE TEST");
-        _logger.LogInformation("📊 Comparing: Original vs Expanded (22 months, 88,610 bars)");
+        _logger.LogInformation("📊 Comparing: Original vs Expanded (47 months, 188,162 bars)");
 
         var result = new PerformanceComparisonResult();
 
@@ -280,6 +282,27 @@ public class ExpandedDatasetRunner
     {
         // 5-minute bars: ~78 bars/day * 252 trading days = ~19,656 bars/year
         return barCount / 19656.0;
+    }
+
+    private static string FindSolutionRoot()
+    {
+        var currentDir = Environment.CurrentDirectory;
+        
+        // Navigate up from test bin directory to find solution root
+        while (currentDir != null && !File.Exists(Path.Combine(currentDir, "Stroll.History")))
+        {
+            var parentDir = Directory.GetParent(currentDir)?.FullName;
+            if (parentDir == currentDir) break; // Reached root
+            currentDir = parentDir;
+            
+            // Also check if we find a directory containing Stroll.History
+            if (currentDir != null && Directory.Exists(Path.Combine(currentDir, "Stroll.History")))
+            {
+                break;
+            }
+        }
+        
+        return currentDir ?? Environment.CurrentDirectory;
     }
 }
 
