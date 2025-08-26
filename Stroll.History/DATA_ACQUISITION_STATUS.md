@@ -85,7 +85,8 @@
 ## 🗃️ File Locations
 - **Acquired Data**: `C:\code\Stroll\Stroll.History\acquired_data\`
 - **File Pattern**: `SPY_YYYY_MM_5min.json`
-- **SQLite Archive**: `C:\code\Stroll\Stroll.History\Stroll.Historical\historical_archive\historical_archive.db`
+- **Current Partition**: `C:\code\Stroll\Stroll.History\Data\Partitions\spy_2021_2025.db`
+- **Legacy Archive**: `C:\code\Stroll\Stroll.History\Stroll.Historical\historical_archive\historical_archive.db`
 
 ## 📝 Next Steps
 1. **Monthly**: Check for August 2025 data when available  

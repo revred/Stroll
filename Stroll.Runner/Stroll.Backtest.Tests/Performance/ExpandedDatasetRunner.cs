@@ -23,7 +23,7 @@ public class ExpandedDatasetRunner
         // Navigate up to solution root and find the database files
         var solutionRoot = FindSolutionRoot();
         _originalDbPath = Path.Combine(solutionRoot, @"Stroll.History\Stroll.Historical\historical_archive\historical_archive.db");
-        _expandedDbPath = Path.Combine(solutionRoot, @"Stroll.History\data\consolidated_backtest.db");
+        _expandedDbPath = Path.Combine(solutionRoot, @"Stroll.History\Data\Partitions\spy_2021_2025.db");
     }
 
     public async Task<PerformanceComparisonResult> RunPerformanceComparisonAsync()

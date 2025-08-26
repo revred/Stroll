@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stroll.Historical.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddcb80cd9e6a40832e819877cda2379abfb95aba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea7fb5d28115f34717a69909a87a7255d0ac5ba4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stroll.Historical.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stroll.Historical.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

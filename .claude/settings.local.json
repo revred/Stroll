@@ -100,7 +100,9 @@
       "Bash(done)",
       "Bash(do if grep -q \"rate limit\" \"$file\")",
       "Bash(then echo \"   ⚠ $file\")",
-      "Bash(git fetch:*)"
+      "Bash(git fetch:*)",
+      "Bash(for file in SPY_2024_12_5min.json SPY_2025_01_5min.json SPY_2025_07_5min.json)",
+      "Bash(git reset:*)"
     ],
     "deny": [],
     "ask": [],

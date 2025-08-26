@@ -1,0 +1,6 @@
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\TestDbPerformance.csproj.AssemblyReference.cache
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\TestDbPerformance.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\TestDbPerformance.AssemblyInfoInputs.cache
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\TestDbPerformance.AssemblyInfo.cs
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\TestDbPerformance.csproj.CoreCompileInputs.cache
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\TestDbPerformance.sourcelink.json

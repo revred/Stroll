@@ -1,0 +1,6 @@
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\MigrateJsonToSqlite.csproj.AssemblyReference.cache
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\MigrateJsonToSqlite.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\MigrateJsonToSqlite.AssemblyInfoInputs.cache
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\MigrateJsonToSqlite.AssemblyInfo.cs
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\MigrateJsonToSqlite.csproj.CoreCompileInputs.cache
+C:\code\Stroll\Stroll.History\obj\x64\Debug\net9.0\MigrateJsonToSqlite.sourcelink.json
