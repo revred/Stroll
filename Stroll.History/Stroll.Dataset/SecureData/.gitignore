@@ -1,0 +1,24 @@
+# Secure Polygon.io Licensed Data
+# NEVER commit these files to any repository
+
+# All database files
+*.db
+*.db-shm
+*.db-wal
+
+# All subdirectories
+Polygon/
+Indices/
+Options/
+Trades/
+
+# Verification files
+*.verification
+*.checksum
+
+# Any CSV exports
+*.csv
+*.csv.gz
+
+# Keep this file only
+!.gitignore
