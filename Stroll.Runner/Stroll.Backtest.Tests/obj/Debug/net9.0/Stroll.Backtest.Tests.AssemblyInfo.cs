@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stroll.Backtest.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddcb80cd9e6a40832e819877cda2379abfb95aba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa5ade1625f800c3b0d18537d81383cd7af63372")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stroll.Backtest.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stroll.Backtest.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

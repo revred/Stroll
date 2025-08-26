@@ -99,7 +99,8 @@
       "Bash(fi)",
       "Bash(done)",
       "Bash(do if grep -q \"rate limit\" \"$file\")",
-      "Bash(then echo \"   ⚠ $file\")"
+      "Bash(then echo \"   ⚠ $file\")",
+      "Bash(git fetch:*)"
     ],
     "deny": [],
     "ask": [],
