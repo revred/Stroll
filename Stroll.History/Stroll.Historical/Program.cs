@@ -8,7 +8,7 @@ try
 {
     var catalog = DataCatalog.Default(Environment.GetEnvironmentVariable("STROLL_DATA"));
     IStorageProvider storage = new CompositeStorage(catalog);
-    IPackager pack = new JsonPackager(Schema, Version);
+    IPackager pack = new HighPerformancePackager(Schema, Version);
 
     await Cli.RunAsync(args, storage, catalog, pack);
     Environment.Exit(0);

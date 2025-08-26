@@ -96,7 +96,7 @@ public sealed class OdteStorage : IStorageProvider
             {
                 var row = new Dictionary<string, object?>(StringComparer.OrdinalIgnoreCase);
                 for (int i=0;i<schema.Length;i++) row[schema[i]] = rdr.IsDBNull(i) ? null : rdr.GetValue(i);
-                res.add(row);
+                res.Add(row);
             }
             return res;
         }
