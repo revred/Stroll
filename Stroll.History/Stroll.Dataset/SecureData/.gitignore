@@ -1,24 +1,25 @@
 # Secure Polygon.io Licensed Data
-# NEVER commit these files to any repository
+# Password-protected databases are OK in version control
+# Only exclude environment files with plain-text secrets
 
-# All database files
-*.db
+# Environment files with secrets
+.env
+.env.local
+.env.production
+
+# Temporary SQLite files (but not the main .db files)
 *.db-shm
 *.db-wal
-
-# All subdirectories
-Polygon/
-Indices/
-Options/
-Trades/
 
 # Verification files
 *.verification
 *.checksum
 
-# Any CSV exports
+# Any CSV exports (contains raw licensed data)
 *.csv
 *.csv.gz
 
-# Keep this file only
+# Keep these files
 !.gitignore
+!.env.template
+!*.db

@@ -10,11 +10,14 @@ namespace Stroll.Dataset;
 /// </summary>
 public class SecurePolygonDataset
 {
-    private readonly string _dbPassword = "$$rc:P0lyg0n.$0";
+    private readonly string _dbPassword;
     private readonly string _datasetPath;
     
     public SecurePolygonDataset()
     {
+        // Get password from environment variable or use fallback
+        _dbPassword = Environment.GetEnvironmentVariable("POLYGON_DB_PASSWORD") ?? "$$rc:P0lyg0n.$0";
+        
         // Store secure datasets in Stroll.Dataset folder
         _datasetPath = Path.Combine(
             Directory.GetCurrentDirectory(),
