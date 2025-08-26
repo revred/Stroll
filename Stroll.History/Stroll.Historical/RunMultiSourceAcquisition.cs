@@ -97,7 +97,9 @@ public class RunMultiSourceAcquisition
             }).ToList();
             
             // Store the data in the storage system
-            await storage.StoreBarsAsync("SPX", storageData);
+            // Use CompositeStorage's internal SqliteStorage implementation
+            var sqliteStorage = new SqliteStorage(storage.Catalog);
+            await sqliteStorage.BulkInsertBarsAsync("SPX", storageData, "5m");
             
             // Verify storage
             await VerifyStorageAsync(storage, dataPoints, logger);

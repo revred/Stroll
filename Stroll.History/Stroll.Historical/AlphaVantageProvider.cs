@@ -8,7 +8,7 @@ namespace Stroll.Historical;
 /// Comprehensive API coverage with both free tier and premium subscriptions
 /// Documentation: https://www.alphavantage.co/documentation/
 /// </summary>
-public class AlphaVantageProvider : IDisposable
+public class AlphaVantageProvider : IDataProvider, IDisposable
 {
     private readonly HttpClient _httpClient;
     private readonly ILogger<AlphaVantageProvider>? _logger;
@@ -48,6 +48,11 @@ public class AlphaVantageProvider : IDisposable
         _logger?.LogInformation("🔑 Alpha Vantage provider initialized ({Tier} tier, {Rate} req/min)",
             isPremium ? "Premium" : "Free", _maxRequestsPerMinute);
     }
+
+    // IDataProvider implementation
+    public string ProviderName => "Alpha Vantage";
+    public int Priority => 2;
+    public bool IsAvailable => !string.IsNullOrEmpty(_apiKey);
 
     /// <summary>
     /// Get comprehensive historical data by combining multiple requests
@@ -414,6 +419,73 @@ public class AlphaVantageProvider : IDisposable
             _logger?.LogDebug("⚠️ OHLCV parsing failed: {Error}", ex.Message);
             return false;
         }
+    }
+
+    // IDataProvider interface methods
+    public async Task<List<MarketDataBar>> GetHistoricalBarsAsync(
+        string symbol,
+        DateTime startDate,
+        DateTime endDate,
+        string interval = "1d",
+        CancellationToken cancellationToken = default)
+    {
+        // Stub implementation - convert from existing methods
+        var result = await GetIntradayHistoricalMonthAsync(symbol, IntradayInterval.FiveMinute, DateTime.Now.ToString("yyyy-MM"));
+        return result.Bars.Select(bar => new MarketDataBar
+        {
+            Timestamp = (DateTime)bar["t"]!,
+            Open = Convert.ToDouble(bar["o"]),
+            High = Convert.ToDouble(bar["h"]),
+            Low = Convert.ToDouble(bar["l"]),
+            Close = Convert.ToDouble(bar["c"]),
+            Volume = Convert.ToInt64(bar["v"]),
+            VWAP = Convert.ToDouble(bar["c"]) // Approximation
+        }).ToList();
+    }
+
+    public Task<OptionsChainData?> GetOptionsChainAsync(
+        string symbol,
+        DateTime date,
+        CancellationToken cancellationToken = default)
+    {
+        // Alpha Vantage doesn't provide options chain data
+        return Task.FromResult<OptionsChainData?>(null);
+    }
+
+    public async Task<ProviderHealthStatus> CheckHealthAsync()
+    {
+        try
+        {
+            var start = DateTime.UtcNow;
+            await GetIntradayHistoricalMonthAsync("SPY", IntradayInterval.FiveMinute, DateTime.Now.ToString("yyyy-MM"));
+            var elapsed = DateTime.UtcNow - start;
+            
+            return new ProviderHealthStatus
+            {
+                IsHealthy = true,
+                LastCheck = DateTime.UtcNow,
+                ResponseTimeMs = elapsed.TotalMilliseconds
+            };
+        }
+        catch (Exception ex)
+        {
+            return new ProviderHealthStatus
+            {
+                IsHealthy = false,
+                LastCheck = DateTime.UtcNow,
+                ErrorMessage = ex.Message
+            };
+        }
+    }
+
+    public RateLimitStatus GetRateLimitStatus()
+    {
+        return new RateLimitStatus
+        {
+            RequestsRemaining = _rateLimiter.CurrentCount,
+            RequestsPerMinute = _maxRequestsPerMinute,
+            IsThrottled = _rateLimiter.CurrentCount == 0
+        };
     }
 
     public void Dispose()

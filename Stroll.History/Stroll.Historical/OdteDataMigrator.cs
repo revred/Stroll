@@ -118,12 +118,12 @@ public class OdteDataMigrator
         {
             symbols.Add(new OdteSymbolInfo
             {
-                Id = reader.GetInt32("id"),
-                Symbol = reader.GetString("symbol"),
-                Description = reader.IsDBNull("description") ? "" : reader.GetString("description"),
-                FirstTimestamp = DateTimeOffset.FromUnixTimeSeconds(reader.GetInt64("first_timestamp")).DateTime,
-                LastTimestamp = DateTimeOffset.FromUnixTimeSeconds(reader.GetInt64("last_timestamp")).DateTime,
-                RecordCount = reader.GetInt64("record_count")
+                Id = reader.GetInt32(0),
+                Symbol = reader.GetString(1),
+                Description = reader.IsDBNull(2) ? "" : reader.GetString(2),
+                FirstTimestamp = DateTimeOffset.FromUnixTimeSeconds(reader.GetInt64(3)).DateTime,
+                LastTimestamp = DateTimeOffset.FromUnixTimeSeconds(reader.GetInt64(4)).DateTime,
+                RecordCount = reader.GetInt64(5)
             });
         }
 
@@ -160,15 +160,15 @@ public class OdteDataMigrator
 
         while (await reader.ReadAsync())
         {
-            var timestamp = DateTimeOffset.FromUnixTimeSeconds(reader.GetInt64("timestamp")).DateTime;
+            var timestamp = DateTimeOffset.FromUnixTimeSeconds(reader.GetInt64(0)).DateTime;
             
             // Convert ODTE's compressed prices back to decimals (divided by 10000)
-            var open = reader.GetInt32("open_price") / 10000.0m;
-            var high = reader.GetInt32("high_price") / 10000.0m;
-            var low = reader.GetInt32("low_price") / 10000.0m;
-            var close = reader.GetInt32("close_price") / 10000.0m;
-            var volume = reader.GetInt64("volume");
-            var vwap = reader.GetInt32("vwap_price") / 10000.0m;
+            var open = reader.GetInt32(1) / 10000.0m;
+            var high = reader.GetInt32(2) / 10000.0m;
+            var low = reader.GetInt32(3) / 10000.0m;
+            var close = reader.GetInt32(4) / 10000.0m;
+            var volume = reader.GetInt64(5);
+            var vwap = reader.GetInt32(6) / 10000.0m;
 
             strollBars.Add(new Dictionary<string, object?>
             {
