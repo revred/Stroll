@@ -1,0 +1,170 @@
+# Enhanced Test Configuration for MCP Service
+# Optimized for real-time streaming and interactive management
+
+test_suites:
+  - name: "History Integrity Tests"
+    description: "Comprehensive IPC contract validation and performance regression tests"
+    project_path: "Stroll.History/Stroll.History.Integrity.Tests"
+    category: "integration"
+    timeout_minutes: 15
+    parallel: false
+    priority: "high"
+    environment:
+      STROLL_TEST_MODE: "integrity"
+      MCP_STREAMING: "true"
+    tags:
+      - "integrity"
+      - "ipc"
+      - "performance"
+      - "critical"
+    
+  - name: "Backtest Performance Tests"
+    description: "High-performance backtesting validation with large datasets"
+    project_path: "Stroll.Runner/Stroll.Backtest.Tests"
+    category: "performance"
+    timeout_minutes: 20
+    parallel: true
+    priority: "medium"
+    environment:
+      STROLL_TEST_MODE: "performance"
+      BACKTEST_DATASET_SIZE: "full"
+    tags:
+      - "performance"
+      - "backtest"
+      - "data-intensive"
+      
+  - name: "Historical Data Provider Tests"
+    description: "Unit tests for data providers and storage systems"
+    project_path: "Stroll.History/Stroll.Historical.Tests"
+    category: "unit"
+    timeout_minutes: 8
+    parallel: true
+    priority: "high"
+    environment:
+      STROLL_TEST_MODE: "unit"
+      FAST_MODE: "true"
+    tags:
+      - "unit"
+      - "data-provider"
+      - "storage"
+      - "fast"
+
+  - name: "MCP Integration Tests"
+    description: "MCP protocol and service integration validation"
+    project_path: "Stroll.History/Stroll.History.Mcp"
+    category: "integration"
+    timeout_minutes: 10
+    parallel: false
+    priority: "medium"
+    environment:
+      STROLL_TEST_MODE: "mcp"
+      MCP_PROTOCOL_VERSION: "2024-11-05"
+    tags:
+      - "integration"
+      - "mcp"
+      - "protocol"
+
+# Enhanced execution settings for MCP streaming
+execution_settings:
+  build_configuration: "Debug"
+  build_before_test: true
+  parallel_suites: true
+  max_concurrent_suites: 3
+  default_timeout_minutes: 15
+  continue_on_failure: true
+  artifacts_directory: ".testartifacts"
+  collect_coverage: true
+  coverage_format: "cobertura"
+  
+  # MCP-specific settings
+  enable_streaming: true
+  stream_progress_interval_ms: 500
+  detailed_progress_reporting: true
+  real_time_notifications: true
+
+# Enhanced output settings for MCP integration
+output_settings:
+  use_colors: true
+  console_verbosity: "detailed"
+  show_build_output: true
+  show_test_output: true
+  generate_html_report: true
+  save_detailed_logs: true
+  
+  # MCP streaming settings
+  stream_to_mcp: true
+  mcp_message_format: "markdown"
+  include_performance_metrics: true
+  include_trend_analysis: true
+
+# Intelligent filtering for MCP interactive management
+filters:
+  default_categories: []
+  default_tags: []
+  exclude_tags:
+    - "slow"
+    - "manual"
+    - "deprecated"
+  exclude_patterns:
+    - "*LongRunning*"
+    - "*Manual*"
+    - "*Obsolete*"
+  
+  # Priority-based filtering
+  priority_filters:
+    critical: ["critical", "integrity"]
+    standard: ["unit", "integration"]
+    performance: ["performance", "data-intensive"]
+
+# Advanced failure handling for streaming UX
+failure_handling:
+  fail_fast: false
+  max_failures: 5
+  retry_failed: true
+  retry_count: 2
+  retry_delay_seconds: 5
+  save_failure_logs: true
+  
+  # Intelligent failure categorization
+  failure_categories:
+    transient: ["timeout", "network", "resource"]
+    structural: ["compilation", "dependency"]
+    logical: ["assertion", "validation"]
+
+# MCP notification settings
+notifications:
+  enabled: true
+  channels: ["mcp", "file"]
+  
+  # Event-based notifications
+  notify_on:
+    - "test_started"
+    - "test_completed"
+    - "test_failed"
+    - "suite_started"
+    - "suite_completed"
+    - "progress_milestone"
+  
+  # Performance thresholds for notifications
+  performance_alerts:
+    slow_suite_threshold_seconds: 60
+    slow_test_threshold_seconds: 10
+    failure_rate_threshold_percent: 15
+
+# Analytics and reporting
+analytics:
+  enabled: true
+  retention_days: 90
+  track_metrics:
+    - "execution_time"
+    - "success_rate"  
+    - "failure_patterns"
+    - "performance_trends"
+    - "resource_usage"
+  
+  # Trend analysis
+  trend_analysis:
+    enabled: true
+    comparison_periods: [7, 30, 90]
+    alert_on_regression: true
+    performance_baseline_auto_update: true
