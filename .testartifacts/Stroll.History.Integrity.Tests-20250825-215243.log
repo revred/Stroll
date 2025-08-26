@@ -1,0 +1,801 @@
+  Determining projects to restore...
+C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\Stroll.History.Integrity.Tests.csproj : warning NU1603: Stroll.History.Integrity.Tests depends on NBomber (>= 5.0.3) but NBomber 5.0.3 was not found. NBomber 5.1.0 was resolved instead.
+  All projects are up-to-date for restore.
+C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\Stroll.History.Integrity.Tests.csproj : warning NU1603: Stroll.History.Integrity.Tests depends on NBomber (>= 5.0.3) but NBomber 5.0.3 was not found. NBomber 5.1.0 was resolved instead.
+  Stroll.Process -> C:\code\Stroll\Stroll.Runtime\Stroll.Process\bin\Debug\net9.0\Stroll.Process.dll
+  Stroll.Watchdog -> C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\bin\Debug\net9.0\Stroll.Watchdog.dll
+  Stroll.History.Integrity.Tests -> C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll
+Test run for C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll (.NETCoreApp,Version=v9.0)
+VSTest version 17.14.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 9.0.8)
+[xUnit.net 00:00:00.06]   Discovering: Stroll.History.Integrity.Tests
+[xUnit.net 00:00:00.10]   Discovered:  Stroll.History.Integrity.Tests
+[xUnit.net 00:00:00.10]   Starting:    Stroll.History.Integrity.Tests
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]
+      IpcTestFixture initializing...
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]
+      Ensuring Stroll.History IPC server is running...
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]
+        ProcessId: stroll.history.ipc
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]
+        Executable: dotnet
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]
+        Pipe Name: stroll.history.server
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]
+        Arguments: run --project Stroll.Historical.csproj -- ipc-server
+[xUnit.net 00:00:00.20]       Expected result.ExitCode to be 0 because Long-term data request should succeed, but found -1 (difference of -1).
+[xUnit.net 00:00:00.20]       Stack Trace:
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:00.20]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:00.20]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(330,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.LongTermData_Availability_MustSpanMultipleYears()
+[xUnit.net 00:00:00.20]         --- End of stack trace from previous location ---
+  Failed Stroll.History.Integrity.Tests.DataIntegrityTests.LongTermData_Availability_MustSpanMultipleYears [70 ms]
+  Error Message:
+   Expected result.ExitCode to be 0 because Long-term data request should succeed, but found -1 (difference of -1).
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.LongTermData_Availability_MustSpanMultipleYears() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 330
+--- End of stack trace from previous location ---
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: "SPY") [172 ms]
+  Passed Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetBars_SingleDay_MustMeetPerformanceSLO [328 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: "USO") [138 ms]
+  Passed Stroll.History.Integrity.Tests.ContractValidationTests.CLI_Discover_MustReturnValidContractSchema [145 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: "QQQ") [132 ms]
+[xUnit.net 00:00:01.15]       System.Text.Json.JsonException : 'i' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+[xUnit.net 00:00:01.16]       ---- System.Text.Json.JsonReaderException : 'i' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.
+[xUnit.net 00:00:01.16]       Stack Trace:
+[xUnit.net 00:00:01.16]            at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+[xUnit.net 00:00:01.16]            at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+[xUnit.net 00:00:01.16]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+[xUnit.net 00:00:01.16]            at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+[xUnit.net 00:00:01.16]            at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+[xUnit.net 00:00:01.16]            at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+[xUnit.net 00:00:01.16]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs(201,0): at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_ProviderStatus_MustReturnHealthInformation()
+[xUnit.net 00:00:01.16]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.16]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:01.16]            at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+[xUnit.net 00:00:01.16]            at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+[xUnit.net 00:00:01.16]            at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+[xUnit.net 00:00:01.16]            at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+[xUnit.net 00:00:01.16]            at System.Text.Json.Utf8JsonReader.Read()
+[xUnit.net 00:00:01.16]            at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+[xUnit.net 00:00:01.16]       Output:
+[xUnit.net 00:00:01.16]         Command: provider-status
+[xUnit.net 00:00:01.16]         Exit Code: 0
+[xUnit.net 00:00:01.16]         Execution Time: 408ms
+[xUnit.net 00:00:01.16]         Output: info: Stroll.Historical.DataAcquisitionEngine[0]
+[xUnit.net 00:00:01.16]               Added Local Historical Data provider
+[xUnit.net 00:00:01.16]         info: Stroll.Historical.DataAcquisitionEngine[0]
+[xUnit.net 00:00:01.16]               Added Yahoo Finance provider
+[xUnit.net 00:00:01.16]         ?? Data Provider Status:
+[xUnit.net 00:00:01.16]         
+[xUnit.net 00:00:01.16]         ? ?? Local Historical Data (Priority: 0)
+[xUnit.net 00:00:01.16]            Available: True
+[xUnit.net 00:00:01.16]            Healthy: False
+[xUnit.net 00:00:01.16]            Response Time: 2ms
+[xUnit.net 00:00:01.16]            Rate Limit: 2147483647/2147483647 per minute
+[xUnit.net 00:00:01.16]         
+[xUnit.net 00:00:01.16]         ? ?? Yahoo Finance (Priority: 1)
+[xUnit.net 00:00:01.16]            Available: True
+[xUnit.net 00:00:01.16]            Healthy: False
+[xUnit.net 00:00:01.16]            Response Time: 230ms
+[xUnit.net 00:00:01.16]            Rate Limit: 30/30 per minute
+[xUnit.net 00:00:01.16]         
+[xUnit.net 00:00:01.16]         
+  Passed Stroll.History.Integrity.Tests.ContractValidationTests.CLI_Version_MustReturnValidVersionSchema [141 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: "XLE") [149 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: "USO") [164 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: "QQQ") [148 ms]
+  Failed Stroll.History.Integrity.Tests.ContractValidationTests.CLI_ProviderStatus_MustReturnHealthInformation [411 ms]
+  Error Message:
+   System.Text.Json.JsonException : 'i' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+---- System.Text.Json.JsonReaderException : 'i' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.
+  Stack Trace:
+     at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_ProviderStatus_MustReturnHealthInformation() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs:line 201
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+  Standard Output Messages:
+ Command: provider-status
+ Exit Code: 0
+ Execution Time: 408ms
+ Output: info: Stroll.Historical.DataAcquisitionEngine[0]
+       Added Local Historical Data provider
+ info: Stroll.Historical.DataAcquisitionEngine[0]
+       Added Yahoo Finance provider
+ ?? Data Provider Status:
+ 
+ ? ?? Local Historical Data (Priority: 0)
+    Available: True
+    Healthy: False
+    Response Time: 2ms
+    Rate Limit: 2147483647/2147483647 per minute
+ 
+ ? ?? Yahoo Finance (Priority: 1)
+    Available: True
+    Healthy: False
+    Response Time: 230ms
+    Rate Limit: 30/30 per minute
+ 
+ 
+
+
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: "XLE") [151 ms]
+  Passed Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetBars_MonthlyRange_MustMeetPerformanceSLO [163 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: "SPY") [160 ms]
+[xUnit.net 00:00:01.47]       System.Text.Json.JsonException : The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+[xUnit.net 00:00:01.47]       ---- System.Text.Json.JsonReaderException : The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. LineNumber: 0 | BytePositionInLine: 0.
+[xUnit.net 00:00:01.47]       Stack Trace:
+[xUnit.net 00:00:01.47]            at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+[xUnit.net 00:00:01.47]            at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+[xUnit.net 00:00:01.47]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+[xUnit.net 00:00:01.47]            at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+[xUnit.net 00:00:01.47]            at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+[xUnit.net 00:00:01.47]            at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+[xUnit.net 00:00:01.47]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs(226,0): at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_MustHandleInvalidArguments_WithStandardErrorFormat()
+[xUnit.net 00:00:01.47]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.47]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:01.47]            at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+[xUnit.net 00:00:01.47]            at System.Text.Json.Utf8JsonReader.Read()
+[xUnit.net 00:00:01.47]            at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+[xUnit.net 00:00:01.47]       Output:
+[xUnit.net 00:00:01.47]         Command: invalid-command --badarg value
+[xUnit.net 00:00:01.47]         Exit Code: 64
+[xUnit.net 00:00:01.47]         Execution Time: 144ms
+[xUnit.net 00:00:01.47]         Output: 
+[xUnit.net 00:00:01.47]         Error: {
+[xUnit.net 00:00:01.47]           "schema": "stroll.history.v1",
+[xUnit.net 00:00:01.47]           "ok": false,
+[xUnit.net 00:00:01.47]           "error": {
+[xUnit.net 00:00:01.47]             "code": "USAGE",
+[xUnit.net 00:00:01.47]             "message": "unknown command \u0027invalid-command\u0027",
+[xUnit.net 00:00:01.47]             "hint": "try: stroll.history discover"
+[xUnit.net 00:00:01.47]           }
+[xUnit.net 00:00:01.47]         }
+[xUnit.net 00:00:01.47]         
+[xUnit.net 00:00:01.79]       Expected result.ExitCode to be 0 because discover must succeed for baseline measurement, but found -1 (difference of -1).
+[xUnit.net 00:00:01.79]       Stack Trace:
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:01.79]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:01.79]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(52,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_DiscoverCommand_MustMaintainSLO()
+[xUnit.net 00:00:01.79]         --- End of stack trace from previous location ---
+  Failed Stroll.History.Integrity.Tests.ContractValidationTests.CLI_MustHandleInvalidArguments_WithStandardErrorFormat [146 ms]
+  Error Message:
+   System.Text.Json.JsonException : The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+---- System.Text.Json.JsonReaderException : The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. LineNumber: 0 | BytePositionInLine: 0.
+  Stack Trace:
+     at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_MustHandleInvalidArguments_WithStandardErrorFormat() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs:line 226
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+  Standard Output Messages:
+ Command: invalid-command --badarg value
+ Exit Code: 64
+ Execution Time: 144ms
+ Output: 
+ Error: {
+   "schema": "stroll.history.v1",
+   "ok": false,
+   "error": {
+     "code": "USAGE",
+     "message": "unknown command \u0027invalid-command\u0027",
+     "hint": "try: stroll.history discover"
+   }
+ }
+ 
+
+
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "XOP") [149 ms]
+  Passed Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetBars_InvalidSymbol_MustReturnStandardError [155 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "OIH") [126 ms]
+  Passed Stroll.History.Integrity.Tests.ProcessLifecycleTests.InitializationOrder_MustCompleteBeforeAcceptingRequests [1 s]
+  Passed Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(date: "2024-01-31", description: "monthly expiry") [168 ms]
+  Failed Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_DiscoverCommand_MustMaintainSLO [1 s]
+  Error Message:
+   Expected result.ExitCode to be 0 because discover must succeed for baseline measurement, but found -1 (difference of -1).
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_DiscoverCommand_MustMaintainSLO() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 52
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:01.82]       Expected result.ExitCode to be one of {0, 3} because XLE should either succeed (0) or report no data (3), not fail completely, but found -1.
+[xUnit.net 00:00:01.82]       Stack Trace:
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)
+[xUnit.net 00:00:01.82]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(198,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol)
+[xUnit.net 00:00:01.82]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.82]       Output:
+[xUnit.net 00:00:01.82]         Oil/Energy symbol XLE not available: Exit=-1, Output=
+[xUnit.net 00:00:01.82]       Expected result.ExitCode to be 0 because get-bars single_month must succeed, but found -1 (difference of -1).
+[xUnit.net 00:00:01.82]       Stack Trace:
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:01.82]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(96,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario)
+[xUnit.net 00:00:01.82]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.82]       Expected result.ExitCode to be 0 because valid options request must succeed, but found -1 (difference of -1).
+[xUnit.net 00:00:01.82]       Stack Trace:
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:01.82]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:01.82]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs(172,0): at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(String date, String description)
+[xUnit.net 00:00:01.82]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.82]       Output:
+[xUnit.net 00:00:01.82]         Command: get-options --symbol SPY --date 2024-01-19
+[xUnit.net 00:00:01.82]         Exit Code: -1
+[xUnit.net 00:00:01.82]         Execution Time: 28ms
+[xUnit.net 00:00:01.82]         Output: 
+[xUnit.net 00:00:01.84]       Expected result.ExitCode to be one of {0, 3} because BOIL should either succeed (0) or report no data (3), not fail completely, but found -1.
+[xUnit.net 00:00:01.84]       Stack Trace:
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)
+[xUnit.net 00:00:01.84]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(198,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol)
+[xUnit.net 00:00:01.84]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.84]       Output:
+[xUnit.net 00:00:01.84]         Oil/Energy symbol BOIL not available: Exit=-1, Output=
+[xUnit.net 00:00:01.84]       Expected result.ExitCode to be 0 because get-bars single_week must succeed, but found -1 (difference of -1).
+[xUnit.net 00:00:01.84]       Stack Trace:
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:01.84]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:01.84]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(96,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario)
+[xUnit.net 00:00:01.84]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.85]       Expected result.ExitCode to be one of {0, 3} because UNG should either succeed (0) or report no data (3), not fail completely, but found -1.
+[xUnit.net 00:00:01.85]       Stack Trace:
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:01.85]            at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)
+[xUnit.net 00:00:01.85]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(198,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol)
+[xUnit.net 00:00:01.85]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.85]       Output:
+[xUnit.net 00:00:01.85]         Oil/Energy symbol UNG not available: Exit=-1, Output=
+[xUnit.net 00:00:01.89]       Expected result.ExitCode to be 0 because get-bars single_day must succeed, but found -1 (difference of -1).
+[xUnit.net 00:00:01.89]       Stack Trace:
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:01.89]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:01.89]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(96,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario)
+[xUnit.net 00:00:01.89]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.90]       Expected result.ExitCode to be one of {0, 3} because DRIP should either succeed (0) or report no data (3), not fail completely, but found -1.
+[xUnit.net 00:00:01.90]       Stack Trace:
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:01.90]            at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)
+[xUnit.net 00:00:01.90]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(198,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol)
+[xUnit.net 00:00:01.90]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.90]       Output:
+[xUnit.net 00:00:01.90]         Oil/Energy symbol DRIP not available: Exit=-1, Output=
+  Failed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "XLE") [114 ms]
+  Error Message:
+   Expected result.ExitCode to be one of {0, 3} because XLE should either succeed (0) or report no data (3), not fail completely, but found -1.
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 198
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ Oil/Energy symbol XLE not available: Exit=-1, Output=
+
+
+  Failed Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: "SPY", from: "2024-01-01", to: "2024-01-31", granularity: "1d", scenario: "single_month") [26 ms]
+  Error Message:
+   Expected result.ExitCode to be 0 because get-bars single_month must succeed, but found -1 (difference of -1).
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 96
+--- End of stack trace from previous location ---
+  Failed Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(date: "2024-01-19", description: "weekly expiry") [29 ms]
+  Error Message:
+   Expected result.ExitCode to be 0 because valid options request must succeed, but found -1 (difference of -1).
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(String date, String description) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs:line 172
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ Command: get-options --symbol SPY --date 2024-01-19
+ Exit Code: -1
+ Execution Time: 28ms
+ Output: 
+
+
+  Failed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "BOIL") [26 ms]
+  Error Message:
+   Expected result.ExitCode to be one of {0, 3} because BOIL should either succeed (0) or report no data (3), not fail completely, but found -1.
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 198
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ Oil/Energy symbol BOIL not available: Exit=-1, Output=
+
+
+  Failed Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: "SPY", from: "2024-01-01", to: "2024-01-07", granularity: "1d", scenario: "single_week") [22 ms]
+  Error Message:
+   Expected result.ExitCode to be 0 because get-bars single_week must succeed, but found -1 (difference of -1).
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 96
+--- End of stack trace from previous location ---
+  Failed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "UNG") [10 ms]
+  Error Message:
+   Expected result.ExitCode to be one of {0, 3} because UNG should either succeed (0) or report no data (3), not fail completely, but found -1.
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 198
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ Oil/Energy symbol UNG not available: Exit=-1, Output=
+
+
+  Failed Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: "SPY", from: "2024-01-15", to: "2024-01-15", granularity: "1d", scenario: "single_day") [41 ms]
+  Error Message:
+   Expected result.ExitCode to be 0 because get-bars single_day must succeed, but found -1 (difference of -1).
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 96
+--- End of stack trace from previous location ---
+  Failed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "DRIP") [44 ms]
+  Error Message:
+   Expected result.ExitCode to be one of {0, 3} because DRIP should either succeed (0) or report no data (3), not fail completely, but found -1.
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 198
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ Oil/Energy symbol DRIP not available: Exit=-1, Output=
+
+
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "GUSH") [211 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "ERY") [251 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "OILY") [146 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "USO") [178 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "ERX") [147 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OptionsData_Availability_MustProvideValidChains(symbol: "SPY", date: "2024-01-31", description: "monthly") [202 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OptionsData_Availability_MustProvideValidChains(symbol: "SPY", date: "2024-01-19", description: "weekly") [182 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.OptionsData_Availability_MustProvideValidChains(symbol: "QQQ", date: "2024-01-19", description: "weekly") [258 ms]
+  Passed Stroll.History.Integrity.Tests.DataIntegrityTests.MultiSymbol_ConsistentResponse_MustHaveSameSchema [448 ms]
+  Passed Stroll.History.Integrity.Tests.PerformanceRegressionTests.MemoryUsage_UnderLoad_MustNotExceedLimits [5 s]
+  Passed Stroll.History.Integrity.Tests.ProcessLifecycleTests.ColdStart_Performance_MustMeetBootstrapSLO [8 s]
+[xUnit.net 00:00:09.90]       System.ComponentModel.Win32Exception : An error occurred trying to start process 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\..\..\..\..\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.exe' with working directory 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0'. Access is denied.
+[xUnit.net 00:00:09.90]       Stack Trace:
+[xUnit.net 00:00:09.90]            at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+[xUnit.net 00:00:09.90]            at System.Diagnostics.Process.Start()
+[xUnit.net 00:00:09.90]            at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+[xUnit.net 00:00:09.90]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs(293,0): at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ExecuteCliCommand(String arguments)
+[xUnit.net 00:00:09.90]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs(88,0): at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ProcessSpawn_Overhead_MustMeetPerformanceSLO()
+[xUnit.net 00:00:09.90]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:10.22]       Expected successCount to be 8 because All concurrent requests must succeed, but found 6.
+[xUnit.net 00:00:10.22]       Stack Trace:
+[xUnit.net 00:00:10.22]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:10.22]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:10.22]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:10.22]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:10.22]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:10.22]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs(244,0): at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ConcurrentConnections_MustHandleMultipleClients()
+[xUnit.net 00:00:10.22]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:10.22]       Output:
+[xUnit.net 00:00:10.22]         Client 1: -1, 21ms
+[xUnit.net 00:00:10.22]         Client 6: -1, 24ms
+[xUnit.net 00:00:10.22]         Client 7: 0, 161ms
+[xUnit.net 00:00:10.22]         Client 4: 0, 161ms
+[xUnit.net 00:00:10.22]         Client 5: 0, 161ms
+[xUnit.net 00:00:10.22]         Client 3: 0, 161ms
+[xUnit.net 00:00:10.22]         Client 2: 0, 161ms
+[xUnit.net 00:00:10.22]         Client 0: 0, 312ms
+fail: Stroll.History.Integrity.Tests.IpcTestFixture[0]
+      IpcTestFixture initialization failed
+      System.InvalidOperationException: Process stroll.history.ipc failed startup validation
+         at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58
+         at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36
+         at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40
+         at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+[xUnit.net 00:00:10.33]       Stack Trace:
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+[xUnit.net 00:00:10.33]       Stack Trace:
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+[xUnit.net 00:00:10.33]       Stack Trace:
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]
+      IpcTestFixture disposing...
+[xUnit.net 00:00:10.33]       Stack Trace:
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+[xUnit.net 00:00:10.33]       Stack Trace:
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+[xUnit.net 00:00:10.33]       Stack Trace:
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()
+  Failed Stroll.History.Integrity.Tests.ProcessLifecycleTests.ProcessSpawn_Overhead_MustMeetPerformanceSLO [17 ms]
+  Error Message:
+   System.ComponentModel.Win32Exception : An error occurred trying to start process 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\..\..\..\..\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.exe' with working directory 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0'. Access is denied.
+  Stack Trace:
+     at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ExecuteCliCommand(String arguments) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs:line 293
+   at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ProcessSpawn_Overhead_MustMeetPerformanceSLO() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs:line 88
+--- End of stack trace from previous location ---
+  Failed Stroll.History.Integrity.Tests.ProcessLifecycleTests.ConcurrentConnections_MustHandleMultipleClients [315 ms]
+  Error Message:
+   Expected successCount to be 8 because All concurrent requests must succeed, but found 6.
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ConcurrentConnections_MustHandleMultipleClients() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs:line 244
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ Client 1: -1, 21ms
+ Client 6: -1, 24ms
+ Client 7: 0, 161ms
+ Client 4: 0, 161ms
+ Client 5: 0, 161ms
+ Client 3: 0, 161ms
+ Client 2: 0, 161ms
+ Client 0: 0, 312ms
+
+
+  Failed Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Performance_MustMeetLatencySLO [1 ms]
+  Error Message:
+   System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+  Stack Trace:
+     at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103
+  Failed Stroll.History.Integrity.Tests.IpcContractTests.IpcErrorHandling_InvalidRequests_MustReturnStandardErrorFormat [1 ms]
+  Error Message:
+   System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+  Stack Trace:
+     at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103
+  Failed Stroll.History.Integrity.Tests.IpcContractTests.IpcLargePayload_DataTransfer_MustHandleMultiMegabyteResponses [1 ms]
+  Error Message:
+   System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+  Stack Trace:
+     at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103
+  Failed Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Persistence_MustReuseConnectionsEfficiently [1 ms]
+  Error Message:
+   System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+  Stack Trace:
+     at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103
+  Failed Stroll.History.Integrity.Tests.IpcContractTests.IpcConnectionPool_ResourceManagement_MustHandleConnectionLifecycle [1 ms]
+  Error Message:
+   System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+  Stack Trace:
+     at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103
+  Failed Stroll.History.Integrity.Tests.IpcContractTests.IpcConcurrency_MultipleClients_MustHandleSimultaneousConnections [1 ms]
+  Error Message:
+   System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+  Stack Trace:
+     at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+[xUnit.net 00:00:10.33]       Stack Trace:
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+[xUnit.net 00:00:10.33]       Stack Trace:
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]
+      IpcTestFixture disposed successfully
+  Failed Stroll.History.Integrity.Tests.IpcContractTests.IpcProtocol_BinaryFraming_MustUseLengthPrefixedFormat [1 ms]
+  Error Message:
+   System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+  Stack Trace:
+     at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103
+  Failed Stroll.History.Integrity.Tests.IpcContractTests.IpcServer_Startup_MustCreateNamedPipeWithStandardName [1 ms]
+  Error Message:
+   System.InvalidOperationException : Process stroll.history.ipc failed startup validation
+  Stack Trace:
+     at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103
+  Passed Stroll.History.Integrity.Tests.ProcessLifecycleTests.GracefulShutdown_MustCompleteWithinTimeout [1 s]
+  Passed Stroll.History.Integrity.Tests.PerformanceRegressionTests.ColdStart_Performance_MustMeetBootstrapSLO [5 s]
+[38;5;9m  _   _   ____                        _                       ____  [0m            
+[38;5;9m | \ | | | __ )    ___    _ __ ___   | |__     ___   _ __    | ___| [0m            
+[38;5;9m |  \| | |  _ \   / _ \  | '_ ` _ \  | '_ \   / _ \ | '__|   |___ \ [0m            
+[38;5;9m | |\  | | |_) | | (_) | | | | | | | | |_) | |  __/ | |       ___) |[0m            
+[38;5;9m |_| \_| |____/   \___/  |_| |_| |_| |_.__/   \___| |_|      |____/ [0m            
+[38;5;9m                                                                    [0m            
+21:52:59 [[38;5;39mINF[0m] NBomber [38;5;10m"5.1.0"[0m started a new session: [38;5;10m"2025-08-25_20.52.58_session_acd4fe33"[0m
+21:52:59 [[38;5;39mINF[0m] NBomber started as single node
+21:52:59 [[38;5;39mINF[0m] License validation....
+21:52:59 [[38;5;11mWRN[0m] THIS VERSION IS FREE ONLY FOR PERSONAL USE. You can't use it for an 
+organization.
+21:52:59 [[38;5;39mINF[0m] Reports folder: [38;5;10m"C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\r[0m
+[38;5;10meports\2025-08-25_20.52.58_session_acd4fe33"[0m
+21:52:59 [[38;5;39mINF[0m] Plugins: no plugins were loaded
+21:52:59 [[38;5;39mINF[0m] Reporting sinks: no reporting sinks were loaded
+21:52:59 [[38;5;39mINF[0m] Starting init...
+21:52:59 [[38;5;39mINF[0m] Target scenarios: [38;5;10m"concurrent_get_bars"[0m
+21:52:59 [[38;5;39mINF[0m] Init finished
+21:52:59 [[38;5;39mINF[0m] Starting warm up...
+21:52:59 [[38;5;39mINF[0m] Warm up for scenarios: [38;5;10m"concurrent_get_bars"[0m
+  Passed Stroll.History.Integrity.Tests.ProcessLifecycleTests.ErrorRecovery_TransientFailures_MustRecoverGracefully [9 s]
+[xUnit.net 00:00:25.86]       System.InvalidOperationException : Sequence contains no elements
+[xUnit.net 00:00:25.86]       Stack Trace:
+[xUnit.net 00:00:25.86]            at System.Linq.ThrowHelper.ThrowNoElementsException()
+[xUnit.net 00:00:25.86]            at System.Linq.Enumerable.Average[TSource,TAccumulator,TResult](IEnumerable`1 source)
+[xUnit.net 00:00:25.86]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs(176,0): at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ResourceLimits_UnderNormalLoad_MustNotExceedLimits()
+[xUnit.net 00:00:25.86]         --- End of stack trace from previous location ---
+  Failed Stroll.History.Integrity.Tests.ProcessLifecycleTests.ResourceLimits_UnderNormalLoad_MustNotExceedLimits [5 s]
+  Error Message:
+   System.InvalidOperationException : Sequence contains no elements
+  Stack Trace:
+     at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Average[TSource,TAccumulator,TResult](IEnumerable`1 source)
+   at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ResourceLimits_UnderNormalLoad_MustNotExceedLimits() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs:line 176
+--- End of stack trace from previous location ---
+  Passed Stroll.History.Integrity.Tests.ProcessLifecycleTests.ForceKill_MustCleanupResources [13 ms]
+21:53:30 [[38;5;39mINF[0m] Starting bombing...
+21:54:04 [[38;5;39mINF[0m] Stopping scenarios...
+21:54:04 [[38;5;39mINF[0m] Calculating final statistics...
+���������������������������������� test info �����������������������������������
+test suite: [38;5;10mnbomber_default_test_suite_name[0m
+test name: [38;5;10mnbomber_default_test_name[0m
+session id: [38;5;10m2025-08-25_20.52.58_session_acd4fe33[0m
+�������������������������������� scenario stats ��������������������������������
+scenario: [38;5;10mconcurrent_get_bars[0m
+  - ok count: [38;5;10m1498[0m
+  - fail count: [38;5;9m0[0m
+  - all data: [38;5;10m0[0m MB
+  - duration: [38;5;10m00:00:30[0m
+load simulations: 
+  - [38;5;10minject[0m, rate: [38;5;10m50[0m, interval: [38;5;10m00:00:01[0m, during: [38;5;10m00:00:30[0m
+������������������������������������������������������������������������������Ŀ
+�               step � ok stats                                                �
+������������������������������������������������������������������������������Ĵ
+�               name � [38;5;39mglobal information[0m                                      �
+�      request count � all = [38;5;10m1498[0m, ok = [38;5;10m1498[0m, RPS = [38;5;10m49.9[0m                       �
+�            latency � min = [38;5;10m127.16[0m, mean = [38;5;10m208.3[0m, max = [38;5;10m532.22[0m, StdDev = [38;5;10m43.6[0m �
+� latency percentile � p50 = [38;5;10m204.67[0m, p75 = [38;5;10m230.27[0m, p95 = [38;5;10m280.32[0m, p99 = [38;5;10m351.49[0m  �
+��������������������������������������������������������������������������������
+21:54:05 [[38;5;39mINF[0m] Reports saved in folder: [38;5;10m"C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\r[0m
+[38;5;10meports\2025-08-25_20.52.58_session_acd4fe33"[0m
+21:54:05 [[38;5;11mWRN[0m] THIS VERSION IS FREE ONLY FOR PERSONAL USE. You can't use it for an 
+organization.
+  Passed Stroll.History.Integrity.Tests.PerformanceRegressionTests.LoadTest_ConcurrentRequests_MustMaintainThroughputSLO [1 m 5 s]
+[xUnit.net 00:01:18.94]       System.ComponentModel.Win32Exception : An error occurred trying to start process 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\..\..\..\..\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.exe' with working directory 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0'. Access is denied.
+[xUnit.net 00:01:18.94]       Stack Trace:
+[xUnit.net 00:01:18.94]            at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+[xUnit.net 00:01:18.94]            at System.Diagnostics.Process.Start()
+[xUnit.net 00:01:18.94]            at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+[xUnit.net 00:01:18.94]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(331,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.ExecuteCliCommand(String arguments)
+[xUnit.net 00:01:18.94]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(139,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(String symbol, String date, String scenario)
+[xUnit.net 00:01:18.94]         --- End of stack trace from previous location ---
+[xUnit.net 00:01:18.96]       Expected result.ExitCode to be 0 because get-options monthly must succeed, but found -1 (difference of -1).
+[xUnit.net 00:01:18.96]       Stack Trace:
+[xUnit.net 00:01:18.96]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:01:18.96]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:01:18.96]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:01:18.96]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:01:18.96]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+[xUnit.net 00:01:18.96]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(142,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(String symbol, String date, String scenario)
+[xUnit.net 00:01:18.96]         --- End of stack trace from previous location ---
+[xUnit.net 00:01:18.96]   Finished:    Stroll.History.Integrity.Tests
+  Failed Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: "SPY", date: "2024-01-19", scenario: "weekly") [16 ms]
+  Error Message:
+   System.ComponentModel.Win32Exception : An error occurred trying to start process 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\..\..\..\..\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.exe' with working directory 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0'. Access is denied.
+  Stack Trace:
+     at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.ExecuteCliCommand(String arguments) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 331
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(String symbol, String date, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 139
+--- End of stack trace from previous location ---
+  Failed Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: "SPY", date: "2024-01-31", scenario: "monthly") [24 ms]
+  Error Message:
+   Expected result.ExitCode to be 0 because get-options monthly must succeed, but found -1 (difference of -1).
+  Stack Trace:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(String symbol, String date, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 142
+--- End of stack trace from previous location ---
+Results File: C:\code\Stroll\.testartifacts\Stroll.History.Integrity.Tests-20250825-215243.trx
+
+Total tests: 58
+     Passed: 33
+     Failed: 25
+ Total time: 1.3215 Minutes
+
+[xUnit.net 00:00:00.20]     Stroll.History.Integrity.Tests.DataIntegrityTests.LongTermData_Availability_MustSpanMultipleYears [FAIL]
+[xUnit.net 00:00:01.15]     Stroll.History.Integrity.Tests.ContractValidationTests.CLI_ProviderStatus_MustReturnHealthInformation [FAIL]
+[xUnit.net 00:00:01.47]     Stroll.History.Integrity.Tests.ContractValidationTests.CLI_MustHandleInvalidArguments_WithStandardErrorFormat [FAIL]
+[xUnit.net 00:00:01.79]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_DiscoverCommand_MustMaintainSLO [FAIL]
+[xUnit.net 00:00:01.82]     Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "XLE") [FAIL]
+[xUnit.net 00:00:01.82]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: "SPY", from: "2024-01-01", to: "2024-01-31", granularity: "1d", scenario: "single_month") [FAIL]
+[xUnit.net 00:00:01.82]     Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(date: "2024-01-19", description: "weekly expiry") [FAIL]
+[xUnit.net 00:00:01.84]     Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "BOIL") [FAIL]
+[xUnit.net 00:00:01.84]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: "SPY", from: "2024-01-01", to: "2024-01-07", granularity: "1d", scenario: "single_week") [FAIL]
+[xUnit.net 00:00:01.85]     Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "UNG") [FAIL]
+[xUnit.net 00:00:01.89]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: "SPY", from: "2024-01-15", to: "2024-01-15", granularity: "1d", scenario: "single_day") [FAIL]
+[xUnit.net 00:00:01.90]     Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "DRIP") [FAIL]
+[xUnit.net 00:00:09.90]     Stroll.History.Integrity.Tests.ProcessLifecycleTests.ProcessSpawn_Overhead_MustMeetPerformanceSLO [FAIL]
+[xUnit.net 00:00:10.22]     Stroll.History.Integrity.Tests.ProcessLifecycleTests.ConcurrentConnections_MustHandleMultipleClients [FAIL]
+[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Performance_MustMeetLatencySLO [FAIL]
+[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcErrorHandling_InvalidRequests_MustReturnStandardErrorFormat [FAIL]
+[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcLargePayload_DataTransfer_MustHandleMultiMegabyteResponses [FAIL]
+[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Persistence_MustReuseConnectionsEfficiently [FAIL]
+[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcConnectionPool_ResourceManagement_MustHandleConnectionLifecycle [FAIL]
+[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcConcurrency_MultipleClients_MustHandleSimultaneousConnections [FAIL]
+[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcProtocol_BinaryFraming_MustUseLengthPrefixedFormat [FAIL]
+[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcServer_Startup_MustCreateNamedPipeWithStandardName [FAIL]
+[xUnit.net 00:00:25.86]     Stroll.History.Integrity.Tests.ProcessLifecycleTests.ResourceLimits_UnderNormalLoad_MustNotExceedLimits [FAIL]
+[xUnit.net 00:01:18.94]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: "SPY", date: "2024-01-19", scenario: "weekly") [FAIL]
+[xUnit.net 00:01:18.96]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: "SPY", date: "2024-01-31", scenario: "monthly") [FAIL]
+Test Run Failed.

@@ -1,0 +1,1397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="ece42c17-0014-443a-a5f2-2288f46ab2b1" name="revanur@SONAKSHI 2025-08-25 21:52:46" runUser="SONAKSHI\revanur" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-08-25T21:52:46.9519717+01:00" queuing="2025-08-25T21:52:46.9519721+01:00" start="2025-08-25T21:52:45.9922710+01:00" finish="2025-08-25T21:54:05.2916843+01:00" />
+  <TestSettings name="default" id="7214f28f-a3d5-4478-8a7e-169da8e540ca">
+    <Deployment runDeploymentRoot="revanur_SONAKSHI_2025-08-25_21_52_46" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="98b46526-902a-4c6e-9dd4-9167909379d3" testId="ab2b2a05-ed37-b373-0697-8aa7b21d8d5d" testName="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, from: &quot;2024-01-01&quot;, to: &quot;2024-01-07&quot;, granularity: &quot;1d&quot;, scenario: &quot;single_week&quot;)" computerName="SONAKSHI" duration="00:00:00.0220987" startTime="2025-08-25T21:52:48.1095330+01:00" endTime="2025-08-25T21:52:48.1095333+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98b46526-902a-4c6e-9dd4-9167909379d3">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be 0 because get-bars single_week must succeed, but found -1 (difference of -1).</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 96&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7c8eea18-3105-48c4-9db9-98aab1f30d4b" testId="a97e8704-df43-aa55-d55e-cc7f9f54d62b" testName="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetBars_SingleDay_MustMeetPerformanceSLO" computerName="SONAKSHI" duration="00:00:00.3289746" startTime="2025-08-25T21:52:46.7198760+01:00" endTime="2025-08-25T21:52:46.7198766+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c8eea18-3105-48c4-9db9-98aab1f30d4b">
+      <Output>
+        <StdOut>Command: get-bars --symbol SPY --from 2024-01-15 --to 2024-01-15 --granularity 1d&#xD;
+Exit Code: 0&#xD;
+Execution Time: 320ms&#xD;
+Output: {"schema":"stroll.history.v1","ok":true,"data":{"symbol":"SPY","granularity":"1d","from":"2024-01-15","to":"2024-01-15","bars":[]},"meta":{"count":0,"timestamp":"2025-08-25T20:52:46.689Z"}}&#xD;
+&#xD;
+No data returned - skipping data quality validation</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f74ca10c-ba72-4d1c-afc3-9bb1a4bb634a" testId="a65e01be-e329-9ced-a231-8f240e9dbff3" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: &quot;SPY&quot;)" computerName="SONAKSHI" duration="00:00:00.1722197" startTime="2025-08-25T21:52:46.6403700+01:00" endTime="2025-08-25T21:52:46.6403702+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f74ca10c-ba72-4d1c-afc3-9bb1a4bb634a">
+      <Output>
+        <StdOut>SPY Completeness: 21 bars, 0 suspicious gaps</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="47a90a5e-dd53-4af6-9fa8-92a51dca0196" testId="21515c87-1674-a668-24cd-e7cf0b8b79a6" testName="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ColdStart_Performance_MustMeetBootstrapSLO" computerName="SONAKSHI" duration="00:00:08.1662822" startTime="2025-08-25T21:52:56.1509193+01:00" endTime="2025-08-25T21:52:56.1509197+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="47a90a5e-dd53-4af6-9fa8-92a51dca0196">
+      <Output>
+        <StdOut>Cold start 1: 130ms&#xD;
+Cold start 2: 162ms&#xD;
+Cold start 3: 131ms&#xD;
+Cold start 4: 125ms&#xD;
+Cold start 5: 132ms&#xD;
+Cold Start Performance: Avg=136.0ms, Max=162ms</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7f68adef-7ed0-45b2-8eab-dc4d769139f7" testId="8c252c2d-052d-8947-948e-0317943dbcb9" testName="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, date: &quot;2024-01-19&quot;, scenario: &quot;weekly&quot;)" computerName="SONAKSHI" duration="00:00:00.0160355" startTime="2025-08-25T21:54:05.2026839+01:00" endTime="2025-08-25T21:54:05.2026841+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f68adef-7ed0-45b2-8eab-dc4d769139f7">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ComponentModel.Win32Exception : An error occurred trying to start process 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\..\..\..\..\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.exe' with working directory 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0'. Access is denied.</Message>
+          <StackTrace>   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)&#xD;
+   at System.Diagnostics.Process.Start()&#xD;
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)&#xD;
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.ExecuteCliCommand(String arguments) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 331&#xD;
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(String symbol, String date, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 139&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="662e5657-0bdd-4934-8e89-ed8cce42c6c2" testId="34c2d878-9f9a-c3fb-f608-685427dd1ff8" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.MultiSymbol_ConsistentResponse_MustHaveSameSchema" computerName="SONAKSHI" duration="00:00:00.4486888" startTime="2025-08-25T21:52:50.1963038+01:00" endTime="2025-08-25T21:52:50.1963042+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="662e5657-0bdd-4934-8e89-ed8cce42c6c2">
+      <Output>
+        <StdOut>Schema consistency validated across 2 symbols</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d556b48d-373b-420a-922b-00222879328f" testId="6d82db8f-5e56-2998-5fc5-a4fc1c24ccd8" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OptionsData_Availability_MustProvideValidChains(symbol: &quot;QQQ&quot;, date: &quot;2024-01-19&quot;, description: &quot;weekly&quot;)" computerName="SONAKSHI" duration="00:00:00.2587027" startTime="2025-08-25T21:52:49.7470821+01:00" endTime="2025-08-25T21:52:49.7470824+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d556b48d-373b-420a-922b-00222879328f" />
+    <UnitTestResult executionId="88067f43-2c0b-4de1-9580-1aa558cdedb0" testId="24742c7d-d023-969a-bdc2-2d3c3debc16b" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.LongTermData_Availability_MustSpanMultipleYears" computerName="SONAKSHI" duration="00:00:00.0704705" startTime="2025-08-25T21:52:46.4699974+01:00" endTime="2025-08-25T21:52:46.4700102+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="88067f43-2c0b-4de1-9580-1aa558cdedb0">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be 0 because Long-term data request should succeed, but found -1 (difference of -1).</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.LongTermData_Availability_MustSpanMultipleYears() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 330&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2e60e9a3-c680-4eaf-8d9c-90308440d34b" testId="cf1ff64e-8e10-7ae6-a670-98faed7e8dbe" testName="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(date: &quot;2024-01-19&quot;, description: &quot;weekly expiry&quot;)" computerName="SONAKSHI" duration="00:00:00.0295824" startTime="2025-08-25T21:52:48.0869983+01:00" endTime="2025-08-25T21:52:48.0869986+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e60e9a3-c680-4eaf-8d9c-90308440d34b">
+      <Output>
+        <StdOut>Command: get-options --symbol SPY --date 2024-01-19&#xD;
+Exit Code: -1&#xD;
+Execution Time: 28ms&#xD;
+Output:</StdOut>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be 0 because valid options request must succeed, but found -1 (difference of -1).</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(String date, String description) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs:line 172&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ed27db63-82ed-4bd9-a88b-34e49614cdd2" testId="c60bb786-dacb-4f91-d8c0-17001cfed7a7" testName="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_MustHandleInvalidArguments_WithStandardErrorFormat" computerName="SONAKSHI" duration="00:00:00.1463033" startTime="2025-08-25T21:52:47.7319017+01:00" endTime="2025-08-25T21:52:47.7319020+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed27db63-82ed-4bd9-a88b-34e49614cdd2">
+      <Output>
+        <StdOut>Command: invalid-command --badarg value&#xD;
+Exit Code: 64&#xD;
+Execution Time: 144ms&#xD;
+Output: &#xD;
+Error: {&#xD;
+  "schema": "stroll.history.v1",&#xD;
+  "ok": false,&#xD;
+  "error": {&#xD;
+    "code": "USAGE",&#xD;
+    "message": "unknown command \u0027invalid-command\u0027",&#xD;
+    "hint": "try: stroll.history discover"&#xD;
+  }&#xD;
+}</StdOut>
+        <ErrorInfo>
+          <Message>System.Text.Json.JsonException : The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. Path: $ | LineNumber: 0 | BytePositionInLine: 0.&#xD;
+---- System.Text.Json.JsonReaderException : The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. LineNumber: 0 | BytePositionInLine: 0.</Message>
+          <StackTrace>   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack&amp; state, JsonReaderException ex)&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader&amp; reader, ReadStack&amp; state)&#xD;
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)&#xD;
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)&#xD;
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)&#xD;
+   at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_MustHandleInvalidArguments_WithStandardErrorFormat() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs:line 226&#xD;
+--- End of stack trace from previous location ---&#xD;
+----- Inner Stack Trace -----&#xD;
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader&amp; json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)&#xD;
+   at System.Text.Json.Utf8JsonReader.Read()&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="81b4ed7e-4427-4790-8de5-ee4384ed16f3" testId="63e5e473-b665-c476-0652-077debdb9447" testName="Stroll.History.Integrity.Tests.IpcContractTests.IpcProtocol_BinaryFraming_MustUseLengthPrefixedFormat" computerName="SONAKSHI" duration="00:00:00.0010000" startTime="2025-08-25T21:52:56.5964100+01:00" endTime="2025-08-25T21:52:56.5964101+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81b4ed7e-4427-4790-8de5-ee4384ed16f3">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Process stroll.history.ipc failed startup validation</Message>
+          <StackTrace>   at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58&#xD;
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5c368e08-f727-4972-9e02-6892f6cd4e6e" testId="698150cf-a3bf-0a44-9fc6-9e4a7cd1afaf" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: &quot;USO&quot;)" computerName="SONAKSHI" duration="00:00:00.1382191" startTime="2025-08-25T21:52:46.7785275+01:00" endTime="2025-08-25T21:52:46.7785279+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c368e08-f727-4972-9e02-6892f6cd4e6e">
+      <Output>
+        <StdOut>USO Completeness: 21 bars, 0 suspicious gaps</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="61ff4ae5-fd26-4a75-8e55-73e3274a0a81" testId="77a4f4e8-bb0c-c2d6-caf9-3aaae7127b49" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;USO&quot;)" computerName="SONAKSHI" duration="00:00:00.1784337" startTime="2025-08-25T21:52:48.9549606+01:00" endTime="2025-08-25T21:52:48.9549610+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="61ff4ae5-fd26-4a75-8e55-73e3274a0a81" />
+    <UnitTestResult executionId="21b141f1-5de4-46cf-87ef-f4a236e52df4" testId="f12d43d6-09ca-94cc-3081-2e6b5b79a2f5" testName="Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Persistence_MustReuseConnectionsEfficiently" computerName="SONAKSHI" duration="00:00:00.0010000" startTime="2025-08-25T21:52:56.5955561+01:00" endTime="2025-08-25T21:52:56.5955562+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="21b141f1-5de4-46cf-87ef-f4a236e52df4">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Process stroll.history.ipc failed startup validation</Message>
+          <StackTrace>   at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58&#xD;
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="db5f25b0-59c5-4737-9a25-8970305e72cd" testId="bf31a76f-3c4d-96bf-54e8-1fab0c1cb5d5" testName="Stroll.History.Integrity.Tests.PerformanceRegressionTests.LoadTest_ConcurrentRequests_MustMaintainThroughputSLO" computerName="SONAKSHI" duration="00:01:05.6067251" startTime="2025-08-25T21:54:05.1857512+01:00" endTime="2025-08-25T21:54:05.1857516+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db5f25b0-59c5-4737-9a25-8970305e72cd">
+      <Output>
+        <StdOut>Load Test Results: 1498 successful requests, 0.00% error rate, 43.6ms avg latency</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="775c0cd8-036a-431f-bd72-64cc8842faa7" testId="6ca5a343-28d2-988e-a3d1-0ac59578c058" testName="Stroll.History.Integrity.Tests.IpcContractTests.IpcServer_Startup_MustCreateNamedPipeWithStandardName" computerName="SONAKSHI" duration="00:00:00.0010000" startTime="2025-08-25T21:52:56.5966023+01:00" endTime="2025-08-25T21:52:56.5966024+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="775c0cd8-036a-431f-bd72-64cc8842faa7">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Process stroll.history.ipc failed startup validation</Message>
+          <StackTrace>   at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58&#xD;
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d3fc9887-315c-48bc-ba7c-e85334b947d2" testId="616857ce-c3bb-273a-3c6c-953b19c49f8b" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OptionsData_Availability_MustProvideValidChains(symbol: &quot;SPY&quot;, date: &quot;2024-01-31&quot;, description: &quot;monthly&quot;)" computerName="SONAKSHI" duration="00:00:00.2020964" startTime="2025-08-25T21:52:49.3052463+01:00" endTime="2025-08-25T21:52:49.3052469+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d3fc9887-315c-48bc-ba7c-e85334b947d2" />
+    <UnitTestResult executionId="c1b40bcc-1423-482b-bfe9-5d8320dbb278" testId="63daa1ce-c43b-f74b-dff2-ca8051321189" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: &quot;XLE&quot;)" computerName="SONAKSHI" duration="00:00:00.1514461" startTime="2025-08-25T21:52:47.5274443+01:00" endTime="2025-08-25T21:52:47.5274449+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c1b40bcc-1423-482b-bfe9-5d8320dbb278">
+      <Output>
+        <StdOut>Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+XLE Data Quality: 21 bars, 0 violations, Score: 100.00%</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f825c592-80f7-42fc-8504-feae98ffeb1b" testId="d9d5e9cb-812b-39a5-915f-74231facbaf3" testName="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, from: &quot;2024-01-15&quot;, to: &quot;2024-01-15&quot;, granularity: &quot;1d&quot;, scenario: &quot;single_day&quot;)" computerName="SONAKSHI" duration="00:00:00.0419832" startTime="2025-08-25T21:52:48.1515334+01:00" endTime="2025-08-25T21:52:48.1515338+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f825c592-80f7-42fc-8504-feae98ffeb1b">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be 0 because get-bars single_day must succeed, but found -1 (difference of -1).</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 96&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="88cbd3d8-1e79-4df1-8c36-b835b6281c50" testId="547563c8-101e-3ed7-b3d3-ffeb50de455a" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;OILY&quot;)" computerName="SONAKSHI" duration="00:00:00.1467803" startTime="2025-08-25T21:52:48.7761507+01:00" endTime="2025-08-25T21:52:48.7761513+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="88cbd3d8-1e79-4df1-8c36-b835b6281c50" />
+    <UnitTestResult executionId="e9a47b1e-5cbf-4ea2-ada2-78b4a5273f61" testId="f7a3ab53-c7e7-2087-a390-a9470fdf08f5" testName="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetBars_MonthlyRange_MustMeetPerformanceSLO" computerName="SONAKSHI" duration="00:00:00.1633727" startTime="2025-08-25T21:52:47.5840433+01:00" endTime="2025-08-25T21:52:47.5840438+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9a47b1e-5cbf-4ea2-ada2-78b4a5273f61">
+      <Output>
+        <StdOut>Command: get-bars --symbol SPY --from 2024-01-01 --to 2024-01-31 --granularity 1d&#xD;
+Exit Code: 0&#xD;
+Execution Time: 162ms&#xD;
+Output: {"schema":"stroll.history.v1","ok":true,"data":{"symbol":"SPY","granularity":"1d","from":"2024-01-01","to":"2024-01-31","bars":[{"t":"","o":464.783,"h":466.27,"l":463.14,"c":465.266,"v":124960111,"symbol":"SPY","g":"1d"},{"t":"","o":463.08,"h":463.829,"l":460.856,"c":461.466,"v":105229929,"symbol":"SPY","g":"1d"},{"t":"","o":460.984,"h":463.601,"l":459.752,"c":459.98,"v":85569059,"symbol":"SPY","g":"1d"},{"t":"","o":460.186,"h":463.09,"l":459.142,"c":460.61,"v":87485749,"symbol":"SPY","g":"1d"},{"t":"","o":461.111,"h":467.334,"l":460.984,"c":467.185,"v":76067517,"symbol":"SPY","g":"1d"},{"t":"","o":464.497,"h":467.509,"l":463.986,"c":466.476,"v":66977869,"symbol":"SPY","g":"1d"},{"t":"","o":466.752,"h":469.989,"l":466.466,"c":469.114,"v":68378960,"symbol":"SPY","g":"1d"},{"t":"","o":470.128,"h":470.651,"l":464.881,"c":468.908,"v":79177759,"symbol":"SPY","g":"1d"},{"t":"","o":470.373,"h":471.123,"l":467.805,"c":469.233,"v":58947386,"symbol":"SPY","g":"1d"},{"t":"","o":467.834,"h":469.164,"l":465.669,"c":467.509,"v":86364183,"symbol":"SPY","g":"1d"},{"t":"","o":464.448,"h":465.403,"l":462.53,"c":464.911,"v":69936526,"symbol":"SPY","g":"1d"},{"t":"","o":466.604,"h":469.607,"l":465.039,"c":469.045,"v":93314144,"symbol":"SPY","g":"1d"},{"t":"","o":470.188,"h":475.178,"l":469.091,"c":474.892,"v":112593592,"symbol":"SPY","g":"1d"},{"t":"","o":476.448,"h":477.639,"l":475.237,"c":475.897,"v":77048703,"symbol":"SPY","g":"1d"},{"t":"","o":476.448,"h":477.525,"l":475.345,"c":477.285,"v":50738003,"symbol":"SPY","g":"1d"},{"t":"","o":480.188,"h":481.133,"l":477.307,"c":477.806,"v":83062772,"symbol":"SPY","g":"1d"},{"t":"","o":479.958,"h":480.677,"l":477.806,"c":480.404,"v":73676069,"symbol":"SPY","g":"1d"},{"t":"","o":479.973,"h":481.478,"l":478.939,"c":479.794,"v":77858026,"symbol":"SPY","g":"1d"},{"t":"","o":480.109,"h":483.737,"l":479.558,"c":483.595,"v":62296035,"symbol":"SPY","g":"1d"},{"t":"","o":482.896,"h":483.94,"l":482.453,"c":483.221,"v":59548747,"symbol":"SPY","g":"1d"},{"t":"","o":480.987,"h":481.439,"l":475.316,"c":475.335,"v":128011046,"symbol":"SPY","g":"1d"}]},"meta":{"count":21,"timestamp":"2025-08-25T20:52:47.546Z"}}</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d678bbee-4a90-4680-9389-1ae8d56ee5c7" testId="45ddda53-a0bf-e237-e92e-8d2bacc11893" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;BOIL&quot;)" computerName="SONAKSHI" duration="00:00:00.0267401" startTime="2025-08-25T21:52:48.1090467+01:00" endTime="2025-08-25T21:52:48.1090469+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d678bbee-4a90-4680-9389-1ae8d56ee5c7">
+      <Output>
+        <StdOut>Oil/Energy symbol BOIL not available: Exit=-1, Output=</StdOut>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be one of {0, 3} because BOIL should either succeed (0) or report no data (3), not fail completely, but found -1.</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 198&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="bee0f82c-71c1-4f9a-bc17-aad504b7183a" testId="b13f8a79-42f6-99db-717d-12f7ffb70858" testName="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, from: &quot;2024-01-01&quot;, to: &quot;2024-01-31&quot;, granularity: &quot;1d&quot;, scenario: &quot;single_month&quot;)" computerName="SONAKSHI" duration="00:00:00.0266150" startTime="2025-08-25T21:52:48.0863823+01:00" endTime="2025-08-25T21:52:48.0863833+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bee0f82c-71c1-4f9a-bc17-aad504b7183a">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be 0 because get-bars single_month must succeed, but found -1 (difference of -1).</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 96&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8f7b919e-735f-4096-ba72-e4f22da4b085" testId="1660c8b5-3c0d-b313-cd84-8dbfedaee52e" testName="Stroll.History.Integrity.Tests.IpcContractTests.IpcErrorHandling_InvalidRequests_MustReturnStandardErrorFormat" computerName="SONAKSHI" duration="00:00:00.0010000" startTime="2025-08-25T21:52:56.5950989+01:00" endTime="2025-08-25T21:52:56.5950990+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8f7b919e-735f-4096-ba72-e4f22da4b085">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Process stroll.history.ipc failed startup validation</Message>
+          <StackTrace>   at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58&#xD;
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b50d1ec4-5682-4780-8f92-6e1ac493e3c7" testId="73faff17-d744-8883-57fa-d6a3005947d4" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;DRIP&quot;)" computerName="SONAKSHI" duration="00:00:00.0445988" startTime="2025-08-25T21:52:48.1655642+01:00" endTime="2025-08-25T21:52:48.1655646+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b50d1ec4-5682-4780-8f92-6e1ac493e3c7">
+      <Output>
+        <StdOut>Oil/Energy symbol DRIP not available: Exit=-1, Output=</StdOut>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be one of {0, 3} because DRIP should either succeed (0) or report no data (3), not fail completely, but found -1.</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 198&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="dee4b3f4-12f3-40a7-a1f7-ebbed695a11e" testId="b0cb56fa-2d51-d0d1-ff37-a047257de28f" testName="Stroll.History.Integrity.Tests.ProcessLifecycleTests.InitializationOrder_MustCompleteBeforeAcceptingRequests" computerName="SONAKSHI" duration="00:00:01.5933955" startTime="2025-08-25T21:52:47.9843096+01:00" endTime="2025-08-25T21:52:47.9843104+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dee4b3f4-12f3-40a7-a1f7-ebbed695a11e">
+      <Output>
+        <StdOut>Initialization: All requests succeeded, Avg latency=135.6ms</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cb2cb988-4612-43f4-9eb1-39ec685e3b08" testId="968fccda-0f7b-3d4a-0c3e-3ba8f27712a1" testName="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_Version_MustReturnValidVersionSchema" computerName="SONAKSHI" duration="00:00:00.1418638" startTime="2025-08-25T21:52:47.0082262+01:00" endTime="2025-08-25T21:52:47.0082265+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb2cb988-4612-43f4-9eb1-39ec685e3b08">
+      <Output>
+        <StdOut>Command: version&#xD;
+Exit Code: 0&#xD;
+Execution Time: 140ms&#xD;
+Output: {"schema":"stroll.history.v1","ok":true,"data":{"service":"stroll.history","version":"1.0.0"}}</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="021e577d-86bd-421d-a6b0-bd5b0c590b62" testId="d868ef31-8c21-5b32-9e1e-7ecb8735d5ce" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: &quot;USO&quot;)" computerName="SONAKSHI" duration="00:00:00.1645861" startTime="2025-08-25T21:52:47.2265001+01:00" endTime="2025-08-25T21:52:47.2265005+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="021e577d-86bd-421d-a6b0-bd5b0c590b62">
+      <Output>
+        <StdOut>Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+USO Data Quality: 21 bars, 0 violations, Score: 100.00%</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="059a361e-7d74-4d9b-8e2a-aa1cd1538e46" testId="f0453f9e-8f1b-6bc5-2f7d-f889f91dca59" testName="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_ProviderStatus_MustReturnHealthInformation" computerName="SONAKSHI" duration="00:00:00.4110787" startTime="2025-08-25T21:52:47.4223716+01:00" endTime="2025-08-25T21:52:47.4223718+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="059a361e-7d74-4d9b-8e2a-aa1cd1538e46">
+      <Output>
+        <StdOut>Command: provider-status&#xD;
+Exit Code: 0&#xD;
+Execution Time: 408ms&#xD;
+Output: info: Stroll.Historical.DataAcquisitionEngine[0]&#xD;
+      Added Local Historical Data provider&#xD;
+info: Stroll.Historical.DataAcquisitionEngine[0]&#xD;
+      Added Yahoo Finance provider&#xD;
+?? Data Provider Status:&#xD;
+&#xD;
+? ?? Local Historical Data (Priority: 0)&#xD;
+   Available: True&#xD;
+   Healthy: False&#xD;
+   Response Time: 2ms&#xD;
+   Rate Limit: 2147483647/2147483647 per minute&#xD;
+&#xD;
+? ?? Yahoo Finance (Priority: 1)&#xD;
+   Available: True&#xD;
+   Healthy: False&#xD;
+   Response Time: 230ms&#xD;
+   Rate Limit: 30/30 per minute</StdOut>
+        <ErrorInfo>
+          <Message>System.Text.Json.JsonException : 'i' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.&#xD;
+---- System.Text.Json.JsonReaderException : 'i' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.</Message>
+          <StackTrace>   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack&amp; state, JsonReaderException ex)&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader&amp; reader, ReadStack&amp; state)&#xD;
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)&#xD;
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)&#xD;
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)&#xD;
+   at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_ProviderStatus_MustReturnHealthInformation() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs:line 201&#xD;
+--- End of stack trace from previous location ---&#xD;
+----- Inner Stack Trace -----&#xD;
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader&amp; json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)&#xD;
+   at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)&#xD;
+   at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)&#xD;
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()&#xD;
+   at System.Text.Json.Utf8JsonReader.Read()&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="52b4360a-c774-45ea-8a0a-c9b84f85b5c4" testId="dfe6ee38-021d-7fbf-62be-74dc8f7bd624" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: &quot;XLE&quot;)" computerName="SONAKSHI" duration="00:00:00.1492425" startTime="2025-08-25T21:52:47.0613580+01:00" endTime="2025-08-25T21:52:47.0613585+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52b4360a-c774-45ea-8a0a-c9b84f85b5c4">
+      <Output>
+        <StdOut>XLE Completeness: 21 bars, 0 suspicious gaps</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="812a5a85-a7fa-4b08-863d-cb01de9f7e50" testId="67affca7-d2a3-f2c9-5a36-dcf803e169a1" testName="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ResourceLimits_UnderNormalLoad_MustNotExceedLimits" computerName="SONAKSHI" duration="00:00:05.2755306" startTime="2025-08-25T21:53:12.1298677+01:00" endTime="2025-08-25T21:53:12.1298680+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="812a5a85-a7fa-4b08-863d-cb01de9f7e50">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Sequence contains no elements</Message>
+          <StackTrace>   at System.Linq.ThrowHelper.ThrowNoElementsException()&#xD;
+   at System.Linq.Enumerable.Average[TSource,TAccumulator,TResult](IEnumerable`1 source)&#xD;
+   at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ResourceLimits_UnderNormalLoad_MustNotExceedLimits() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs:line 176&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5b39d5f8-6f51-45d4-8253-061a84e5b33f" testId="eee663c9-7edd-c938-7bf2-4a34517b3c51" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: &quot;QQQ&quot;)" computerName="SONAKSHI" duration="00:00:00.1487647" startTime="2025-08-25T21:52:47.3755985+01:00" endTime="2025-08-25T21:52:47.3755992+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b39d5f8-6f51-45d4-8253-061a84e5b33f">
+      <Output>
+        <StdOut>Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+QQQ Data Quality: 21 bars, 0 violations, Score: 100.00%</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b3e654f9-f91a-4d65-9755-7ac7d301fe7b" testId="7d24f10f-08c2-6db5-865f-0317ad547814" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;XLE&quot;)" computerName="SONAKSHI" duration="00:00:00.1148747" startTime="2025-08-25T21:52:48.0816435+01:00" endTime="2025-08-25T21:52:48.0816438+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3e654f9-f91a-4d65-9755-7ac7d301fe7b">
+      <Output>
+        <StdOut>Oil/Energy symbol XLE not available: Exit=-1, Output=</StdOut>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be one of {0, 3} because XLE should either succeed (0) or report no data (3), not fail completely, but found -1.</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 198&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="603a2a8e-c9c8-41be-bcc6-736288e71cfb" testId="669a21aa-c949-333b-2581-d8d519a421f7" testName="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, date: &quot;2024-01-31&quot;, scenario: &quot;monthly&quot;)" computerName="SONAKSHI" duration="00:00:00.0248482" startTime="2025-08-25T21:54:05.2277928+01:00" endTime="2025-08-25T21:54:05.2277930+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="603a2a8e-c9c8-41be-bcc6-736288e71cfb">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be 0 because get-options monthly must succeed, but found -1 (difference of -1).</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(String symbol, String date, String scenario) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 142&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8de3cf06-021c-4a8d-8de3-8c6fe4f4a8f9" testId="a0f2be1f-6a20-f77c-a432-095aad79f209" testName="Stroll.History.Integrity.Tests.ProcessLifecycleTests.GracefulShutdown_MustCompleteWithinTimeout" computerName="SONAKSHI" duration="00:00:01.0157037" startTime="2025-08-25T21:52:57.5029116+01:00" endTime="2025-08-25T21:52:57.5029127+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8de3cf06-021c-4a8d-8de3-8c6fe4f4a8f9">
+      <Output>
+        <StdOut>Graceful shutdown completed in 0ms</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="684a66fd-0eea-4481-a806-5fbecf8d82a2" testId="02b1d2f1-3459-ba65-f8fa-b0b332fd1ac5" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: &quot;SPY&quot;)" computerName="SONAKSHI" duration="00:00:00.1608116" startTime="2025-08-25T21:52:47.6886975+01:00" endTime="2025-08-25T21:52:47.6886981+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="684a66fd-0eea-4481-a806-5fbecf8d82a2">
+      <Output>
+        <StdOut>Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+Invalid timestamp format in bar data: &#xD;
+SPY Data Quality: 21 bars, 0 violations, Score: 100.00%</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8764558f-5545-476e-aea7-a2c96be9a883" testId="c498f224-7d3c-0cf5-5186-95f77e5a2cd8" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;UNG&quot;)" computerName="SONAKSHI" duration="00:00:00.0105171" startTime="2025-08-25T21:52:48.1199575+01:00" endTime="2025-08-25T21:52:48.1199579+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8764558f-5545-476e-aea7-a2c96be9a883">
+      <Output>
+        <StdOut>Oil/Energy symbol UNG not available: Exit=-1, Output=</StdOut>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be one of {0, 3} because UNG should either succeed (0) or report no data (3), not fail completely, but found -1.</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs:line 198&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="639ffc51-22f8-4f1c-ba85-df6ed330ea6b" testId="0a60c8d7-ce2e-951c-8c65-0d1888537231" testName="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_DiscoverCommand_MustMaintainSLO" computerName="SONAKSHI" duration="00:00:01.6678048" startTime="2025-08-25T21:52:48.0591364+01:00" endTime="2025-08-25T21:52:48.0591367+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="639ffc51-22f8-4f1c-ba85-df6ed330ea6b">
+      <Output>
+        <ErrorInfo>
+          <Message>Expected result.ExitCode to be 0 because discover must succeed for baseline measurement, but found -1 (difference of -1).</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_DiscoverCommand_MustMaintainSLO() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs:line 52&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7460549d-5e0d-46cc-aaee-5aa9f0a5b744" testId="2a98c4fa-8bce-0aac-f1e5-20629f4fcd20" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: &quot;QQQ&quot;)" computerName="SONAKSHI" duration="00:00:00.1329749" startTime="2025-08-25T21:52:46.9117409+01:00" endTime="2025-08-25T21:52:46.9117412+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7460549d-5e0d-46cc-aaee-5aa9f0a5b744">
+      <Output>
+        <StdOut>QQQ Completeness: 21 bars, 0 suspicious gaps</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5fb74d20-8bb6-4d5c-b9f4-5a78f4839603" testId="9720b5d8-629d-49df-67fd-acba0735f3a3" testName="Stroll.History.Integrity.Tests.IpcContractTests.IpcLargePayload_DataTransfer_MustHandleMultiMegabyteResponses" computerName="SONAKSHI" duration="00:00:00.0010000" startTime="2025-08-25T21:52:56.5953070+01:00" endTime="2025-08-25T21:52:56.5953071+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5fb74d20-8bb6-4d5c-b9f4-5a78f4839603">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Process stroll.history.ipc failed startup validation</Message>
+          <StackTrace>   at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58&#xD;
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5baa013b-e07d-45f8-a0a6-b9c3d6e15d23" testId="46f4fb9a-9ec3-3575-6a3e-f54dfe0e0e6b" testName="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ErrorRecovery_TransientFailures_MustRecoverGracefully" computerName="SONAKSHI" duration="00:00:09.3496904" startTime="2025-08-25T21:53:06.8531402+01:00" endTime="2025-08-25T21:53:06.8531405+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5baa013b-e07d-45f8-a0a6-b9c3d6e15d23">
+      <Output>
+        <StdOut>Error Recovery: Success Rate=90.00%, Avg Latency=468.8ms</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5ef80c52-5fc2-4057-86d4-b4a173e98dde" testId="d50dac0e-a7de-09cc-da1c-bc348c29be5f" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;XOP&quot;)" computerName="SONAKSHI" duration="00:00:00.1499104" startTime="2025-08-25T21:52:47.8391535+01:00" endTime="2025-08-25T21:52:47.8391540+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5ef80c52-5fc2-4057-86d4-b4a173e98dde" />
+    <UnitTestResult executionId="0db2480c-3b16-40fb-bfd4-27c66aee1af0" testId="852d2a22-e4c5-db23-b204-eeb31211f60c" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OptionsData_Availability_MustProvideValidChains(symbol: &quot;SPY&quot;, date: &quot;2024-01-19&quot;, description: &quot;weekly&quot;)" computerName="SONAKSHI" duration="00:00:00.1825575" startTime="2025-08-25T21:52:49.4881297+01:00" endTime="2025-08-25T21:52:49.4881301+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0db2480c-3b16-40fb-bfd4-27c66aee1af0" />
+    <UnitTestResult executionId="7d441b20-f35d-4f7f-b86c-11945205e2b4" testId="498b763e-7b76-0e04-e368-31cf9aced6ba" testName="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ForceKill_MustCleanupResources" computerName="SONAKSHI" duration="00:00:00.0137206" startTime="2025-08-25T21:53:12.1436314+01:00" endTime="2025-08-25T21:53:12.1436320+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d441b20-f35d-4f7f-b86c-11945205e2b4">
+      <Output>
+        <StdOut>Process 13308 terminated and cleaned up successfully</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="77924117-c5f0-41e2-901b-ea0a36a321c5" testId="a3cc2a23-de32-b194-4da8-ac2edc918fbd" testName="Stroll.History.Integrity.Tests.PerformanceRegressionTests.ColdStart_Performance_MustMeetBootstrapSLO" computerName="SONAKSHI" duration="00:00:05.5934084" startTime="2025-08-25T21:52:59.5789528+01:00" endTime="2025-08-25T21:52:59.5789531+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="77924117-c5f0-41e2-901b-ea0a36a321c5">
+      <Output>
+        <StdOut>Cold Start Performance: Avg=124.8ms, Max=130ms</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ee5ad762-5363-4138-8e45-f05826dcaaff" testId="d5b7c5d1-908c-90c4-0c53-379ba6ea3959" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;ERX&quot;)" computerName="SONAKSHI" duration="00:00:00.1474257" startTime="2025-08-25T21:52:49.1028858+01:00" endTime="2025-08-25T21:52:49.1028863+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee5ad762-5363-4138-8e45-f05826dcaaff" />
+    <UnitTestResult executionId="0c85d3e3-6691-4094-add3-76db7f8405f6" testId="9013f874-8a4c-4c73-e79f-a509e61da1b6" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;GUSH&quot;)" computerName="SONAKSHI" duration="00:00:00.2114488" startTime="2025-08-25T21:52:48.3767687+01:00" endTime="2025-08-25T21:52:48.3767693+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c85d3e3-6691-4094-add3-76db7f8405f6" />
+    <UnitTestResult executionId="cf638ced-b494-46fe-945e-d357a66d8a67" testId="345169e6-3dc3-afa2-a0a8-9fb2f1d400d2" testName="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ProcessSpawn_Overhead_MustMeetPerformanceSLO" computerName="SONAKSHI" duration="00:00:00.0177743" startTime="2025-08-25T21:52:56.1704917+01:00" endTime="2025-08-25T21:52:56.1704918+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf638ced-b494-46fe-945e-d357a66d8a67">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ComponentModel.Win32Exception : An error occurred trying to start process 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\..\..\..\..\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.exe' with working directory 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0'. Access is denied.</Message>
+          <StackTrace>   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)&#xD;
+   at System.Diagnostics.Process.Start()&#xD;
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)&#xD;
+   at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ExecuteCliCommand(String arguments) in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs:line 293&#xD;
+   at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ProcessSpawn_Overhead_MustMeetPerformanceSLO() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs:line 88&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="91647ec6-9d92-4839-a6cf-4a697c15d8fb" testId="34d94d2d-122b-5143-8b16-e37fc2f5b7f3" testName="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_Discover_MustReturnValidContractSchema" computerName="SONAKSHI" duration="00:00:00.1459306" startTime="2025-08-25T21:52:46.8660990+01:00" endTime="2025-08-25T21:52:46.8661002+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="91647ec6-9d92-4839-a6cf-4a697c15d8fb">
+      <Output>
+        <StdOut>Command: discover&#xD;
+Exit Code: 0&#xD;
+Execution Time: 142ms&#xD;
+Output: {"schema":"stroll.history.v1","ok":true,"data":{"service":"stroll.history","version":"1.0.0","env":[{"name":"STROLL_DATA","desc":"dataset root override","required":false}],"commands":[{"name":"version","args":[]},{"name":"discover","args":[]},{"name":"list-datasets","args":[]},{"name":"get-bars","args":[{"name":"symbol","required":true},{"name":"from","required":true,"type":"yyyy-MM-dd"},{"name":"to","required":true,"type":"yyyy-MM-dd"},{"name":"granularity","required":false,"default":"1m","oneOf":["1m","5m","1d"]},{"name":"format","required":false,"default":"json","oneOf":["json","jsonl"]}]},{"name":"get-options","args":[{"name":"symbol","required":true},{"name":"date","required":true,"type":"yyyy-MM-dd"}]},{"name":"acquire-data","args":[{"name":"symbol","required":true},{"name":"from","required":true,"type":"yyyy-MM-dd"},{"name":"to","required":true,"type":"yyyy-MM-dd"},{"name":"interval","required":false,"default":"1d","oneOf":["1d","1h","30m","15m","5m","1m"]},{"name":"output","required":false,"default":"./data"}]},{"name":"provider-status","args":[{"name":"output","required":false,"default":"./data"}]}]}}</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7b0512dd-9a98-4cec-af04-cc98ef54352b" testId="2fdfcb73-88ba-ce23-826c-6777399aa01c" testName="Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Performance_MustMeetLatencySLO" computerName="SONAKSHI" duration="00:00:00.0010000" startTime="2025-08-25T21:52:56.5948431+01:00" endTime="2025-08-25T21:52:56.5948433+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7b0512dd-9a98-4cec-af04-cc98ef54352b">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Process stroll.history.ipc failed startup validation</Message>
+          <StackTrace>   at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58&#xD;
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5895d16a-513b-4502-9aae-0bbf0c353c4f" testId="9abd53b2-101b-f815-e8cf-0804376ff000" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;OIH&quot;)" computerName="SONAKSHI" duration="00:00:00.1263487" startTime="2025-08-25T21:52:47.9658286+01:00" endTime="2025-08-25T21:52:47.9658295+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5895d16a-513b-4502-9aae-0bbf0c353c4f" />
+    <UnitTestResult executionId="b8be5024-34f1-4bd6-b2ed-a96210079092" testId="130227d6-949f-cd4f-6bff-8d4961f0ee9a" testName="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(date: &quot;2024-01-31&quot;, description: &quot;monthly expiry&quot;)" computerName="SONAKSHI" duration="00:00:00.1687844" startTime="2025-08-25T21:52:48.0557016+01:00" endTime="2025-08-25T21:52:48.0557023+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b8be5024-34f1-4bd6-b2ed-a96210079092">
+      <Output>
+        <StdOut>Command: get-options --symbol SPY --date 2024-01-31&#xD;
+Exit Code: 0&#xD;
+Execution Time: 167ms&#xD;
+Output: {"schema":"stroll.history.v1","ok":true,"data":{"symbol":"SPY","expiry":"2024-01-31","chain":[]},"meta":{"count":0,"timestamp":"2025-08-25T20:52:47.992Z"}}&#xD;
+&#xD;
+No options data returned - skipping data quality validation</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="873b557b-99da-4291-b340-616ac18947d3" testId="b82280b4-dbf6-d42b-a3fb-284005534d07" testName="Stroll.History.Integrity.Tests.IpcContractTests.IpcConcurrency_MultipleClients_MustHandleSimultaneousConnections" computerName="SONAKSHI" duration="00:00:00.0010000" startTime="2025-08-25T21:52:56.5960018+01:00" endTime="2025-08-25T21:52:56.5960019+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="873b557b-99da-4291-b340-616ac18947d3">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Process stroll.history.ipc failed startup validation</Message>
+          <StackTrace>   at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58&#xD;
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="64b2859a-fdf3-4932-af11-1f3d4e57b932" testId="7c2f39fd-95d4-786a-c566-b77ae9fa6746" testName="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetBars_InvalidSymbol_MustReturnStandardError" computerName="SONAKSHI" duration="00:00:00.1553238" startTime="2025-08-25T21:52:47.8866840+01:00" endTime="2025-08-25T21:52:47.8866844+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="64b2859a-fdf3-4932-af11-1f3d4e57b932">
+      <Output>
+        <StdOut>Command: get-bars --symbol INVALID_SYMBOL_XYZ --from 2024-01-01 --to 2024-01-31&#xD;
+Exit Code: 0&#xD;
+Execution Time: 154ms&#xD;
+Output: {"schema":"stroll.history.v1","ok":true,"data":{"symbol":"INVALID_SYMBOL_XYZ","granularity":"1m","from":"2024-01-01","to":"2024-01-31","bars":[]},"meta":{"count":0,"timestamp":"2025-08-25T20:52:47.849Z"}}</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2455db72-1485-4bba-8f76-37c617ae7751" testId="d1046a89-ce94-3c20-cf55-15cedf399078" testName="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ConcurrentConnections_MustHandleMultipleClients" computerName="SONAKSHI" duration="00:00:00.3156481" startTime="2025-08-25T21:52:56.4870089+01:00" endTime="2025-08-25T21:52:56.4870092+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2455db72-1485-4bba-8f76-37c617ae7751">
+      <Output>
+        <StdOut>Client 1: -1, 21ms&#xD;
+Client 6: -1, 24ms&#xD;
+Client 7: 0, 161ms&#xD;
+Client 4: 0, 161ms&#xD;
+Client 5: 0, 161ms&#xD;
+Client 3: 0, 161ms&#xD;
+Client 2: 0, 161ms&#xD;
+Client 0: 0, 312ms</StdOut>
+        <ErrorInfo>
+          <Message>Expected successCount to be 8 because All concurrent requests must succeed, but found 6.</Message>
+          <StackTrace>   at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+   at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+   at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ConcurrentConnections_MustHandleMultipleClients() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs:line 244&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5e3172f4-ec8d-44d1-a564-1337bd73cd63" testId="bd89ac76-1178-a9a8-b539-d7abc58c5d5d" testName="Stroll.History.Integrity.Tests.IpcContractTests.IpcConnectionPool_ResourceManagement_MustHandleConnectionLifecycle" computerName="SONAKSHI" duration="00:00:00.0010000" startTime="2025-08-25T21:52:56.5957854+01:00" endTime="2025-08-25T21:52:56.5957855+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5e3172f4-ec8d-44d1-a564-1337bd73cd63">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Process stroll.history.ipc failed startup validation</Message>
+          <StackTrace>   at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58&#xD;
+   at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40&#xD;
+   at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4b58165f-c9f3-4462-9a4b-4c8bc7d77cbf" testId="a1abdd3e-f3c6-1c14-6064-4f2dd0d24d96" testName="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;ERY&quot;)" computerName="SONAKSHI" duration="00:00:00.2516769" startTime="2025-08-25T21:52:48.6287807+01:00" endTime="2025-08-25T21:52:48.6287815+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b58165f-c9f3-4462-9a4b-4c8bc7d77cbf" />
+    <UnitTestResult executionId="084973f5-8c1f-498d-abbe-4ab51c071ad3" testId="070eb660-3594-4f33-e767-639f4867d099" testName="Stroll.History.Integrity.Tests.PerformanceRegressionTests.MemoryUsage_UnderLoad_MustNotExceedLimits" computerName="SONAKSHI" duration="00:00:05.8333894" startTime="2025-08-25T21:52:53.9849798+01:00" endTime="2025-08-25T21:52:53.9849801+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="084973f5-8c1f-498d-abbe-4ab51c071ad3">
+      <Output>
+        <StdOut>Memory Usage: Avg=2.6MB, Max=2MB</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ConcurrentConnections_MustHandleMultipleClients" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="d1046a89-ce94-3c20-cf55-15cedf399078">
+      <Execution id="2455db72-1485-4bba-8f76-37c617ae7751" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ProcessLifecycleTests" name="ConcurrentConnections_MustHandleMultipleClients" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, from: &quot;2024-01-01&quot;, to: &quot;2024-01-07&quot;, granularity: &quot;1d&quot;, scenario: &quot;single_week&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="ab2b2a05-ed37-b373-0697-8aa7b21d8d5d">
+      <Execution id="98b46526-902a-4c6e-9dd4-9167909379d3" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.PerformanceRegressionTests" name="PerformanceBaseline_GetBarsCommands_MustMaintainSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetBars_MonthlyRange_MustMeetPerformanceSLO" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="f7a3ab53-c7e7-2087-a390-a9470fdf08f5">
+      <Execution id="e9a47b1e-5cbf-4ea2-ada2-78b4a5273f61" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ContractValidationTests" name="CLI_GetBars_MonthlyRange_MustMeetPerformanceSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ProcessLifecycleTests.GracefulShutdown_MustCompleteWithinTimeout" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="a0f2be1f-6a20-f77c-a432-095aad79f209">
+      <Execution id="8de3cf06-021c-4a8d-8de3-8c6fe4f4a8f9" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ProcessLifecycleTests" name="GracefulShutdown_MustCompleteWithinTimeout" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ProcessSpawn_Overhead_MustMeetPerformanceSLO" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="345169e6-3dc3-afa2-a0a8-9fb2f1d400d2">
+      <Execution id="cf638ced-b494-46fe-945e-d357a66d8a67" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ProcessLifecycleTests" name="ProcessSpawn_Overhead_MustMeetPerformanceSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetBars_InvalidSymbol_MustReturnStandardError" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="7c2f39fd-95d4-786a-c566-b77ae9fa6746">
+      <Execution id="64b2859a-fdf3-4932-af11-1f3d4e57b932" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ContractValidationTests" name="CLI_GetBars_InvalidSymbol_MustReturnStandardError" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Persistence_MustReuseConnectionsEfficiently" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="f12d43d6-09ca-94cc-3081-2e6b5b79a2f5">
+      <Execution id="21b141f1-5de4-46cf-87ef-f4a236e52df4" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.IpcContractTests" name="IpcConnection_Persistence_MustReuseConnectionsEfficiently" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ProcessLifecycleTests.InitializationOrder_MustCompleteBeforeAcceptingRequests" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="b0cb56fa-2d51-d0d1-ff37-a047257de28f">
+      <Execution id="dee4b3f4-12f3-40a7-a1f7-ebbed695a11e" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ProcessLifecycleTests" name="InitializationOrder_MustCompleteBeforeAcceptingRequests" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, from: &quot;2024-01-15&quot;, to: &quot;2024-01-15&quot;, granularity: &quot;1d&quot;, scenario: &quot;single_day&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="d9d5e9cb-812b-39a5-915f-74231facbaf3">
+      <Execution id="f825c592-80f7-42fc-8504-feae98ffeb1b" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.PerformanceRegressionTests" name="PerformanceBaseline_GetBarsCommands_MustMaintainSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;XLE&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="7d24f10f-08c2-6db5-865f-0317ad547814">
+      <Execution id="b3e654f9-f91a-4d65-9755-7ac7d301fe7b" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;ERX&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="d5b7c5d1-908c-90c4-0c53-379ba6ea3959">
+      <Execution id="ee5ad762-5363-4138-8e45-f05826dcaaff" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;UNG&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="c498f224-7d3c-0cf5-5186-95f77e5a2cd8">
+      <Execution id="8764558f-5545-476e-aea7-a2c96be9a883" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;OILY&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="547563c8-101e-3ed7-b3d3-ffeb50de455a">
+      <Execution id="88cbd3d8-1e79-4df1-8c36-b835b6281c50" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.IpcContractTests.IpcLargePayload_DataTransfer_MustHandleMultiMegabyteResponses" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="9720b5d8-629d-49df-67fd-acba0735f3a3">
+      <Execution id="5fb74d20-8bb6-4d5c-b9f4-5a78f4839603" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.IpcContractTests" name="IpcLargePayload_DataTransfer_MustHandleMultiMegabyteResponses" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;DRIP&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="73faff17-d744-8883-57fa-d6a3005947d4">
+      <Execution id="b50d1ec4-5682-4780-8f92-6e1ac493e3c7" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ForceKill_MustCleanupResources" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="498b763e-7b76-0e04-e368-31cf9aced6ba">
+      <Execution id="7d441b20-f35d-4f7f-b86c-11945205e2b4" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ProcessLifecycleTests" name="ForceKill_MustCleanupResources" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.IpcContractTests.IpcConnectionPool_ResourceManagement_MustHandleConnectionLifecycle" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="bd89ac76-1178-a9a8-b539-d7abc58c5d5d">
+      <Execution id="5e3172f4-ec8d-44d1-a564-1337bd73cd63" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.IpcContractTests" name="IpcConnectionPool_ResourceManagement_MustHandleConnectionLifecycle" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: &quot;SPY&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="a65e01be-e329-9ced-a231-8f240e9dbff3">
+      <Execution id="f74ca10c-ba72-4d1c-afc3-9bb1a4bb634a" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: &quot;QQQ&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="eee663c9-7edd-c938-7bf2-4a34517b3c51">
+      <Execution id="5b39d5f8-6f51-45d4-8253-061a84e5b33f" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="DataQuality_OHLCV_MustSatisfyFinancialInvariants" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: &quot;XLE&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="dfe6ee38-021d-7fbf-62be-74dc8f7bd624">
+      <Execution id="52b4360a-c774-45ea-8a0a-c9b84f85b5c4" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Performance_MustMeetLatencySLO" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="2fdfcb73-88ba-ce23-826c-6777399aa01c">
+      <Execution id="7b0512dd-9a98-4cec-af04-cc98ef54352b" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.IpcContractTests" name="IpcConnection_Performance_MustMeetLatencySLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: &quot;QQQ&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="2a98c4fa-8bce-0aac-f1e5-20629f4fcd20">
+      <Execution id="7460549d-5e0d-46cc-aaee-5aa9f0a5b744" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_MustHandleInvalidArguments_WithStandardErrorFormat" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="c60bb786-dacb-4f91-d8c0-17001cfed7a7">
+      <Execution id="ed27db63-82ed-4bd9-a88b-34e49614cdd2" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ContractValidationTests" name="CLI_MustHandleInvalidArguments_WithStandardErrorFormat" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.MultiSymbol_ConsistentResponse_MustHaveSameSchema" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="34c2d878-9f9a-c3fb-f608-685427dd1ff8">
+      <Execution id="662e5657-0bdd-4934-8e89-ed8cce42c6c2" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="MultiSymbol_ConsistentResponse_MustHaveSameSchema" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: &quot;USO&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="d868ef31-8c21-5b32-9e1e-7ecb8735d5ce">
+      <Execution id="021e577d-86bd-421d-a6b0-bd5b0c590b62" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="DataQuality_OHLCV_MustSatisfyFinancialInvariants" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, date: &quot;2024-01-19&quot;, scenario: &quot;weekly&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="8c252c2d-052d-8947-948e-0317943dbcb9">
+      <Execution id="7f68adef-7ed0-45b2-8eab-dc4d769139f7" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.PerformanceRegressionTests" name="PerformanceBaseline_GetOptionsCommands_MustMaintainSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.PerformanceRegressionTests.LoadTest_ConcurrentRequests_MustMaintainThroughputSLO" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="bf31a76f-3c4d-96bf-54e8-1fab0c1cb5d5">
+      <Execution id="db5f25b0-59c5-4737-9a25-8970305e72cd" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.PerformanceRegressionTests" name="LoadTest_ConcurrentRequests_MustMaintainThroughputSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ErrorRecovery_TransientFailures_MustRecoverGracefully" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="46f4fb9a-9ec3-3575-6a3e-f54dfe0e0e6b">
+      <Execution id="5baa013b-e07d-45f8-a0a6-b9c3d6e15d23" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ProcessLifecycleTests" name="ErrorRecovery_TransientFailures_MustRecoverGracefully" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: &quot;SPY&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="02b1d2f1-3459-ba65-f8fa-b0b332fd1ac5">
+      <Execution id="684a66fd-0eea-4481-a806-5fbecf8d82a2" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="DataQuality_OHLCV_MustSatisfyFinancialInvariants" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.DataQuality_OHLCV_MustSatisfyFinancialInvariants(symbol: &quot;XLE&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="63daa1ce-c43b-f74b-dff2-ca8051321189">
+      <Execution id="c1b40bcc-1423-482b-bfe9-5d8320dbb278" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="DataQuality_OHLCV_MustSatisfyFinancialInvariants" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;ERY&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="a1abdd3e-f3c6-1c14-6064-4f2dd0d24d96">
+      <Execution id="4b58165f-c9f3-4462-9a4b-4c8bc7d77cbf" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OptionsData_Availability_MustProvideValidChains(symbol: &quot;SPY&quot;, date: &quot;2024-01-31&quot;, description: &quot;monthly&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="616857ce-c3bb-273a-3c6c-953b19c49f8b">
+      <Execution id="d3fc9887-315c-48bc-ba7c-e85334b947d2" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OptionsData_Availability_MustProvideValidChains" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;GUSH&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="9013f874-8a4c-4c73-e79f-a509e61da1b6">
+      <Execution id="0c85d3e3-6691-4094-add3-76db7f8405f6" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, date: &quot;2024-01-31&quot;, scenario: &quot;monthly&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="669a21aa-c949-333b-2581-d8d519a421f7">
+      <Execution id="603a2a8e-c9c8-41be-bcc6-736288e71cfb" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.PerformanceRegressionTests" name="PerformanceBaseline_GetOptionsCommands_MustMaintainSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps(symbol: &quot;USO&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="698150cf-a3bf-0a44-9fc6-9e4a7cd1afaf">
+      <Execution id="5c368e08-f727-4972-9e02-6892f6cd4e6e" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="DataCompleteness_TradingDays_MustNotHaveUnexpectedGaps" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.LongTermData_Availability_MustSpanMultipleYears" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="24742c7d-d023-969a-bdc2-2d3c3debc16b">
+      <Execution id="88067f43-2c0b-4de1-9580-1aa558cdedb0" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="LongTermData_Availability_MustSpanMultipleYears" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;OIH&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="9abd53b2-101b-f815-e8cf-0804376ff000">
+      <Execution id="5895d16a-513b-4502-9aae-0bbf0c353c4f" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OptionsData_Availability_MustProvideValidChains(symbol: &quot;QQQ&quot;, date: &quot;2024-01-19&quot;, description: &quot;weekly&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="6d82db8f-5e56-2998-5fc5-a4fc1c24ccd8">
+      <Execution id="d556b48d-373b-420a-922b-00222879328f" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OptionsData_Availability_MustProvideValidChains" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;USO&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="77a4f4e8-bb0c-c2d6-caf9-3aaae7127b49">
+      <Execution id="61ff4ae5-fd26-4a75-8e55-73e3274a0a81" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetBars_SingleDay_MustMeetPerformanceSLO" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="a97e8704-df43-aa55-d55e-cc7f9f54d62b">
+      <Execution id="7c8eea18-3105-48c4-9db9-98aab1f30d4b" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ContractValidationTests" name="CLI_GetBars_SingleDay_MustMeetPerformanceSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_Version_MustReturnValidVersionSchema" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="968fccda-0f7b-3d4a-0c3e-3ba8f27712a1">
+      <Execution id="cb2cb988-4612-43f4-9eb1-39ec685e3b08" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ContractValidationTests" name="CLI_Version_MustReturnValidVersionSchema" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ColdStart_Performance_MustMeetBootstrapSLO" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="21515c87-1674-a668-24cd-e7cf0b8b79a6">
+      <Execution id="47a90a5e-dd53-4af6-9fa8-92a51dca0196" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ProcessLifecycleTests" name="ColdStart_Performance_MustMeetBootstrapSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;XOP&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="d50dac0e-a7de-09cc-da1c-bc348c29be5f">
+      <Execution id="5ef80c52-5fc2-4057-86d4-b4a173e98dde" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(date: &quot;2024-01-31&quot;, description: &quot;monthly expiry&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="130227d6-949f-cd4f-6bff-8d4961f0ee9a">
+      <Execution id="b8be5024-34f1-4bd6-b2ed-a96210079092" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ContractValidationTests" name="CLI_GetOptions_MustMeetPerformanceAndQualitySLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_DiscoverCommand_MustMaintainSLO" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="0a60c8d7-ce2e-951c-8c65-0d1888537231">
+      <Execution id="639ffc51-22f8-4f1c-ba85-df6ed330ea6b" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.PerformanceRegressionTests" name="PerformanceBaseline_DiscoverCommand_MustMaintainSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.IpcContractTests.IpcProtocol_BinaryFraming_MustUseLengthPrefixedFormat" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="63e5e473-b665-c476-0652-077debdb9447">
+      <Execution id="81b4ed7e-4427-4790-8de5-ee4384ed16f3" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.IpcContractTests" name="IpcProtocol_BinaryFraming_MustUseLengthPrefixedFormat" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_Discover_MustReturnValidContractSchema" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="34d94d2d-122b-5143-8b16-e37fc2f5b7f3">
+      <Execution id="91647ec6-9d92-4839-a6cf-4a697c15d8fb" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ContractValidationTests" name="CLI_Discover_MustReturnValidContractSchema" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(date: &quot;2024-01-19&quot;, description: &quot;weekly expiry&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="cf1ff64e-8e10-7ae6-a670-98faed7e8dbe">
+      <Execution id="2e60e9a3-c680-4eaf-8d9c-90308440d34b" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ContractValidationTests" name="CLI_GetOptions_MustMeetPerformanceAndQualitySLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: &quot;SPY&quot;, from: &quot;2024-01-01&quot;, to: &quot;2024-01-31&quot;, granularity: &quot;1d&quot;, scenario: &quot;single_month&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="b13f8a79-42f6-99db-717d-12f7ffb70858">
+      <Execution id="bee0f82c-71c1-4f9a-bc17-aad504b7183a" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.PerformanceRegressionTests" name="PerformanceBaseline_GetBarsCommands_MustMaintainSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ContractValidationTests.CLI_ProviderStatus_MustReturnHealthInformation" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="f0453f9e-8f1b-6bc5-2f7d-f889f91dca59">
+      <Execution id="059a361e-7d74-4d9b-8e2a-aa1cd1538e46" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ContractValidationTests" name="CLI_ProviderStatus_MustReturnHealthInformation" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.PerformanceRegressionTests.ColdStart_Performance_MustMeetBootstrapSLO" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="a3cc2a23-de32-b194-4da8-ac2edc918fbd">
+      <Execution id="77924117-c5f0-41e2-901b-ea0a36a321c5" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.PerformanceRegressionTests" name="ColdStart_Performance_MustMeetBootstrapSLO" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.PerformanceRegressionTests.MemoryUsage_UnderLoad_MustNotExceedLimits" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="070eb660-3594-4f33-e767-639f4867d099">
+      <Execution id="084973f5-8c1f-498d-abbe-4ab51c071ad3" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.PerformanceRegressionTests" name="MemoryUsage_UnderLoad_MustNotExceedLimits" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.IpcContractTests.IpcConcurrency_MultipleClients_MustHandleSimultaneousConnections" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="b82280b4-dbf6-d42b-a3fb-284005534d07">
+      <Execution id="873b557b-99da-4291-b340-616ac18947d3" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.IpcContractTests" name="IpcConcurrency_MultipleClients_MustHandleSimultaneousConnections" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: &quot;BOIL&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="45ddda53-a0bf-e237-e92e-8d2bacc11893">
+      <Execution id="d678bbee-4a90-4680-9389-1ae8d56ee5c7" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OilEnergyData_Availability_MustBeAccessible" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.DataIntegrityTests.OptionsData_Availability_MustProvideValidChains(symbol: &quot;SPY&quot;, date: &quot;2024-01-19&quot;, description: &quot;weekly&quot;)" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="852d2a22-e4c5-db23-b204-eeb31211f60c">
+      <Execution id="0db2480c-3b16-40fb-bfd4-27c66aee1af0" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.DataIntegrityTests" name="OptionsData_Availability_MustProvideValidChains" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.IpcContractTests.IpcServer_Startup_MustCreateNamedPipeWithStandardName" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="6ca5a343-28d2-988e-a3d1-0ac59578c058">
+      <Execution id="775c0cd8-036a-431f-bd72-64cc8842faa7" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.IpcContractTests" name="IpcServer_Startup_MustCreateNamedPipeWithStandardName" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.ProcessLifecycleTests.ResourceLimits_UnderNormalLoad_MustNotExceedLimits" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="67affca7-d2a3-f2c9-5a36-dcf803e169a1">
+      <Execution id="812a5a85-a7fa-4b08-863d-cb01de9f7e50" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.ProcessLifecycleTests" name="ResourceLimits_UnderNormalLoad_MustNotExceedLimits" />
+    </UnitTest>
+    <UnitTest name="Stroll.History.Integrity.Tests.IpcContractTests.IpcErrorHandling_InvalidRequests_MustReturnStandardErrorFormat" storage="c:\code\stroll\stroll.history\stroll.history.integrity.tests\bin\debug\net9.0\stroll.history.integrity.tests.dll" id="1660c8b5-3c0d-b313-cd84-8dbfedaee52e">
+      <Execution id="8f7b919e-735f-4096-ba72-e4f22da4b085" />
+      <TestMethod codeBase="C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\Stroll.History.Integrity.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Stroll.History.Integrity.Tests.IpcContractTests" name="IpcErrorHandling_InvalidRequests_MustReturnStandardErrorFormat" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ab2b2a05-ed37-b373-0697-8aa7b21d8d5d" executionId="98b46526-902a-4c6e-9dd4-9167909379d3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a97e8704-df43-aa55-d55e-cc7f9f54d62b" executionId="7c8eea18-3105-48c4-9db9-98aab1f30d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a65e01be-e329-9ced-a231-8f240e9dbff3" executionId="f74ca10c-ba72-4d1c-afc3-9bb1a4bb634a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="21515c87-1674-a668-24cd-e7cf0b8b79a6" executionId="47a90a5e-dd53-4af6-9fa8-92a51dca0196" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8c252c2d-052d-8947-948e-0317943dbcb9" executionId="7f68adef-7ed0-45b2-8eab-dc4d769139f7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="34c2d878-9f9a-c3fb-f608-685427dd1ff8" executionId="662e5657-0bdd-4934-8e89-ed8cce42c6c2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6d82db8f-5e56-2998-5fc5-a4fc1c24ccd8" executionId="d556b48d-373b-420a-922b-00222879328f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="24742c7d-d023-969a-bdc2-2d3c3debc16b" executionId="88067f43-2c0b-4de1-9580-1aa558cdedb0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf1ff64e-8e10-7ae6-a670-98faed7e8dbe" executionId="2e60e9a3-c680-4eaf-8d9c-90308440d34b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c60bb786-dacb-4f91-d8c0-17001cfed7a7" executionId="ed27db63-82ed-4bd9-a88b-34e49614cdd2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63e5e473-b665-c476-0652-077debdb9447" executionId="81b4ed7e-4427-4790-8de5-ee4384ed16f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="698150cf-a3bf-0a44-9fc6-9e4a7cd1afaf" executionId="5c368e08-f727-4972-9e02-6892f6cd4e6e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="77a4f4e8-bb0c-c2d6-caf9-3aaae7127b49" executionId="61ff4ae5-fd26-4a75-8e55-73e3274a0a81" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f12d43d6-09ca-94cc-3081-2e6b5b79a2f5" executionId="21b141f1-5de4-46cf-87ef-f4a236e52df4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bf31a76f-3c4d-96bf-54e8-1fab0c1cb5d5" executionId="db5f25b0-59c5-4737-9a25-8970305e72cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6ca5a343-28d2-988e-a3d1-0ac59578c058" executionId="775c0cd8-036a-431f-bd72-64cc8842faa7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="616857ce-c3bb-273a-3c6c-953b19c49f8b" executionId="d3fc9887-315c-48bc-ba7c-e85334b947d2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63daa1ce-c43b-f74b-dff2-ca8051321189" executionId="c1b40bcc-1423-482b-bfe9-5d8320dbb278" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d9d5e9cb-812b-39a5-915f-74231facbaf3" executionId="f825c592-80f7-42fc-8504-feae98ffeb1b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="547563c8-101e-3ed7-b3d3-ffeb50de455a" executionId="88cbd3d8-1e79-4df1-8c36-b835b6281c50" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f7a3ab53-c7e7-2087-a390-a9470fdf08f5" executionId="e9a47b1e-5cbf-4ea2-ada2-78b4a5273f61" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="45ddda53-a0bf-e237-e92e-8d2bacc11893" executionId="d678bbee-4a90-4680-9389-1ae8d56ee5c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b13f8a79-42f6-99db-717d-12f7ffb70858" executionId="bee0f82c-71c1-4f9a-bc17-aad504b7183a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1660c8b5-3c0d-b313-cd84-8dbfedaee52e" executionId="8f7b919e-735f-4096-ba72-e4f22da4b085" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="73faff17-d744-8883-57fa-d6a3005947d4" executionId="b50d1ec4-5682-4780-8f92-6e1ac493e3c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b0cb56fa-2d51-d0d1-ff37-a047257de28f" executionId="dee4b3f4-12f3-40a7-a1f7-ebbed695a11e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="968fccda-0f7b-3d4a-0c3e-3ba8f27712a1" executionId="cb2cb988-4612-43f4-9eb1-39ec685e3b08" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d868ef31-8c21-5b32-9e1e-7ecb8735d5ce" executionId="021e577d-86bd-421d-a6b0-bd5b0c590b62" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f0453f9e-8f1b-6bc5-2f7d-f889f91dca59" executionId="059a361e-7d74-4d9b-8e2a-aa1cd1538e46" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dfe6ee38-021d-7fbf-62be-74dc8f7bd624" executionId="52b4360a-c774-45ea-8a0a-c9b84f85b5c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="67affca7-d2a3-f2c9-5a36-dcf803e169a1" executionId="812a5a85-a7fa-4b08-863d-cb01de9f7e50" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eee663c9-7edd-c938-7bf2-4a34517b3c51" executionId="5b39d5f8-6f51-45d4-8253-061a84e5b33f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7d24f10f-08c2-6db5-865f-0317ad547814" executionId="b3e654f9-f91a-4d65-9755-7ac7d301fe7b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="669a21aa-c949-333b-2581-d8d519a421f7" executionId="603a2a8e-c9c8-41be-bcc6-736288e71cfb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a0f2be1f-6a20-f77c-a432-095aad79f209" executionId="8de3cf06-021c-4a8d-8de3-8c6fe4f4a8f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="02b1d2f1-3459-ba65-f8fa-b0b332fd1ac5" executionId="684a66fd-0eea-4481-a806-5fbecf8d82a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c498f224-7d3c-0cf5-5186-95f77e5a2cd8" executionId="8764558f-5545-476e-aea7-a2c96be9a883" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0a60c8d7-ce2e-951c-8c65-0d1888537231" executionId="639ffc51-22f8-4f1c-ba85-df6ed330ea6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2a98c4fa-8bce-0aac-f1e5-20629f4fcd20" executionId="7460549d-5e0d-46cc-aaee-5aa9f0a5b744" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9720b5d8-629d-49df-67fd-acba0735f3a3" executionId="5fb74d20-8bb6-4d5c-b9f4-5a78f4839603" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="46f4fb9a-9ec3-3575-6a3e-f54dfe0e0e6b" executionId="5baa013b-e07d-45f8-a0a6-b9c3d6e15d23" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d50dac0e-a7de-09cc-da1c-bc348c29be5f" executionId="5ef80c52-5fc2-4057-86d4-b4a173e98dde" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="852d2a22-e4c5-db23-b204-eeb31211f60c" executionId="0db2480c-3b16-40fb-bfd4-27c66aee1af0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="498b763e-7b76-0e04-e368-31cf9aced6ba" executionId="7d441b20-f35d-4f7f-b86c-11945205e2b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a3cc2a23-de32-b194-4da8-ac2edc918fbd" executionId="77924117-c5f0-41e2-901b-ea0a36a321c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5b7c5d1-908c-90c4-0c53-379ba6ea3959" executionId="ee5ad762-5363-4138-8e45-f05826dcaaff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9013f874-8a4c-4c73-e79f-a509e61da1b6" executionId="0c85d3e3-6691-4094-add3-76db7f8405f6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="345169e6-3dc3-afa2-a0a8-9fb2f1d400d2" executionId="cf638ced-b494-46fe-945e-d357a66d8a67" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="34d94d2d-122b-5143-8b16-e37fc2f5b7f3" executionId="91647ec6-9d92-4839-a6cf-4a697c15d8fb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2fdfcb73-88ba-ce23-826c-6777399aa01c" executionId="7b0512dd-9a98-4cec-af04-cc98ef54352b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9abd53b2-101b-f815-e8cf-0804376ff000" executionId="5895d16a-513b-4502-9aae-0bbf0c353c4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="130227d6-949f-cd4f-6bff-8d4961f0ee9a" executionId="b8be5024-34f1-4bd6-b2ed-a96210079092" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b82280b4-dbf6-d42b-a3fb-284005534d07" executionId="873b557b-99da-4291-b340-616ac18947d3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7c2f39fd-95d4-786a-c566-b77ae9fa6746" executionId="64b2859a-fdf3-4932-af11-1f3d4e57b932" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d1046a89-ce94-3c20-cf55-15cedf399078" executionId="2455db72-1485-4bba-8f76-37c617ae7751" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bd89ac76-1178-a9a8-b539-d7abc58c5d5d" executionId="5e3172f4-ec8d-44d1-a564-1337bd73cd63" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a1abdd3e-f3c6-1c14-6064-4f2dd0d24d96" executionId="4b58165f-c9f3-4462-9a4b-4c8bc7d77cbf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="070eb660-3594-4f33-e767-639f4867d099" executionId="084973f5-8c1f-498d-abbe-4ab51c071ad3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="58" executed="58" passed="33" failed="25" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 9.0.8)&#xD;
+[xUnit.net 00:00:00.06]   Discovering: Stroll.History.Integrity.Tests&#xD;
+[xUnit.net 00:00:00.10]   Discovered:  Stroll.History.Integrity.Tests&#xD;
+[xUnit.net 00:00:00.10]   Starting:    Stroll.History.Integrity.Tests&#xD;
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]&#xD;
+      IpcTestFixture initializing...&#xD;
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]&#xD;
+      Ensuring Stroll.History IPC server is running...&#xD;
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]&#xD;
+        ProcessId: stroll.history.ipc&#xD;
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]&#xD;
+        Executable: dotnet&#xD;
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]&#xD;
+        Pipe Name: stroll.history.server&#xD;
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]&#xD;
+        Arguments: run --project Stroll.Historical.csproj -- ipc-server&#xD;
+[xUnit.net 00:00:00.20]       Expected result.ExitCode to be 0 because Long-term data request should succeed, but found -1 (difference of -1).&#xD;
+[xUnit.net 00:00:00.20]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:00.20]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:00.20]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:00.20]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(330,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.LongTermData_Availability_MustSpanMultipleYears()&#xD;
+[xUnit.net 00:00:00.20]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.15]       System.Text.Json.JsonException : 'i' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0.&#xD;
+[xUnit.net 00:00:01.16]       ---- System.Text.Json.JsonReaderException : 'i' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0.&#xD;
+[xUnit.net 00:00:01.16]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack&amp; state, JsonReaderException ex)&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader&amp; reader, ReadStack&amp; state)&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)&#xD;
+[xUnit.net 00:00:01.16]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs(201,0): at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_ProviderStatus_MustReturnHealthInformation()&#xD;
+[xUnit.net 00:00:01.16]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.16]         ----- Inner Stack Trace -----&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader&amp; json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.Utf8JsonReader.ConsumeValue(Byte marker)&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.Utf8JsonReader.ReadFirstToken(Byte first)&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.Utf8JsonReader.ReadSingleSegment()&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.Utf8JsonReader.Read()&#xD;
+[xUnit.net 00:00:01.16]            at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+[xUnit.net 00:00:01.16]       Output:&#xD;
+[xUnit.net 00:00:01.16]         Command: provider-status&#xD;
+[xUnit.net 00:00:01.16]         Exit Code: 0&#xD;
+[xUnit.net 00:00:01.16]         Execution Time: 408ms&#xD;
+[xUnit.net 00:00:01.16]         Output: info: Stroll.Historical.DataAcquisitionEngine[0]&#xD;
+[xUnit.net 00:00:01.16]               Added Local Historical Data provider&#xD;
+[xUnit.net 00:00:01.16]         info: Stroll.Historical.DataAcquisitionEngine[0]&#xD;
+[xUnit.net 00:00:01.16]               Added Yahoo Finance provider&#xD;
+[xUnit.net 00:00:01.16]         ?? Data Provider Status:&#xD;
+[xUnit.net 00:00:01.16]         &#xD;
+[xUnit.net 00:00:01.16]         ? ?? Local Historical Data (Priority: 0)&#xD;
+[xUnit.net 00:00:01.16]            Available: True&#xD;
+[xUnit.net 00:00:01.16]            Healthy: False&#xD;
+[xUnit.net 00:00:01.16]            Response Time: 2ms&#xD;
+[xUnit.net 00:00:01.16]            Rate Limit: 2147483647/2147483647 per minute&#xD;
+[xUnit.net 00:00:01.16]         &#xD;
+[xUnit.net 00:00:01.16]         ? ?? Yahoo Finance (Priority: 1)&#xD;
+[xUnit.net 00:00:01.16]            Available: True&#xD;
+[xUnit.net 00:00:01.16]            Healthy: False&#xD;
+[xUnit.net 00:00:01.16]            Response Time: 230ms&#xD;
+[xUnit.net 00:00:01.16]            Rate Limit: 30/30 per minute&#xD;
+[xUnit.net 00:00:01.16]         &#xD;
+[xUnit.net 00:00:01.16]         &#xD;
+[xUnit.net 00:00:01.47]       System.Text.Json.JsonException : The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. Path: $ | LineNumber: 0 | BytePositionInLine: 0.&#xD;
+[xUnit.net 00:00:01.47]       ---- System.Text.Json.JsonReaderException : The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. LineNumber: 0 | BytePositionInLine: 0.&#xD;
+[xUnit.net 00:00:01.47]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.47]            at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack&amp; state, JsonReaderException ex)&#xD;
+[xUnit.net 00:00:01.47]            at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+[xUnit.net 00:00:01.47]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader&amp; reader, ReadStack&amp; state)&#xD;
+[xUnit.net 00:00:01.47]            at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)&#xD;
+[xUnit.net 00:00:01.47]            at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)&#xD;
+[xUnit.net 00:00:01.47]            at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)&#xD;
+[xUnit.net 00:00:01.47]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs(226,0): at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_MustHandleInvalidArguments_WithStandardErrorFormat()&#xD;
+[xUnit.net 00:00:01.47]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.47]         ----- Inner Stack Trace -----&#xD;
+[xUnit.net 00:00:01.47]            at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader&amp; json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)&#xD;
+[xUnit.net 00:00:01.47]            at System.Text.Json.Utf8JsonReader.Read()&#xD;
+[xUnit.net 00:00:01.47]            at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+[xUnit.net 00:00:01.47]       Output:&#xD;
+[xUnit.net 00:00:01.47]         Command: invalid-command --badarg value&#xD;
+[xUnit.net 00:00:01.47]         Exit Code: 64&#xD;
+[xUnit.net 00:00:01.47]         Execution Time: 144ms&#xD;
+[xUnit.net 00:00:01.47]         Output: &#xD;
+[xUnit.net 00:00:01.47]         Error: {&#xD;
+[xUnit.net 00:00:01.47]           "schema": "stroll.history.v1",&#xD;
+[xUnit.net 00:00:01.47]           "ok": false,&#xD;
+[xUnit.net 00:00:01.47]           "error": {&#xD;
+[xUnit.net 00:00:01.47]             "code": "USAGE",&#xD;
+[xUnit.net 00:00:01.47]             "message": "unknown command \u0027invalid-command\u0027",&#xD;
+[xUnit.net 00:00:01.47]             "hint": "try: stroll.history discover"&#xD;
+[xUnit.net 00:00:01.47]           }&#xD;
+[xUnit.net 00:00:01.47]         }&#xD;
+[xUnit.net 00:00:01.47]         &#xD;
+[xUnit.net 00:00:01.79]       Expected result.ExitCode to be 0 because discover must succeed for baseline measurement, but found -1 (difference of -1).&#xD;
+[xUnit.net 00:00:01.79]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.79]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:01.79]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:01.79]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(52,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_DiscoverCommand_MustMaintainSLO()&#xD;
+[xUnit.net 00:00:01.79]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.82]       Expected result.ExitCode to be one of {0, 3} because XLE should either succeed (0) or report no data (3), not fail completely, but found -1.&#xD;
+[xUnit.net 00:00:01.82]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:01.82]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(198,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol)&#xD;
+[xUnit.net 00:00:01.82]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.82]       Output:&#xD;
+[xUnit.net 00:00:01.82]         Oil/Energy symbol XLE not available: Exit=-1, Output=&#xD;
+[xUnit.net 00:00:01.82]       Expected result.ExitCode to be 0 because get-bars single_month must succeed, but found -1 (difference of -1).&#xD;
+[xUnit.net 00:00:01.82]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:01.82]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(96,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario)&#xD;
+[xUnit.net 00:00:01.82]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.82]       Expected result.ExitCode to be 0 because valid options request must succeed, but found -1 (difference of -1).&#xD;
+[xUnit.net 00:00:01.82]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:01.82]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:01.82]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ContractValidationTests.cs(172,0): at Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(String date, String description)&#xD;
+[xUnit.net 00:00:01.82]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.82]       Output:&#xD;
+[xUnit.net 00:00:01.82]         Command: get-options --symbol SPY --date 2024-01-19&#xD;
+[xUnit.net 00:00:01.82]         Exit Code: -1&#xD;
+[xUnit.net 00:00:01.82]         Execution Time: 28ms&#xD;
+[xUnit.net 00:00:01.82]         Output: &#xD;
+[xUnit.net 00:00:01.84]       Expected result.ExitCode to be one of {0, 3} because BOIL should either succeed (0) or report no data (3), not fail completely, but found -1.&#xD;
+[xUnit.net 00:00:01.84]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:01.84]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(198,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol)&#xD;
+[xUnit.net 00:00:01.84]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.84]       Output:&#xD;
+[xUnit.net 00:00:01.84]         Oil/Energy symbol BOIL not available: Exit=-1, Output=&#xD;
+[xUnit.net 00:00:01.84]       Expected result.ExitCode to be 0 because get-bars single_week must succeed, but found -1 (difference of -1).&#xD;
+[xUnit.net 00:00:01.84]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:01.84]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:01.84]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(96,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario)&#xD;
+[xUnit.net 00:00:01.84]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.85]       Expected result.ExitCode to be one of {0, 3} because UNG should either succeed (0) or report no data (3), not fail completely, but found -1.&#xD;
+[xUnit.net 00:00:01.85]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.85]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:01.85]            at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:01.85]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(198,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol)&#xD;
+[xUnit.net 00:00:01.85]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.85]       Output:&#xD;
+[xUnit.net 00:00:01.85]         Oil/Energy symbol UNG not available: Exit=-1, Output=&#xD;
+[xUnit.net 00:00:01.89]       Expected result.ExitCode to be 0 because get-bars single_day must succeed, but found -1 (difference of -1).&#xD;
+[xUnit.net 00:00:01.89]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.89]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:01.89]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:01.89]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(96,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(String symbol, String from, String to, String granularity, String scenario)&#xD;
+[xUnit.net 00:00:01.89]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.90]       Expected result.ExitCode to be one of {0, 3} because DRIP should either succeed (0) or report no data (3), not fail completely, but found -1.&#xD;
+[xUnit.net 00:00:01.90]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:01.90]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)&#xD;
+[xUnit.net 00:00:01.90]            at FluentAssertions.Numeric.NumericAssertions`2.BeOneOf(IEnumerable`1 validValues, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:01.90]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\DataIntegrityTests.cs(198,0): at Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(String symbol)&#xD;
+[xUnit.net 00:00:01.90]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.90]       Output:&#xD;
+[xUnit.net 00:00:01.90]         Oil/Energy symbol DRIP not available: Exit=-1, Output=&#xD;
+[xUnit.net 00:00:09.90]       System.ComponentModel.Win32Exception : An error occurred trying to start process 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\..\..\..\..\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.exe' with working directory 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0'. Access is denied.&#xD;
+[xUnit.net 00:00:09.90]       Stack Trace:&#xD;
+[xUnit.net 00:00:09.90]            at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)&#xD;
+[xUnit.net 00:00:09.90]            at System.Diagnostics.Process.Start()&#xD;
+[xUnit.net 00:00:09.90]            at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)&#xD;
+[xUnit.net 00:00:09.90]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs(293,0): at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ExecuteCliCommand(String arguments)&#xD;
+[xUnit.net 00:00:09.90]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs(88,0): at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ProcessSpawn_Overhead_MustMeetPerformanceSLO()&#xD;
+[xUnit.net 00:00:09.90]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:10.22]       Expected successCount to be 8 because All concurrent requests must succeed, but found 6.&#xD;
+[xUnit.net 00:00:10.22]       Stack Trace:&#xD;
+[xUnit.net 00:00:10.22]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:00:10.22]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:00:10.22]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:00:10.22]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:00:10.22]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:00:10.22]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs(244,0): at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ConcurrentConnections_MustHandleMultipleClients()&#xD;
+[xUnit.net 00:00:10.22]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:10.22]       Output:&#xD;
+[xUnit.net 00:00:10.22]         Client 1: -1, 21ms&#xD;
+[xUnit.net 00:00:10.22]         Client 6: -1, 24ms&#xD;
+[xUnit.net 00:00:10.22]         Client 7: 0, 161ms&#xD;
+[xUnit.net 00:00:10.22]         Client 4: 0, 161ms&#xD;
+[xUnit.net 00:00:10.22]         Client 5: 0, 161ms&#xD;
+[xUnit.net 00:00:10.22]         Client 3: 0, 161ms&#xD;
+[xUnit.net 00:00:10.22]         Client 2: 0, 161ms&#xD;
+[xUnit.net 00:00:10.22]         Client 0: 0, 312ms&#xD;
+fail: Stroll.History.Integrity.Tests.IpcTestFixture[0]&#xD;
+      IpcTestFixture initialization failed&#xD;
+      System.InvalidOperationException: Process stroll.history.ipc failed startup validation&#xD;
+         at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs:line 58&#xD;
+         at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory) in C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs:line 36&#xD;
+         at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 40&#xD;
+         at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync() in C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs:line 103&#xD;
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation&#xD;
+[xUnit.net 00:00:10.33]       Stack Trace:&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()&#xD;
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation&#xD;
+[xUnit.net 00:00:10.33]       Stack Trace:&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()&#xD;
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation&#xD;
+[xUnit.net 00:00:10.33]       Stack Trace:&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()&#xD;
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation&#xD;
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]&#xD;
+      IpcTestFixture disposing...&#xD;
+[xUnit.net 00:00:10.33]       Stack Trace:&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()&#xD;
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation&#xD;
+[xUnit.net 00:00:10.33]       Stack Trace:&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()&#xD;
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation&#xD;
+[xUnit.net 00:00:10.33]       Stack Trace:&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()&#xD;
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation&#xD;
+[xUnit.net 00:00:10.33]       Stack Trace:&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()&#xD;
+[xUnit.net 00:00:10.33]       System.InvalidOperationException : Process stroll.history.ipc failed startup validation&#xD;
+[xUnit.net 00:00:10.33]       Stack Trace:&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\ProcessManager.cs(58,0): at Stroll.Process.ProcessManager.EnsureProcessAsync(String processId, ProcessSpec spec)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.Runtime\Stroll.Process\IpcProcessManager.cs(36,0): at Stroll.Process.IpcProcessManager.EnsureIpcServerAsync(String processId, String executablePath, String pipeName, String[] arguments, String workingDirectory)&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(40,0): at Stroll.History.Integrity.Tests.IpcTestFixture.EnsureStrollHistoryIpcServerAsync()&#xD;
+[xUnit.net 00:00:10.33]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\IpcTestFixture.cs(103,0): at Stroll.History.Integrity.Tests.IpcTestFixture.InitializeAsync()&#xD;
+info: Stroll.History.Integrity.Tests.IpcTestFixture[0]&#xD;
+      IpcTestFixture disposed successfully&#xD;
+\u001b[38;5;9m  _   _   ____                        _                       ____  \u001b[0m            &#xD;
+\u001b[38;5;9m | \ | | | __ )    ___    _ __ ___   | |__     ___   _ __    | ___| \u001b[0m            &#xD;
+\u001b[38;5;9m |  \| | |  _ \   / _ \  | '_ ` _ \  | '_ \   / _ \ | '__|   |___ \ \u001b[0m            &#xD;
+\u001b[38;5;9m | |\  | | |_) | | (_) | | | | | | | | |_) | |  __/ | |       ___) |\u001b[0m            &#xD;
+\u001b[38;5;9m |_| \_| |____/   \___/  |_| |_| |_| |_.__/   \___| |_|      |____/ \u001b[0m            &#xD;
+\u001b[38;5;9m                                                                    \u001b[0m            &#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] NBomber \u001b[38;5;10m"5.1.0"\u001b[0m started a new session: \u001b[38;5;10m"2025-08-25_20.52.58_session_acd4fe33"\u001b[0m&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] NBomber started as single node&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] License validation....&#xD;
+21:52:59 [\u001b[38;5;11mWRN\u001b[0m] THIS VERSION IS FREE ONLY FOR PERSONAL USE. You can't use it for an &#xD;
+organization.&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] Reports folder: \u001b[38;5;10m"C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\r\u001b[0m&#xD;
+\u001b[38;5;10meports\2025-08-25_20.52.58_session_acd4fe33"\u001b[0m&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] Plugins: no plugins were loaded&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] Reporting sinks: no reporting sinks were loaded&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] Starting init...&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] Target scenarios: \u001b[38;5;10m"concurrent_get_bars"\u001b[0m&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] Init finished&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] Starting warm up...&#xD;
+21:52:59 [\u001b[38;5;39mINF\u001b[0m] Warm up for scenarios: \u001b[38;5;10m"concurrent_get_bars"\u001b[0m&#xD;
+[xUnit.net 00:00:25.86]       System.InvalidOperationException : Sequence contains no elements&#xD;
+[xUnit.net 00:00:25.86]       Stack Trace:&#xD;
+[xUnit.net 00:00:25.86]            at System.Linq.ThrowHelper.ThrowNoElementsException()&#xD;
+[xUnit.net 00:00:25.86]            at System.Linq.Enumerable.Average[TSource,TAccumulator,TResult](IEnumerable`1 source)&#xD;
+[xUnit.net 00:00:25.86]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\ProcessLifecycleTests.cs(176,0): at Stroll.History.Integrity.Tests.ProcessLifecycleTests.ResourceLimits_UnderNormalLoad_MustNotExceedLimits()&#xD;
+[xUnit.net 00:00:25.86]         --- End of stack trace from previous location ---&#xD;
+21:53:30 [\u001b[38;5;39mINF\u001b[0m] Starting bombing...&#xD;
+21:54:04 [\u001b[38;5;39mINF\u001b[0m] Stopping scenarios...&#xD;
+21:54:04 [\u001b[38;5;39mINF\u001b[0m] Calculating final statistics...&#xD;
+���������������������������������� test info �����������������������������������&#xD;
+test suite: \u001b[38;5;10mnbomber_default_test_suite_name\u001b[0m&#xD;
+test name: \u001b[38;5;10mnbomber_default_test_name\u001b[0m&#xD;
+session id: \u001b[38;5;10m2025-08-25_20.52.58_session_acd4fe33\u001b[0m&#xD;
+�������������������������������� scenario stats ��������������������������������&#xD;
+scenario: \u001b[38;5;10mconcurrent_get_bars\u001b[0m&#xD;
+  - ok count: \u001b[38;5;10m1498\u001b[0m&#xD;
+  - fail count: \u001b[38;5;9m0\u001b[0m&#xD;
+  - all data: \u001b[38;5;10m0\u001b[0m MB&#xD;
+  - duration: \u001b[38;5;10m00:00:30\u001b[0m&#xD;
+load simulations: &#xD;
+  - \u001b[38;5;10minject\u001b[0m, rate: \u001b[38;5;10m50\u001b[0m, interval: \u001b[38;5;10m00:00:01\u001b[0m, during: \u001b[38;5;10m00:00:30\u001b[0m&#xD;
+������������������������������������������������������������������������������Ŀ&#xD;
+�               step � ok stats                                                �&#xD;
+������������������������������������������������������������������������������Ĵ&#xD;
+�               name � \u001b[38;5;39mglobal information\u001b[0m                                      �&#xD;
+�      request count � all = \u001b[38;5;10m1498\u001b[0m, ok = \u001b[38;5;10m1498\u001b[0m, RPS = \u001b[38;5;10m49.9\u001b[0m                       �&#xD;
+�            latency � min = \u001b[38;5;10m127.16\u001b[0m, mean = \u001b[38;5;10m208.3\u001b[0m, max = \u001b[38;5;10m532.22\u001b[0m, StdDev = \u001b[38;5;10m43.6\u001b[0m �&#xD;
+� latency percentile � p50 = \u001b[38;5;10m204.67\u001b[0m, p75 = \u001b[38;5;10m230.27\u001b[0m, p95 = \u001b[38;5;10m280.32\u001b[0m, p99 = \u001b[38;5;10m351.49\u001b[0m  �&#xD;
+��������������������������������������������������������������������������������&#xD;
+21:54:05 [\u001b[38;5;39mINF\u001b[0m] Reports saved in folder: \u001b[38;5;10m"C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\r\u001b[0m&#xD;
+\u001b[38;5;10meports\2025-08-25_20.52.58_session_acd4fe33"\u001b[0m&#xD;
+21:54:05 [\u001b[38;5;11mWRN\u001b[0m] THIS VERSION IS FREE ONLY FOR PERSONAL USE. You can't use it for an &#xD;
+organization.&#xD;
+[xUnit.net 00:01:18.94]       System.ComponentModel.Win32Exception : An error occurred trying to start process 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\..\..\..\..\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.exe' with working directory 'C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0'. Access is denied.&#xD;
+[xUnit.net 00:01:18.94]       Stack Trace:&#xD;
+[xUnit.net 00:01:18.94]            at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)&#xD;
+[xUnit.net 00:01:18.94]            at System.Diagnostics.Process.Start()&#xD;
+[xUnit.net 00:01:18.94]            at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)&#xD;
+[xUnit.net 00:01:18.94]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(331,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.ExecuteCliCommand(String arguments)&#xD;
+[xUnit.net 00:01:18.94]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(139,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(String symbol, String date, String scenario)&#xD;
+[xUnit.net 00:01:18.94]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:01:18.96]       Expected result.ExitCode to be 0 because get-options monthly must succeed, but found -1 (difference of -1).&#xD;
+[xUnit.net 00:01:18.96]       Stack Trace:&#xD;
+[xUnit.net 00:01:18.96]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)&#xD;
+[xUnit.net 00:01:18.96]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)&#xD;
+[xUnit.net 00:01:18.96]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)&#xD;
+[xUnit.net 00:01:18.96]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)&#xD;
+[xUnit.net 00:01:18.96]            at FluentAssertions.Numeric.NumericAssertions`2.Be(T expected, String because, Object[] becauseArgs)&#xD;
+[xUnit.net 00:01:18.96]         C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\PerformanceRegressionTests.cs(142,0): at Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(String symbol, String date, String scenario)&#xD;
+[xUnit.net 00:01:18.96]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:01:18.96]   Finished:    Stroll.History.Integrity.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:46.4684117+01:00">
+        <Text>[xUnit.net 00:00:00.20]     Stroll.History.Integrity.Tests.DataIntegrityTests.LongTermData_Availability_MustSpanMultipleYears [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:47.4209527+01:00">
+        <Text>[xUnit.net 00:00:01.15]     Stroll.History.Integrity.Tests.ContractValidationTests.CLI_ProviderStatus_MustReturnHealthInformation [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:47.7313241+01:00">
+        <Text>[xUnit.net 00:00:01.47]     Stroll.History.Integrity.Tests.ContractValidationTests.CLI_MustHandleInvalidArguments_WithStandardErrorFormat [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:48.0590492+01:00">
+        <Text>[xUnit.net 00:00:01.79]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_DiscoverCommand_MustMaintainSLO [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:48.0816015+01:00">
+        <Text>[xUnit.net 00:00:01.82]     Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "XLE") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:48.0861073+01:00">
+        <Text>[xUnit.net 00:00:01.82]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: "SPY", from: "2024-01-01", to: "2024-01-31", granularity: "1d", scenario: "single_month") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:48.0866445+01:00">
+        <Text>[xUnit.net 00:00:01.82]     Stroll.History.Integrity.Tests.ContractValidationTests.CLI_GetOptions_MustMeetPerformanceAndQualitySLO(date: "2024-01-19", description: "weekly expiry") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:48.1087939+01:00">
+        <Text>[xUnit.net 00:00:01.84]     Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "BOIL") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:48.1092587+01:00">
+        <Text>[xUnit.net 00:00:01.84]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: "SPY", from: "2024-01-01", to: "2024-01-07", granularity: "1d", scenario: "single_week") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:48.1197356+01:00">
+        <Text>[xUnit.net 00:00:01.85]     Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "UNG") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:48.1512726+01:00">
+        <Text>[xUnit.net 00:00:01.89]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetBarsCommands_MustMaintainSLO(symbol: "SPY", from: "2024-01-15", to: "2024-01-15", granularity: "1d", scenario: "single_day") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:48.1652415+01:00">
+        <Text>[xUnit.net 00:00:01.90]     Stroll.History.Integrity.Tests.DataIntegrityTests.OilEnergyData_Availability_MustBeAccessible(symbol: "DRIP") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.1701593+01:00">
+        <Text>[xUnit.net 00:00:09.90]     Stroll.History.Integrity.Tests.ProcessLifecycleTests.ProcessSpawn_Overhead_MustMeetPerformanceSLO [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.4867367+01:00">
+        <Text>[xUnit.net 00:00:10.22]     Stroll.History.Integrity.Tests.ProcessLifecycleTests.ConcurrentConnections_MustHandleMultipleClients [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.5947465+01:00">
+        <Text>[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Performance_MustMeetLatencySLO [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.5949584+01:00">
+        <Text>[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcErrorHandling_InvalidRequests_MustReturnStandardErrorFormat [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.5951666+01:00">
+        <Text>[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcLargePayload_DataTransfer_MustHandleMultiMegabyteResponses [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.5954060+01:00">
+        <Text>[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcConnection_Persistence_MustReuseConnectionsEfficiently [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.5957674+01:00">
+        <Text>[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcConnectionPool_ResourceManagement_MustHandleConnectionLifecycle [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.5958668+01:00">
+        <Text>[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcConcurrency_MultipleClients_MustHandleSimultaneousConnections [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.5971384+01:00">
+        <Text>[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcProtocol_BinaryFraming_MustUseLengthPrefixedFormat [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:52:56.5972184+01:00">
+        <Text>[xUnit.net 00:00:10.33]     Stroll.History.Integrity.Tests.IpcContractTests.IpcServer_Startup_MustCreateNamedPipeWithStandardName [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:53:12.1297957+01:00">
+        <Text>[xUnit.net 00:00:25.86]     Stroll.History.Integrity.Tests.ProcessLifecycleTests.ResourceLimits_UnderNormalLoad_MustNotExceedLimits [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:54:05.2024738+01:00">
+        <Text>[xUnit.net 00:01:18.94]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: "SPY", date: "2024-01-19", scenario: "weekly") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="SONAKSHI" outcome="Error" timestamp="2025-08-25T21:54:05.2277749+01:00">
+        <Text>[xUnit.net 00:01:18.96]     Stroll.History.Integrity.Tests.PerformanceRegressionTests.PerformanceBaseline_GetOptionsCommands_MustMaintainSLO(symbol: "SPY", date: "2024-01-31", scenario: "monthly") [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,169 @@
+using Microsoft.Extensions.Logging;
+using System.Diagnostics;
+using Stroll.Backtest.Tests.Backtests;
+
+namespace Stroll.Backtest.Tests.Performance;
+
+/// <summary>
+/// Performance benchmark for Stroll backtest system
+/// Measures and optimizes historical data processing speed
+/// </summary>
+public class BacktestPerformanceBenchmark
+{
+    private readonly ILogger<BacktestPerformanceBenchmark> _logger;
+    private readonly string _archivePath;
+
+    public BacktestPerformanceBenchmark(ILogger<BacktestPerformanceBenchmark>? logger = null)
+    {
+        var loggerFactory = LoggerFactory.Create(builder =>
+            builder.AddConsole().SetMinimumLevel(LogLevel.Information));
+        _logger = logger ?? loggerFactory.CreateLogger<BacktestPerformanceBenchmark>();
+        _archivePath = Path.GetFullPath(@"C:\code\Stroll\Stroll.History\Stroll.Historical\historical_archive\historical_archive.db");
+    }
+
+    /// <summary>
+    /// Run comprehensive performance benchmark
+    /// </summary>
+    [Test]
+    public async Task Benchmark_6Month_Backtest_Performance()
+    {
+        _logger.LogInformation("🚀 Starting backtest performance benchmark");
+        
+        if (!File.Exists(_archivePath))
+        {
+            Assert.Fail($"Historical archive not found: {_archivePath}");
+        }
+
+        var results = new List<BenchmarkResult>();
+
+        // Test 1: Current Implementation
+        _logger.LogInformation("📊 Test 1: Baseline Performance");
+        var baseline = await RunBacktestWithTiming("Baseline", () => 
+            CreateStandardRunner());
+        results.Add(baseline);
+
+        // Test 2: Optimized Data Loading
+        _logger.LogInformation("📊 Test 2: Optimized Data Loading");  
+        var optimizedData = await RunBacktestWithTiming("OptimizedData", () => 
+            CreateOptimizedDataRunner());
+        results.Add(optimizedData);
+
+        // Test 3: Reduced Bar Magnification
+        _logger.LogInformation("📊 Test 3: Reduced Bar Magnification");
+        var reducedMag = await RunBacktestWithTiming("ReducedMagnification", () => 
+            CreateReducedMagnificationRunner());
+        results.Add(reducedMag);
+
+        // Test 4: Fast Path Processing
+        _logger.LogInformation("📊 Test 4: Fast Path Processing");
+        var fastPath = await RunBacktestWithTiming("FastPath", () => 
+            CreateFastPathRunner());
+        results.Add(fastPath);
+
+        // Report Results
+        LogBenchmarkResults(results);
+        
+        // Verify all tests completed successfully
+        Assert.That(results.Count, Is.EqualTo(4));
+        Assert.That(results.All(r => r.Success), Is.True, "All benchmarks should succeed");
+    }
+
+    private async Task<BenchmarkResult> RunBacktestWithTiming(string testName, Func<HistoricalArchiveBacktestRunner> runnerFactory)
+    {
+        var result = new BenchmarkResult { TestName = testName };
+        
+        try
+        {
+            var stopwatch = Stopwatch.StartNew();
+            var runner = runnerFactory();
+            var backtestResult = await runner.RunSixMonthBacktestAsync();
+            stopwatch.Stop();
+            
+            result.ExecutionTimeMs = stopwatch.ElapsedMilliseconds;
+            result.Success = true;
+            result.TotalTrades = backtestResult.TotalTrades;
+            result.AccountValue = backtestResult.FinalAccountValue;
+            
+            _logger.LogInformation("✅ {TestName}: {Time:N0}ms, {Trades} trades, ${Account:N0}", 
+                testName, result.ExecutionTimeMs, result.TotalTrades, result.AccountValue);
+        }
+        catch (Exception ex)
+        {
+            result.Success = false;
+            result.ErrorMessage = ex.Message;
+            _logger.LogError(ex, "❌ {TestName} failed", testName);
+        }
+        
+        return result;
+    }
+
+    private HistoricalArchiveBacktestRunner CreateStandardRunner()
+    {
+        var logger = LoggerFactory.Create(b => b.AddConsole().SetMinimumLevel(LogLevel.Warning))
+            .CreateLogger<HistoricalArchiveBacktestRunner>();
+        return new HistoricalArchiveBacktestRunner(_archivePath, logger);
+    }
+
+    private OptimizedHistoricalBacktestRunner CreateOptimizedDataRunner()
+    {
+        var logger = LoggerFactory.Create(b => b.AddConsole().SetMinimumLevel(LogLevel.Warning))
+            .CreateLogger<OptimizedHistoricalBacktestRunner>();
+        return new OptimizedHistoricalBacktestRunner(_archivePath, logger);
+    }
+
+    private FastHistoricalBacktestRunner CreateReducedMagnificationRunner()
+    {
+        var logger = LoggerFactory.Create(b => b.AddConsole().SetMinimumLevel(LogLevel.Warning))
+            .CreateLogger<FastHistoricalBacktestRunner>();
+        return new FastHistoricalBacktestRunner(_archivePath, logger, useMagnifier: false);
+    }
+
+    private UltraFastBacktestRunner CreateFastPathRunner()
+    {
+        var logger = LoggerFactory.Create(b => b.AddConsole().SetMinimumLevel(LogLevel.Warning))
+            .CreateLogger<UltraFastBacktestRunner>();
+        return new UltraFastBacktestRunner(_archivePath, logger);
+    }
+
+    private void LogBenchmarkResults(List<BenchmarkResult> results)
+    {
+        _logger.LogInformation("");
+        _logger.LogInformation("🏁 PERFORMANCE BENCHMARK RESULTS");
+        _logger.LogInformation("================================");
+        
+        var baseline = results.FirstOrDefault(r => r.TestName == "Baseline");
+        if (baseline != null && baseline.Success)
+        {
+            _logger.LogInformation("📊 Baseline: {Time:N0}ms", baseline.ExecutionTimeMs);
+            
+            foreach (var result in results.Skip(1).Where(r => r.Success))
+            {
+                var speedup = (double)baseline.ExecutionTimeMs / result.ExecutionTimeMs;
+                var improvement = ((double)(baseline.ExecutionTimeMs - result.ExecutionTimeMs) / baseline.ExecutionTimeMs) * 100;
+                
+                _logger.LogInformation("⚡ {TestName}: {Time:N0}ms ({Speedup:F2}x faster, {Improvement:F1}% improvement)",
+                    result.TestName, result.ExecutionTimeMs, speedup, improvement);
+            }
+        }
+        
+        var fastest = results.Where(r => r.Success).OrderBy(r => r.ExecutionTimeMs).First();
+        _logger.LogInformation("");
+        _logger.LogInformation("🏆 Fastest: {TestName} at {Time:N0}ms", fastest.TestName, fastest.ExecutionTimeMs);
+        
+        // Calculate bars per second for fastest
+        var totalBars = 35931; // From our archive
+        var barsPerSecond = totalBars / (fastest.ExecutionTimeMs / 1000.0);
+        _logger.LogInformation("📈 Processing Rate: {Rate:N0} bars/second", barsPerSecond);
+    }
+}
+
+// Benchmark result tracking
+public class BenchmarkResult
+{
+    public required string TestName { get; init; }
+    public long ExecutionTimeMs { get; set; }
+    public bool Success { get; set; }
+    public int TotalTrades { get; set; }
+    public decimal AccountValue { get; set; }
+    public string? ErrorMessage { get; set; }
+}

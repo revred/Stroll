@@ -1,0 +1,27 @@
+# Stroll Test Suite Configuration
+test_suites:
+  - name: "History Integrity Tests"
+    description: "IPC contract validation and performance regression tests"
+    project_path: "Stroll.History/Stroll.History.Integrity.Tests"
+    category: "integration"
+    timeout_minutes: 10
+    parallel: false
+    tags: ["integrity", "ipc"]
+
+execution_settings:
+  build_configuration: "Debug"
+  build_before_test: true
+  parallel_suites: true
+  max_concurrent_suites: 3
+  continue_on_failure: true
+  artifacts_directory: ".testartifacts"
+
+output_settings:
+  use_colors: true
+  console_verbosity: "normal"
+  save_detailed_logs: true
+
+failure_handling:
+  fail_fast: false
+  max_failures: 10
+  save_failure_logs: true

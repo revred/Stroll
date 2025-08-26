@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="Stroll.Dataset.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="*.cs" />
+    <Compile Include="ResponseTimeReport.cs" />
+  </ItemGroup>
+</Project>

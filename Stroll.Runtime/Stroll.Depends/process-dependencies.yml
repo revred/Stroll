@@ -1,0 +1,106 @@
+# Process Dependency Configuration
+# This file defines which processes depend on other processes
+# When a process is killed, all its dependent processes should also be terminated
+
+processes:
+  # Core data services - these are foundational and don't depend on others
+  - name: "Stroll.Historical"
+    path: "Stroll.History/Stroll.Historical"
+    description: "Historical data provider service"
+    dependencies: []
+    type: "service"
+    
+  - name: "Stroll.Dataset" 
+    path: "Stroll.History/Stroll.Dataset"
+    description: "Dataset management and packaging"
+    dependencies: 
+      - "Stroll.Historical"
+    type: "service"
+
+  # Strategy components
+  - name: "Stroll.Signal"
+    path: "Stroll.Strategy/Stroll.Signal"  
+    description: "Signal generation and processing"
+    dependencies:
+      - "Stroll.Dataset"
+    type: "service"
+    
+  - name: "Stroll.Model"
+    path: "Stroll.Strategy/Stroll.Model"
+    description: "ML models and predictions"
+    dependencies:
+      - "Stroll.Dataset"
+      - "Stroll.Signal"
+    type: "service"
+
+  # Backtesting - depends on both data and strategy components  
+  - name: "Stroll.Backtest"
+    path: "Stroll.Runner/Stroll.Backtest"
+    description: "Backtesting engine"
+    dependencies:
+      - "Stroll.Dataset"    # Needs historical data
+      - "Stroll.Signal"     # Needs signal generation
+      - "Stroll.Model"      # May need ML predictions
+    type: "application"
+    
+  # Control and monitoring
+  - name: "Stroll.Control"
+    path: "Stroll.Strategy/Stroll.Control"
+    description: "Process control and orchestration"  
+    dependencies:
+      - "Stroll.Backtest"
+      - "Stroll.Signal"
+      - "Stroll.Model"
+    type: "application"
+
+# Dependency rules for process management
+dependency_rules:
+  # When a process is terminated, what should happen to dependents
+  on_termination:
+    # Kill all processes that depend on the terminated process
+    kill_dependents: true
+    
+    # Grace period before force-killing dependents (seconds)
+    grace_period: 10
+    
+    # Whether to wait for dependents to shut down gracefully
+    wait_for_graceful_shutdown: true
+
+  # When starting a process, what should happen to dependencies  
+  on_startup:
+    # Automatically start required dependencies
+    auto_start_dependencies: true
+    
+    # Maximum time to wait for dependencies to start (seconds)
+    dependency_startup_timeout: 30
+    
+    # Whether to fail startup if dependencies can't be started
+    fail_on_dependency_failure: true
+
+# Process lifecycle configuration
+lifecycle:
+  # Health check configuration
+  health_check:
+    # How often to check process health (seconds)
+    interval: 15
+    
+    # How many failed checks before considering process unhealthy
+    failure_threshold: 3
+    
+    # Timeout for individual health checks (seconds)
+    timeout: 5
+
+  # Restart policy
+  restart_policy:
+    # Whether to automatically restart failed processes
+    auto_restart: true
+    
+    # Maximum number of restart attempts
+    max_restarts: 5
+    
+    # Time window for counting restarts (seconds)
+    restart_window: 300
+    
+    # Exponential backoff for restart delays
+    restart_delay_base: 2
+    restart_delay_max: 60

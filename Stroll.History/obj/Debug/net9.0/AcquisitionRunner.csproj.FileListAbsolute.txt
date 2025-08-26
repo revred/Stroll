@@ -1,0 +1,5 @@
+C:\code\Stroll\Stroll.History\obj\Debug\net9.0\AcquisitionRunner.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Stroll\Stroll.History\obj\Debug\net9.0\AcquisitionRunner.AssemblyInfoInputs.cache
+C:\code\Stroll\Stroll.History\obj\Debug\net9.0\AcquisitionRunner.AssemblyInfo.cs
+C:\code\Stroll\Stroll.History\obj\Debug\net9.0\AcquisitionRunner.csproj.CoreCompileInputs.cache
+C:\code\Stroll\Stroll.History\obj\Debug\net9.0\AcquisitionRunner.sourcelink.json

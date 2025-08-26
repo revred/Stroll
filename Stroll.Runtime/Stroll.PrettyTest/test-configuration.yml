@@ -1,0 +1,132 @@
+# Stroll Test Suite Configuration
+# This file defines all test projects and their execution settings
+
+test_suites:
+  - name: "History Integrity Tests"
+    description: "IPC contract validation and performance regression tests"
+    project_path: "Stroll.History/Stroll.History.Integrity.Tests"
+    category: "integration"
+    timeout_minutes: 10
+    parallel: false
+    environment:
+      STROLL_TEST_MODE: "integrity"
+    tags:
+      - "integrity"
+      - "ipc"
+      - "performance"
+    
+  - name: "Historical Unit Tests"
+    description: "Unit tests for historical data provider"
+    project_path: "Stroll.History/Stroll.Historical.Tests"
+    category: "unit"
+    timeout_minutes: 5
+    parallel: true
+    environment:
+      STROLL_TEST_MODE: "unit"
+    tags:
+      - "unit"
+      - "data-provider"
+      
+  - name: "History Integration Tests (Runner)"
+    description: "Integration tests for history components from runner perspective"
+    project_path: "Stroll.Runner/Stroll.History.Integrity.Tests"
+    category: "integration"
+    timeout_minutes: 8
+    parallel: false
+    environment:
+      STROLL_TEST_MODE: "integration"
+    tags:
+      - "integration"
+      - "runner"
+
+# Global test execution settings
+execution_settings:
+  # Default configuration for test builds
+  build_configuration: "Debug"
+  
+  # Whether to build projects before running tests
+  build_before_test: true
+  
+  # Whether to run tests in parallel suites
+  parallel_suites: true
+  
+  # Maximum concurrent test suites
+  max_concurrent_suites: 3
+  
+  # Default timeout for individual test suites (minutes)
+  default_timeout_minutes: 10
+  
+  # Whether to continue running other suites if one fails
+  continue_on_failure: true
+  
+  # Output directory for test artifacts
+  artifacts_directory: ".testartifacts"
+  
+  # Whether to collect code coverage
+  collect_coverage: false
+  
+  # Coverage output format (if enabled)
+  coverage_format: "cobertura"
+
+# Output formatting settings
+output_settings:
+  # Whether to use colored output
+  use_colors: true
+  
+  # Console output verbosity: minimal, normal, detailed
+  console_verbosity: "normal"
+  
+  # Whether to show build output during compilation
+  show_build_output: false
+  
+  # Whether to show individual test output
+  show_test_output: false
+  
+  # Whether to generate HTML test report
+  generate_html_report: false
+  
+  # Whether to save detailed logs to file
+  save_detailed_logs: true
+
+# Filter settings for running specific tests
+filters:
+  # Default filters to apply (empty = run all)
+  default_categories: []
+  
+  # Default tags to include (empty = run all)
+  default_tags: []
+  
+  # Tags to exclude by default
+  exclude_tags:
+    - "slow"
+    - "manual"
+    
+  # Test name patterns to exclude
+  exclude_patterns:
+    - "*LongRunning*"
+    - "*Manual*"
+
+# Failure handling
+failure_handling:
+  # Whether to stop all tests on first failure
+  fail_fast: false
+  
+  # Maximum number of failed tests before stopping
+  max_failures: 10
+  
+  # Whether to automatically retry failed tests
+  retry_failed: false
+  
+  # Number of retry attempts
+  retry_count: 2
+  
+  # Whether to save failed test output to separate files
+  save_failure_logs: true
+
+# Notifications (for future extension)
+notifications:
+  # Whether to send notifications on completion
+  enabled: false
+  
+  # Notification channels (email, slack, etc.)
+  channels: []

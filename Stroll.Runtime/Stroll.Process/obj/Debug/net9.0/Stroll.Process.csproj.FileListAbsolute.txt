@@ -1,0 +1,13 @@
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\Stroll.Process.csproj.AssemblyReference.cache
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\Stroll.Process.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\Stroll.Process.AssemblyInfoInputs.cache
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\Stroll.Process.AssemblyInfo.cs
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\Stroll.Process.csproj.CoreCompileInputs.cache
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\Stroll.Process.sourcelink.json
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\bin\Debug\net9.0\Stroll.Process.deps.json
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\bin\Debug\net9.0\Stroll.Process.dll
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\bin\Debug\net9.0\Stroll.Process.pdb
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\Stroll.Process.dll
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\refint\Stroll.Process.dll
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\Stroll.Process.pdb
+C:\code\Stroll\Stroll.Runtime\Stroll.Process\obj\Debug\net9.0\ref\Stroll.Process.dll

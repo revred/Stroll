@@ -1,0 +1,16 @@
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\bin\Debug\net9.0\Stroll.Watchdog.deps.json
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\bin\Debug\net9.0\Stroll.Watchdog.dll
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\bin\Debug\net9.0\Stroll.Watchdog.pdb
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\bin\Debug\net9.0\Stroll.Process.dll
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\bin\Debug\net9.0\Stroll.Process.pdb
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\Stroll.Watchdog.csproj.AssemblyReference.cache
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\Stroll.Watchdog.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\Stroll.Watchdog.AssemblyInfoInputs.cache
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\Stroll.Watchdog.AssemblyInfo.cs
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\Stroll.Watchdog.csproj.CoreCompileInputs.cache
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\Stroll.Watchdog.sourcelink.json
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\Stroll.W.58E83365.Up2Date
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\Stroll.Watchdog.dll
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\refint\Stroll.Watchdog.dll
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\Stroll.Watchdog.pdb
+C:\code\Stroll\Stroll.Runtime\Stroll.Watchdog\obj\Debug\net9.0\ref\Stroll.Watchdog.dll

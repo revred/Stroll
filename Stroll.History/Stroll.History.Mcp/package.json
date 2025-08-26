@@ -1,0 +1,29 @@
+{
+  "name": "@stroll/history-mcp",
+  "version": "1.0.0",
+  "description": "Stroll History MCP Service - High-performance financial data access via Model Context Protocol",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "vitest",
+    "benchmark": "node dist/benchmark.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["mcp", "financial-data", "stroll", "market-data", "high-performance"],
+  "author": "Stroll Team",
+  "license": "PROPRIETARY"
+}

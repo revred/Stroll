@@ -1,0 +1,13 @@
+2025-08-25 23:21:36.690 +01:00 [INF] [ThreadId:159] NBomber 5.1.0 started a new session: 2025-08-25_22.21.61_session_2078e27
+2025-08-25 23:21:36.718 +01:00 [INF] [ThreadId:159] NBomber started as single node
+2025-08-25 23:21:36.719 +01:00 [INF] [ThreadId:159] License validation....
+2025-08-25 23:21:36.719 +01:00 [WRN] [ThreadId:159] THIS VERSION IS FREE ONLY FOR PERSONAL USE. You can't use it for an organization.
+2025-08-25 23:21:36.754 +01:00 [INF] [ThreadId:61] Reports folder: C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\Debug\net9.0\reports\2025-08-25_22.21.61_session_2078e27
+2025-08-25 23:21:36.756 +01:00 [INF] [ThreadId:61] Plugins: no plugins were loaded
+2025-08-25 23:21:36.757 +01:00 [INF] [ThreadId:61] Reporting sinks: no reporting sinks were loaded
+2025-08-25 23:21:36.757 +01:00 [INF] [ThreadId:61] Starting init...
+2025-08-25 23:21:36.764 +01:00 [INF] [ThreadId:61] Target scenarios: concurrent_get_bars
+2025-08-25 23:21:36.765 +01:00 [INF] [ThreadId:61] Init finished
+2025-08-25 23:21:36.774 +01:00 [INF] [ThreadId:160] Starting warm up...
+2025-08-25 23:21:36.774 +01:00 [INF] [ThreadId:160] Warm up for scenarios: concurrent_get_bars
+2025-08-25 23:22:07.843 +01:00 [INF] [ThreadId:63] Starting bombing...

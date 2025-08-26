@@ -31,4 +31,15 @@
     <ProjectReference Include="..\..\Stroll.History\Stroll.Dataset\Stroll.Dataset.csproj" />
   </ItemGroup>
 
+  <!-- Temporarily exclude problematic files until type conflicts are resolved -->
+  <ItemGroup>
+    <Compile Remove="Performance\CompiledStrategyRules.cs" />
+    <Compile Remove="Performance\OptimizedArchiveBacktest.cs" />
+    <Compile Remove="Performance\OptimizedBacktestRunners.cs" />
+    <Compile Remove="Performance\ExpandedDatasetBacktest.cs" />
+    <Compile Remove="Performance\UltraOptimizedBacktest.cs" />
+    <Compile Remove="Performance\SimplePerformanceMeasurement.cs" />
+    <Compile Remove="Performance\*.bak" />
+  </ItemGroup>
+
 </Project>

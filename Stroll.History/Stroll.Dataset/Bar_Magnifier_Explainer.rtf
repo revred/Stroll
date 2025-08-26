@@ -1,0 +1,157 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Arial;}{\f1 Courier New;}}
+\fs24
+\b Bar Magnifier: Synthesizing 1‑Minute Paths from 5‑Minute Bars (Explainer)\b0\par\par
+\b Why you can’t recover real 1‑minute data\b0\par
+You cannot reconstruct true 1‑minute prices from 5‑minute OHLCV. Multiple intra‑bar paths are compatible with the same 5‑minute candle. For testing and sensitivity analysis, we instead generate synthetic 1‑minute paths that are consistent with each 5‑minute bar.\par
+\par
+\b Recommended approach (don’t upsample — magnify in the simulator)\b0\par
+Keep the dataset at 5‑minute resolution and only synthesize an intra‑bar path when the simulator needs a decision within the bar.\par
+Patterns you can use:\par
+- Conservative permutations: evaluate OHLC orderings like OHLC, OLHC, HLOC, HOLC and take the worst‑case for stops/fills.\par
+- Stochastic: sample a Brownian bridge from Open→Close under each 5‑minute candle, constrained to hit the bar’s High/Low.\par
+Outcome: no permanent synthetic data, faster tests, and avoids false precision.\par
+\par
+\b If you must materialize 1‑minute bars\b0\par
+Generate five 1‑minute bars per 5‑minute candle under these constraints:\par
+- Minute 0 Open = 5‑min Open; minute 4 Close = 5‑min Close.\par
+- max(minute highs) = 5‑min High; min(minute lows) = 5‑min Low.\par
+- Sum of minute volumes = 5‑min Volume.\par
+- Re‑aggregating the five minutes reproduces the original 5‑minute OHLCV exactly.\par
+\par
+Two practical generators:\par
+A) Deterministic “anchor points” (conservative)\par
+- If Close ≥ Open: O → L → H → C; else O → H → L → C.\par
+- Linearly interpolate intermediate endpoints; force one minute to attain High and one to attain Low.\par
+- Distribute volume with a U‑shape profile (e.g., 1.25, 1.1, 0.9, 1.1, 1.25), then normalize to the 5‑minute volume.\par
+\par
+B) Constrained Brownian bridge (realistic, stochastic)\par
+- Estimate per‑minute variance from the 5‑minute range (e.g., Parkinson).\par
+- Sample minute increments with drift (C−O)/5 and variance σ²/5; bridge‑adjust so the final equals Close.\par
+- Enforce barriers: ensure at least one minute hits the High and another hits the Low; re‑bridge to preserve endpoints.\par
+- Allocate volume proportional to absolute price change per minute, normalized to the 5‑minute volume.\par
+\par
+\b Guarantees\b0\par
+- Re‑aggregating synthetic 1‑minute bars recovers the original 5‑minute OHLCV.\par
+- Envelope and invariants (low ≤ open/close ≤ high; volume ≥ 0) are preserved.\par
+- You can choose pessimistic (deterministic) or realistic (stochastic) behaviors per test.\par
+\par
+\b Placement in Stroll\b0\par
+Place the helper in Stroll.Runner (e.g., Stroll.Backtest/BarMagnifier.cs). \par
+Tag any data produced as synthetic via metadata (e.g., meta.synthetic_1m=true) so it never leaks into production datasets.\par
+\par
+\b Caveats\b0\par
+- Synthetic ≠ real: use for sensitivity analyses, not for performance claims.\par
+- x‑DTE/0‑DTE options still require intraday option quotes/greeks; magnifying the underlying alone isn’t sufficient.\par
+- Always A/B: compare results on real 1‑minute data (for a period where you have it) versus synthetic 1‑minute to quantify bias.\par
+\par
+\b Quick A/B validation plan\b0\par
+1) Downsample real 1‑minute to 5‑minute; run strategy on both and compare win‑rate, avg P&L, max drawdown, trade count.\par
+2) Intrabar path sensitivity: test the four OHLC permutations; if P&L varies widely, your logic is path‑dependent.\par
+3) MAE/MFE check: if typical MAE < intra‑bar range, 5‑minute bars likely overstate performance without magnification.\par
+\par
+\b Summary\b0\par
+Use a Bar Magnifier when intrabar decisions matter. Prefer simulator‑time magnification. \par
+If you must create synthetic 1‑minute bars, enforce constraints so re‑aggregation matches the original 5‑minute bar, and mark outputs as synthetic.\par
+\par
+\b Drop-in C# helper (for Stroll)\b0\par
+{\f1\fs20 
+public enum MagnifierMode \{ Conservative, Bridge \}
+
+public record Bar5m(DateTime T, decimal O, decimal H, decimal L, decimal C, long V);
+public record Bar1m(DateTime T, decimal O, decimal H, decimal L, decimal C, long V);
+
+public static class BarMagnifier
+\{
+    public static IEnumerable<Bar1m> ToMinutes(Bar5m b, MagnifierMode mode, int seed = 42)
+        => mode == MagnifierMode.Conservative ? Conservative(b) : Bridge(b, seed);
+
+    // A) Deterministic anchor approach
+    static IEnumerable<Bar1m> Conservative(Bar5m b)
+    \{
+        var t = b.T;
+        var anchors = new List<(int idx, decimal px)>();
+
+        if (b.C >= b.O) anchors.AddRange(new[]\{ (0,b.O),(1,b.L),(3,b.H),(4,b.C) \});
+        else             anchors.AddRange(new[]\{ (0,b.O),(1,b.H),(3,b.L),(4,b.C) \});
+
+        var end = new decimal[6];
+        foreach (var a in anchors) end[a.idx] = a.px;
+        if (end[2] == 0m) \{ int left = 1, right = 3; end[2] = end[left] + (end[right] - end[left]) / (right - left); \}
+        end[5] = b.C;
+
+        var w = new[] \{ 1.25, 1.1, 0.9, 1.1, 1.25 \};
+        var wsum = w.Sum();
+        var vols = w.Select(x => (long)Math.Round((double)b.V * x / wsum)).ToArray();
+        var drift = (long)b.V - vols.Sum();
+        if (drift != 0) vols[4] += drift;
+
+        for (int i = 0; i < 5; i++)
+        \{
+            decimal o = (i == 0) ? b.O : end[i];
+            decimal c = end[i + 1];
+            decimal lo = Math.Min(o, c);
+            decimal hi = Math.Max(o, c);
+
+            if (anchors.Any(a => a.idx == i && a.px == b.H)) hi = b.H;
+            if (anchors.Any(a => a.idx == i && a.px == b.L)) lo = b.L;
+
+            yield return new Bar1m(t.AddMinutes(i), o, hi, lo, c, vols[i]);
+        \}
+    \}
+
+    // B) Brownian bridge with barrier enforcement
+    static IEnumerable<Bar1m> Bridge(Bar5m b, int seed)
+    \{
+        var rng = new Random(seed);
+        double O = (double)b.O, H = (double)b.H, L = (double)b.L, C = (double)b.C;
+
+        double r = (H > 0 && L > 0 && H > L) ? Math.Log(H / L) : 0.0;
+        double sigma5 = r > 0 ? Math.Sqrt(r * r / (4.0 * Math.Log(2.0))) : 1e-6;
+        double sigma1 = sigma5 / Math.Sqrt(5.0);
+        double mu = (C - O) / 5.0;
+
+        var end = new double[6];
+        end[0] = O;
+        for (int i = 1; i <= 5; i++)
+        \{
+            double step = mu + NextGaussian(rng) * sigma1;
+            end[i] = end[i - 1] + step;
+        \}
+        double corr = (end[5] - C) / 5.0;
+        for (int i = 1; i <= 5; i++) end[i] -= corr * i;
+
+        int iH = rng.Next(0, 5), iL = rng.Next(0, 5);
+        if (iL == iH) iL = (iH + 2) % 5;
+
+        if (end.Max() < H) end[iH + 1] = Math.Max(end[iH + 1], H);
+        if (end.Min() > L) end[iL + 1] = Math.Min(end[iL + 1], L);
+        corr = (end[5] - C) / 5.0;
+        for (int i = 1; i <= 5; i++) end[i] -= corr * i;
+
+        var vols = new long[5];
+        double[] w = new double[5];
+        for (int i = 0; i < 5; i++) w[i] = Math.Abs(end[i + 1] - end[i]) + 1e-6;
+        var wsum = w.Sum();
+        for (int i = 0; i < 5; i++) vols[i] = (long)Math.Round((double)b.V * (w[i] / wsum));
+        long drift = (long)b.V - vols.Sum();
+        if (drift != 0) vols[4] += drift;
+
+        for (int i = 0; i < 5; i++)
+        \{
+            double o = end[i], c = end[i + 1];
+            double hi = Math.Max(o, c), lo = Math.Min(o, c);
+            yield return new Bar1m(b.T.AddMinutes(i),
+                (decimal)o, (decimal)hi, (decimal)lo, (decimal)c, vols[i]);
+        \}
+    \}
+
+    static double NextGaussian(Random r)
+    \{
+        var u1 = 1.0 - r.NextDouble();
+        var u2 = 1.0 - r.NextDouble();
+        return Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Cos(2.0 * Math.PI * u2);
+    \}
+\}
+}\par
+}

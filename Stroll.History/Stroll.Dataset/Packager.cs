@@ -43,16 +43,26 @@ public sealed class JsonPackager : IPackager
                 new { name="version", args = Array.Empty<object>() },
                 new { name="discover", args = Array.Empty<object>() },
                 new { name="list-datasets", args = Array.Empty<object>() },
-                new { name="get-bars", args = new[]{
+                new { name="get-bars", args = new object[]{
                     new { name="symbol", required=true },
                     new { name="from", required=true, type="yyyy-MM-dd" },
                     new { name="to",   required=true, type="yyyy-MM-dd" },
                     new { name="granularity", required=false, @default="1m", oneOf=new[]{"1m","5m","1d"} },
                     new { name="format", required=false, @default="json", oneOf=new[]{"json","jsonl"} }
                 }},
-                new { name="get-options", args = new[]{
+                new { name="get-options", args = new object[]{
                     new { name="symbol", required=true },
                     new { name="date", required=true, type="yyyy-MM-dd" }
+                }},
+                new { name="acquire-data", args = new object[]{
+                    new { name="symbol", required=true },
+                    new { name="from", required=true, type="yyyy-MM-dd" },
+                    new { name="to", required=true, type="yyyy-MM-dd" },
+                    new { name="interval", required=false, @default="1d", oneOf=new[]{"1d","1h","30m","15m","5m","1m"} },
+                    new { name="output", required=false, @default="./data" }
+                }},
+                new { name="provider-status", args = new object[]{
+                    new { name="output", required=false, @default="./data" }
                 }}
             }
         }

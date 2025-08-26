@@ -1,0 +1,16 @@
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\Stroll.Storage.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\Stroll.Storage.AssemblyInfoInputs.cache
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\Stroll.Storage.AssemblyInfo.cs
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\Stroll.Storage.csproj.CoreCompileInputs.cache
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\Stroll.Storage.sourcelink.json
+C:\code\Stroll\Stroll.History\Stroll.Storage\bin\Debug\net9.0\Stroll.Storage.deps.json
+C:\code\Stroll\Stroll.History\Stroll.Storage\bin\Debug\net9.0\Stroll.Storage.dll
+C:\code\Stroll\Stroll.History\Stroll.Storage\bin\Debug\net9.0\Stroll.Storage.pdb
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\Stroll.Storage.dll
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\refint\Stroll.Storage.dll
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\Stroll.Storage.pdb
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\ref\Stroll.Storage.dll
+C:\code\Stroll\Stroll.History\Stroll.Dataset\test-build\Stroll.Storage.deps.json
+C:\code\Stroll\Stroll.History\Stroll.Dataset\test-build\Stroll.Storage.dll
+C:\code\Stroll\Stroll.History\Stroll.Dataset\test-build\Stroll.Storage.pdb
+C:\code\Stroll\Stroll.History\Stroll.Storage\obj\Debug\net9.0\Stroll.Storage.csproj.AssemblyReference.cache

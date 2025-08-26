@@ -1,0 +1,5 @@
+C:\code\Stroll\Stroll.History\Stroll.Historical\binDebugnet9.0\Stroll.Historical.exe
+C:\code\Stroll\Stroll.History\Stroll.Historical\binDebugnet9.0\Stroll.Historical.dll
+C:\code\Stroll\Stroll.History\Stroll.Historical\binDebugnet9.0\Stroll.Historical.deps.json
+C:\code\Stroll\Stroll.History\Stroll.Historical\binDebugnet9.0\Stroll.Historical.runtimeconfig.json
+C:\code\Stroll\Stroll.History\Stroll.Historical\binDebugnet9.0\Stroll.Historical.pdb

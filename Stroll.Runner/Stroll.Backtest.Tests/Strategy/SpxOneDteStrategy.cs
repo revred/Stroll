@@ -28,7 +28,46 @@ public class SpxOneDteStrategy
     }
 
     /// <summary>
-    /// Generate 1DTE Iron Condor trade signals
+    /// Generate 1DTE Iron Condor trade signals (with active positions tracking)
+    /// </summary>
+    public Task<IEnumerable<TradeSignal>> GenerateSignalsAsync(MarketData marketData, Dictionary<string, Position> activePositions)
+    {
+        return GenerateSignalsAsync(marketData.Timestamp, marketData);
+    }
+
+    /// <summary>
+    /// Optimized signal generation for high-performance backtesting
+    /// </summary>
+    public Task<IEnumerable<TradeSignal>> GenerateSignalsOptimizedAsync(MarketData marketData, Dictionary<string, Position> activePositions)
+    {
+        // Use compiled conditions for maximum performance
+        if (!IsMarketHoursCompiled(marketData.Timestamp) || !IsEntryTimeCompiled(marketData.Timestamp))
+        {
+            return Task.FromResult(Enumerable.Empty<TradeSignal>());
+        }
+
+        // Check for low IV environment (optimized condition)
+        if (marketData.ImpliedVolatility > 0.25m)
+        {
+            return Task.FromResult(Enumerable.Empty<TradeSignal>());
+        }
+
+        var signals = new List<TradeSignal>();
+
+        // Generate entry signal if no active positions (simplified check)
+        if (activePositions.Count == 0)
+        {
+            var expirationDate = GetNextExpirationDate(marketData.Timestamp);
+            var strikes = CalculateIronCondorStrikesOptimized(marketData.SpxPrice, marketData.ImpliedVolatility);
+            
+            signals.Add(CreateIronCondorSignal(marketData.Timestamp, expirationDate, strikes));
+        }
+
+        return Task.FromResult<IEnumerable<TradeSignal>>(signals);
+    }
+
+    /// <summary>
+    /// Generate 1DTE Iron Condor trade signals (original method)
     /// </summary>
     public async Task<IEnumerable<TradeSignal>> GenerateSignalsAsync(DateTime timestamp, MarketData marketData)
     {
@@ -261,7 +300,7 @@ public class SpxOneDteStrategy
         return Math.Min(1.0m, confidence);
     }
 
-    private async Task<decimal> EstimatePositionValue(Position position, MarketData marketData)
+    private Task<decimal> EstimatePositionValue(Position position, MarketData marketData)
     {
         // Simplified position valuation - in production this would use proper option pricing
         decimal totalValue = 0m;
@@ -282,7 +321,7 @@ public class SpxOneDteStrategy
             totalValue = totalValue > 0 ? maxValueBeforeMultiplier : -maxValueBeforeMultiplier;
         }
         
-        return totalValue * 100; // SPX multiplier
+        return Task.FromResult(totalValue * 100); // SPX multiplier
     }
 
     private decimal CalculateIntrinsicValue(OptionLeg leg, decimal underlyingPrice)
@@ -338,6 +377,65 @@ public class SpxOneDteStrategy
         }
         return nextDate;
     }
+
+    /// <summary>
+    /// Compiled market hours check for performance
+    /// </summary>
+    private bool IsMarketHoursCompiled(DateTime timestamp)
+    {
+        return timestamp.DayOfWeek != DayOfWeek.Saturday && 
+               timestamp.DayOfWeek != DayOfWeek.Sunday;
+    }
+
+    /// <summary>
+    /// Compiled entry time check for performance
+    /// </summary>
+    private bool IsEntryTimeCompiled(DateTime timestamp)
+    {
+        return timestamp.Hour == ENTRY_TIME_HOUR && 
+               timestamp.Minute >= ENTRY_TIME_MINUTE;
+    }
+
+    /// <summary>
+    /// Optimized strike calculation with minimal allocations
+    /// </summary>
+    private IronCondorStrikes CalculateIronCondorStrikesOptimized(decimal spxPrice, decimal impliedVolatility)
+    {
+        // Simplified calculation for performance
+        var expectedMove = spxPrice * Math.Min(impliedVolatility, 1.0m) * 0.0524m; // 1DTE sqrt
+        
+        var shortCallStrike = Math.Ceiling(spxPrice + expectedMove * 0.85m);
+        var shortPutStrike = Math.Floor(spxPrice - expectedMove * 0.85m);
+        
+        return new IronCondorStrikes
+        {
+            ShortCallStrike = shortCallStrike,
+            LongCallStrike = shortCallStrike + 15m,
+            ShortPutStrike = shortPutStrike,
+            LongPutStrike = shortPutStrike - 15m
+        };
+    }
+
+    /// <summary>
+    /// Create Iron Condor signal with pre-allocated arrays
+    /// </summary>
+    private TradeSignal CreateIronCondorSignal(DateTime timestamp, DateTime expiration, IronCondorStrikes strikes)
+    {
+        return new TradeSignal
+        {
+            Timestamp = timestamp,
+            StrategyName = "SPX_1DTE_Iron_Condor",
+            Legs = new OptionLeg[]
+            {
+                new() { Symbol = "SPX", Strike = strikes.ShortCallStrike, Expiration = expiration, OptionType = OptionType.Call, Side = OrderSide.Sell, Quantity = 1 },
+                new() { Symbol = "SPX", Strike = strikes.LongCallStrike, Expiration = expiration, OptionType = OptionType.Call, Side = OrderSide.Buy, Quantity = 1 },
+                new() { Symbol = "SPX", Strike = strikes.ShortPutStrike, Expiration = expiration, OptionType = OptionType.Put, Side = OrderSide.Sell, Quantity = 1 },
+                new() { Symbol = "SPX", Strike = strikes.LongPutStrike, Expiration = expiration, OptionType = OptionType.Put, Side = OrderSide.Buy, Quantity = 1 }
+            },
+            SignalType = SignalType.Entry,
+            Confidence = 0.8m
+        };
+    }
 }
 
 // Supporting data structures
@@ -372,11 +470,13 @@ public record OptionLeg
 public record Position
 {
     public required string Id { get; init; }
-    public required string Symbol { get; init; }
-    public required DateTime Expiration { get; init; }
+    public string Symbol { get; init; } = "";
+    public DateTime Expiration { get; init; }
     public required OptionLeg[] Legs { get; init; }
-    public required decimal OpenValue { get; init; }
+    public decimal OpenValue { get; init; }
     public required DateTime OpenTime { get; init; }
+    public string Strategy { get; init; } = "";
+    public decimal AccountValue { get; init; }
 }
 
 public record MarketData
@@ -384,8 +484,8 @@ public record MarketData
     public required DateTime Timestamp { get; init; }
     public required decimal SpxPrice { get; init; }
     public required decimal ImpliedVolatility { get; init; }
-    public required decimal VolumeRatio { get; init; }
-    public required bool IsMarketOpen { get; init; }
+    public decimal VolumeRatio { get; init; } = 1.0m;
+    public bool IsMarketOpen { get; init; } = true;
 }
 
 public enum SignalType { Entry, Exit }

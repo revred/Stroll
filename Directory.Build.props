@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Suppress analyzer warnings that are not critical for this codebase -->
+    <NoWarn>$(NoWarn);CA1848;CA1852;CA1822;CA1707;CA1859;CA1860;CS1998;CA1305;CA1869;CA1850;CA1826;CA1816</NoWarn>
+  </PropertyGroup>
+</Project>

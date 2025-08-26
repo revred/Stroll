@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "t9XoZ8Ku6QE=",
+  "success": true,
+  "projectFilePath": "C:\\code\\Stroll\\Stroll.Runtime\\Stroll.Process\\Stroll.Process.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\revanur\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\revanur\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

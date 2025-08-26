@@ -1,0 +1,55 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "PerfTest/1.0.0": {
+        "dependencies": {
+          "Stroll.Dataset": "1.0.0"
+        },
+        "runtime": {
+          "PerfTest.dll": {}
+        }
+      },
+      "Stroll.Dataset/1.0.0": {
+        "dependencies": {
+          "Stroll.Storage": "1.0.0"
+        },
+        "runtime": {
+          "Stroll.Dataset.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Stroll.Storage/1.0.0": {
+        "runtime": {
+          "Stroll.Storage.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PerfTest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Stroll.Dataset/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Stroll.Storage/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

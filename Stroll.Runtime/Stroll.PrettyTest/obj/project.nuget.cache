@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "dacXeB4OE9M=",
+  "success": true,
+  "projectFilePath": "C:\\code\\Stroll\\Stroll.Runtime\\Stroll.PrettyTest\\Stroll.PrettyTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\revanur\\.nuget\\packages\\spectre.console\\0.49.1\\spectre.console.0.49.1.nupkg.sha512",
+    "C:\\Users\\revanur\\.nuget\\packages\\system.commandline\\2.0.0-beta4.22272.1\\system.commandline.2.0.0-beta4.22272.1.nupkg.sha512",
+    "C:\\Users\\revanur\\.nuget\\packages\\yamldotnet\\13.7.1\\yamldotnet.13.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,15 @@
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\TestStrollHistorical.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\TestStrollHistorical.AssemblyInfoInputs.cache
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\TestStrollHistorical.AssemblyInfo.cs
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\TestStrollHistorical.csproj.CoreCompileInputs.cache
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\TestStrollHistorical.sourcelink.json
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\Stroll.Historical.dll
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\refint\Stroll.Historical.dll
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\Stroll.Historical.pdb
+C:\code\Stroll\Stroll.History\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.exe
+C:\code\Stroll\Stroll.History\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.deps.json
+C:\code\Stroll\Stroll.History\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.runtimeconfig.json
+C:\code\Stroll\Stroll.History\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.dll
+C:\code\Stroll\Stroll.History\Stroll.Historical\bin\Debug\net9.0\Stroll.Historical.pdb
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\TestStrollHistorical.genruntimeconfig.cache
+C:\code\Stroll\Stroll.History\Stroll.Historical\obj\Debug\net9.0\ref\Stroll.Historical.dll

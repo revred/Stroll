@@ -1,0 +1,9 @@
+{
+  "mode": "dotnet-run",
+  "project": "../../Stroll.History/Stroll.Historical/Stroll.Historical.csproj",
+  "exe": null,
+  "env": {
+    "STROLL_DATA": "../../data"
+  },
+  "timeoutMs": 60000
+}
