@@ -37,7 +37,7 @@ public class Program
                 .UseSerilog()
                 .ConfigureServices(services =>
                 {
-                    services.AddSingleton<TestMcpService>();
+                    services.AddSingleton<CleanTestMcpService>();
                 })
                 .UseConsoleLifetime(options =>
                 {
@@ -45,7 +45,7 @@ public class Program
                 })
                 .Build();
 
-            var mcpService = host.Services.GetRequiredService<TestMcpService>();
+            var mcpService = host.Services.GetRequiredService<CleanTestMcpService>();
             await mcpService.RunAsync();
 
             return 0;
