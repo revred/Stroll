@@ -205,6 +205,4 @@ public record FillResult
     public DateTime Timestamp { get; init; }
 }
 
-public enum OrderSide { Buy, Sell }
-public enum OrderType { Market, Limit }
-public enum OptionType { Call, Put }
+// Enums moved to Core/TradingEnums.cs

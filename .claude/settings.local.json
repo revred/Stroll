@@ -135,7 +135,9 @@
       "Bash(tasklist)",
       "Bash(POLYGON_API_KEY=\"demo\" timeout 60 dotnet run --project Acquisition/ExpandedIndicesAcquisition.cs)",
       "Read(/C:\\c\\code/**)",
-      "Bash(git submodule add:*)"
+      "Bash(git submodule add:*)",
+      "Bash(cat:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": [],

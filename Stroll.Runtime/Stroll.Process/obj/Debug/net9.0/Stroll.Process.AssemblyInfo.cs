@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stroll.Process")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+baaccebf5426580ada608ad662015a97e9789a90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5df3cec727bc2acb2f3c3d266ef3da1b0d42391")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stroll.Process")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stroll.Process")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

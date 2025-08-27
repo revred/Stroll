@@ -1,27 +1,24 @@
 using Microsoft.Extensions.Logging;
-using NUnit.Framework;
+using Xunit;
 
 namespace Stroll.Backtest.Tests.Performance;
 
 /// <summary>
 /// Performance tests for expanded 22-month dataset
 /// </summary>
-[TestFixture]
-[Category("Performance")]
 public class ExpandedDatasetTests
 {
     private ILogger<ExpandedDatasetTests>? _logger;
     
-    [SetUp]
-    public void Setup()
+    // Constructor used instead of SetUp in xUnit
+    public ExpandedDatasetTests()
     {
         var loggerFactory = LoggerFactory.Create(builder =>
             builder.AddConsole().SetMinimumLevel(LogLevel.Information));
         _logger = loggerFactory.CreateLogger<ExpandedDatasetTests>();
     }
 
-    [Test]
-    [Category("Performance")]
+    [Fact]
     public async Task Expanded_Dataset_Performance_Test()
     {
         // Arrange
@@ -31,18 +28,18 @@ public class ExpandedDatasetTests
         var result = await runner.RunPerformanceComparisonAsync();
         
         // Assert
-        Assert.That(result, Is.Not.Null);
-        Assert.That(result.ExpandedResult, Is.Not.Null, "Expanded dataset result should be available");
+        Assert.NotNull(result);
+        Assert.NotNull(result.ExpandedResult); // Expanded dataset result should be available
         
         // Verify expanded dataset performance
         var expanded = result.ExpandedResult!;
-        Assert.That(expanded.BarCount, Is.GreaterThan(180000), "Should process at least 180,000 bars");
-        Assert.That(expanded.TimeMs, Is.LessThan(8000), "Should complete in under 8 seconds");
+        Assert.True(expanded.BarCount > 180000); // Should process at least 180,000 bars
+        Assert.True(expanded.TimeMs < 8000); // Should complete in under 8 seconds
         
         // Verify processing speed
         var yearsProcessed = expanded.BarCount / 19656.0; // ~19,656 bars per year
         var processingSpeed = yearsProcessed / (expanded.TimeMs / 1000.0);
-        Assert.That(processingSpeed, Is.GreaterThan(4.0), "Should process at least 4 years per second");
+        Assert.True(processingSpeed > 4.0); // Should process at least 4 years per second
         
         // Log performance metrics
         _logger?.LogInformation("📊 Expanded Dataset Performance Test Results:");
@@ -53,16 +50,15 @@ public class ExpandedDatasetTests
         // If comparison available, verify scaling efficiency
         if (result.EfficiencyRatio.HasValue)
         {
-            Assert.That(result.EfficiencyRatio, Is.GreaterThan(0.8), 
+            Assert.True(result.EfficiencyRatio > 0.8, 
                 "Should maintain at least 80% efficiency when scaling");
             
             _logger?.LogInformation("   • Scaling Efficiency: {Efficiency:F2}", result.EfficiencyRatio);
         }
     }
 
-    [Test]
-    [Category("Performance")]
-    [Category("Benchmark")]
+    [Fact]
+    // Category attributes not used in xUnit
     public async Task Compare_Against_ChatGPT_Benchmark()
     {
         // Arrange
@@ -73,7 +69,7 @@ public class ExpandedDatasetTests
         var result = await runner.RunPerformanceComparisonAsync();
         
         // Assert
-        Assert.That(result.ExpandedResult, Is.Not.Null);
+        Assert.NotNull(result.ExpandedResult);
         
         var expanded = result.ExpandedResult!;
         var yearsProcessed = expanded.BarCount / 19656.0;
@@ -81,7 +77,7 @@ public class ExpandedDatasetTests
         var percentOfChatGpt = (processingSpeed / chatGptBenchmark) * 100;
         
         // We should achieve at least 50% of ChatGPT's claimed performance
-        Assert.That(percentOfChatGpt, Is.GreaterThan(50), 
+        Assert.True(percentOfChatGpt > 50, 
             $"Should achieve at least 50% of ChatGPT's {chatGptBenchmark} years/second benchmark");
         
         _logger?.LogInformation("🎯 ChatGPT Benchmark Comparison:");
@@ -99,8 +95,8 @@ public class ExpandedDatasetTests
         }
     }
 
-    [Test]
-    [Category("DataIntegrity")]
+    [Fact]
+    // Category attributes not used in xUnit
     public async Task Verify_Expanded_Dataset_Integrity()
     {
         // Arrange
@@ -110,22 +106,19 @@ public class ExpandedDatasetTests
         var result = await runner.RunPerformanceComparisonAsync();
         
         // Assert
-        Assert.That(result.ExpandedResult, Is.Not.Null);
+        Assert.NotNull(result.ExpandedResult);
         
         var expanded = result.ExpandedResult!;
         
         // Verify data integrity
-        Assert.That(expanded.BarCount, Is.EqualTo(188162).Within(500), 
-            "Should have approximately 188,162 bars as expected");
+        Assert.InRange(expanded.BarCount, 188162 - 500, 188162 + 500); // "Should have approximately 188,162 bars as expected"
         
         // Verify date range (approximately 47 months)
         var monthsCovered = (expanded.EndDate - expanded.StartDate).Days / 30.0;
-        Assert.That(monthsCovered, Is.GreaterThan(45).And.LessThan(50), 
-            "Should cover approximately 47 months of data");
+        Assert.InRange(monthsCovered, 45.01, 49.99); // "Should cover approximately 47 months of data"
         
         // Verify final portfolio value is reasonable
-        Assert.That(expanded.FinalValue, Is.GreaterThan(50000).And.LessThan(200000),
-            "Final portfolio value should be within reasonable range");
+        Assert.InRange(expanded.FinalValue, 50001, 199999); // "Final portfolio value should be within reasonable range"
         
         _logger?.LogInformation("✅ Data Integrity Verification:");
         _logger?.LogInformation("   • Bar Count: {BarCount:N0} (expected ~188,162)", expanded.BarCount);

@@ -148,3 +148,7 @@ C:\code\Stroll\Stroll.Runner\Stroll.Backtest.Tests\bin\Debug\net9.0\nunit.framew
 C:\code\Stroll\Stroll.Runner\Stroll.Backtest.Tests\bin\Debug\net9.0\Stroll.Storage.deps.json
 C:\code\Stroll\Stroll.Runner\Stroll.Backtest.Tests\bin\Debug\net9.0\Stroll.Storage.runtimeconfig.json
 C:\code\Stroll\Stroll.Runner\Stroll.Backtest.Tests\bin\Debug\net9.0\Stroll.Storage.exe
+C:\code\Stroll\Stroll.Runner\Stroll.Backtest.Tests\bin\Debug\net9.0\Stroll.Dataset.deps.json
+C:\code\Stroll\Stroll.Runner\Stroll.Backtest.Tests\bin\Debug\net9.0\Stroll.Dataset.runtimeconfig.json
+C:\code\Stroll\Stroll.Runner\Stroll.Backtest.Tests\bin\Debug\net9.0\Stroll.Dataset.exe
+C:\code\Stroll\Stroll.Runner\Stroll.Backtest.Tests\bin\Debug\net9.0\Dapper.dll

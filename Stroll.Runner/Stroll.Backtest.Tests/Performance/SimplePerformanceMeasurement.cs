@@ -16,7 +16,7 @@ public class SimplePerformanceMeasurement
         _archivePath = Path.GetFullPath(@"C:\code\Stroll\Stroll.History\Stroll.Historical\historical_archive\historical_archive.db");
     }
 
-    [Test]
+    [Fact]
     public async Task Show_Performance_Results()
     {
         Console.WriteLine("🚀 Real Performance Measurement - Historical Data Processing");
@@ -26,7 +26,7 @@ public class SimplePerformanceMeasurement
 
         if (!File.Exists(_archivePath))
         {
-            Assert.Fail($"Archive not found: {_archivePath}");
+            throw new FileNotFoundException($"Archive not found: {_archivePath}");
         }
 
         // Test baseline performance
@@ -78,7 +78,7 @@ public class SimplePerformanceMeasurement
             Console.WriteLine("⚠️  ROOM FOR IMPROVEMENT: Performance gap remains vs ChatGPT");
         }
 
-        Assert.That(optimizedTime, Is.LessThan(baselineTime), "Optimization should improve performance");
+        Assert.True(optimizedTime < baselineTime, "Optimization should improve performance");
     }
 
     private async Task<long> MeasureBaseline()

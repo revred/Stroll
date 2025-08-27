@@ -26,7 +26,7 @@ public class HistoricalArchiveBacktestTests
     /// <summary>
     /// Run 6-month 1DTE SPX backtest using historical archive with Bar Magnifier
     /// </summary>
-    [Test]
+    [Fact]
     public async Task Run_SixMonth_1DTE_Backtest_With_BarMagnifier()
     {
         // Arrange
@@ -36,7 +36,7 @@ public class HistoricalArchiveBacktestTests
         if (!File.Exists(_archivePath))
         {
             _logger.LogError("❌ Historical archive not found: {Path}", _archivePath);
-            Assert.Fail($"Historical archive database not found at: {_archivePath}");
+            throw new FileNotFoundException($"Historical archive database not found at: {_archivePath}");
         }
 
         var backtestLogger = LoggerFactory.Create(b => b.AddConsole().SetMinimumLevel(LogLevel.Information))
@@ -65,16 +65,16 @@ public class HistoricalArchiveBacktestTests
         _logger.LogInformation("⚖️ Profit Factor: {ProfitFactor:F2}", result.ProfitFactor);
 
         // Performance validations
-        Assert.That(result.TotalTrades, Is.GreaterThan(0), "Should have executed some trades");
-        Assert.That(result.FinalAccountValue, Is.GreaterThan(0), "Should have positive account value");
+        Assert.True(result.TotalTrades > 0); // Should have executed some trades
+        Assert.True(result.FinalAccountValue > 0); // Should have positive account value
         
         // Log detailed trade analysis
-        if (result.Trades.Length > 0)
+        if (result.Trades?.Length > 0)
         {
             _logger.LogInformation("🔍 TRADE ANALYSIS:");
             _logger.LogInformation("Recent Trades:");
             
-            var recentTrades = result.Trades.TakeLast(10);
+            var recentTrades = result.Trades?.TakeLast(10) ?? Array.Empty<TradeRecord>();
             foreach (var trade in recentTrades)
             {
                 _logger.LogInformation("  {Timestamp}: {Strategy} - P&L: ${PnL:F2} (Premium: ${NetPremium:F2})",
@@ -91,7 +91,7 @@ public class HistoricalArchiveBacktestTests
     /// <summary>
     /// Test Bar Magnifier functionality independently
     /// </summary>
-    [Test]
+    [Fact]
     public async Task Test_BarMagnifier_Functionality()
     {
         _logger.LogInformation("🔬 Testing Bar Magnifier functionality");
@@ -110,20 +110,20 @@ public class HistoricalArchiveBacktestTests
         var conservativeMinutes = BarMagnifier.ToMinutes(testBar, MagnifierMode.Conservative).ToList();
         _logger.LogInformation("🔧 Conservative Mode: Generated {Count} 1-minute bars", conservativeMinutes.Count);
 
-        Assert.That(conservativeMinutes.Count, Is.EqualTo(5), "Should generate exactly 5 one-minute bars");
+        Assert.Equal(5, conservativeMinutes.Count); // Should generate exactly 5 one-minute bars
 
         // Test Bridge mode
         var bridgeMinutes = BarMagnifier.ToMinutes(testBar, MagnifierMode.Bridge, seed: 42).ToList();
         _logger.LogInformation("🌉 Bridge Mode: Generated {Count} 1-minute bars", bridgeMinutes.Count);
 
-        Assert.That(bridgeMinutes.Count, Is.EqualTo(5), "Should generate exactly 5 one-minute bars");
+        Assert.Equal(5, bridgeMinutes.Count); // Should generate exactly 5 one-minute bars
 
         // Validate re-aggregation
         var reAggregated = BarMagnifier.ReAggregate(conservativeMinutes);
         var isValid = BarMagnifier.ValidateMagnification(testBar, conservativeMinutes);
 
         _logger.LogInformation("✅ Re-aggregation validation: {IsValid}", isValid);
-        Assert.That(isValid, Is.True, "Re-aggregated bar should match original");
+        Assert.True(isValid); // Re-aggregated bar should match original
 
         _logger.LogInformation("🔍 Original: O={O} H={H} L={L} C={C} V={V}",
             testBar.O, testBar.H, testBar.L, testBar.C, testBar.V);
@@ -134,14 +134,14 @@ public class HistoricalArchiveBacktestTests
     /// <summary>
     /// Verify historical archive data quality and coverage
     /// </summary>
-    [Test]
+    [Fact]
     public async Task Verify_Historical_Archive_Data_Quality()
     {
         _logger.LogInformation("🔍 Verifying historical archive data quality");
 
         if (!File.Exists(_archivePath))
         {
-            Assert.Fail($"Historical archive not found: {_archivePath}");
+            throw new FileNotFoundException($"Historical archive not found: {_archivePath}");
         }
 
         var backtestLogger = LoggerFactory.Create(b => b.AddConsole().SetMinimumLevel(LogLevel.Information))
@@ -160,16 +160,16 @@ public class HistoricalArchiveBacktestTests
         catch (Exception ex)
         {
             _logger.LogError(ex, "❌ Data quality verification failed");
-            Assert.Fail($"Data quality verification failed: {ex.Message}");
+            throw new InvalidOperationException($"Data quality verification failed: {ex.Message}");
         }
     }
 }
 
 // Support for NUnit testing
-[SetUpFixture]
+// SetUpFixture not needed in xUnit
 public class TestSetup
 {
-    [OneTimeSetUp]
+    // One-time setup not needed in xUnit
     public void Setup()
     {
         // Global test setup if needed

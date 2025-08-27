@@ -291,7 +291,7 @@ public class CompiledStrategyExecutor
 /// </summary>
 public class CompiledRuleBenchmark
 {
-    [Test]
+    [Fact]
     public async Task Benchmark_Compiled_Vs_Interpreted()
     {
         Console.WriteLine("🚀 Compiled Expression Performance Test");
@@ -328,8 +328,8 @@ public class CompiledRuleBenchmark
         var realWorldSavings = (interpretedTime - compiledTime) * 35.931;
         Console.WriteLine($"⚡ Est. savings for 35,931 bars: {realWorldSavings:F0}ms");
         
-        Assert.That(compiledTime, Is.LessThan(interpretedTime), "Compiled should be faster");
-        Assert.That(speedup, Is.GreaterThan(2), "Should be at least 2x faster");
+        Assert.True(compiledTime < interpretedTime, "Compiled should be faster");
+        Assert.True(speedup > 2, "Should be at least 2x faster");
     }
     
     private async Task<long> MeasureInterpreted(DateTime timestamp, MarketData marketData, int iterations)

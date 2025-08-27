@@ -28,7 +28,7 @@ public class OptimizedArchiveBacktest
         _archivePath = Path.GetFullPath(@"C:\code\Stroll\Stroll.History\Stroll.Historical\historical_archive\historical_archive.db");
     }
 
-    [Test]
+    [Fact]
     public async Task Real_Performance_Comparison_Test()
     {
         _logger.LogInformation("🏃‍♂️ Real Performance Comparison - Processing Actual Historical Data");
@@ -36,7 +36,7 @@ public class OptimizedArchiveBacktest
 
         if (!File.Exists(_archivePath))
         {
-            Assert.Fail($"Archive not found: {_archivePath}");
+            throw new FileNotFoundException($"Archive not found: {_archivePath}");
         }
 
         var results = new List<(string Name, long TimeMs, BacktestResult Result)>();
@@ -104,11 +104,11 @@ public class OptimizedArchiveBacktest
                 name, tradeDiff, valueDiff);
             
             // More lenient assertions for optimized versions
-            Assert.That(result.TotalTrades, Is.GreaterThan(0), $"{name} should have executed some trades");
-            Assert.That(result.FinalAccountValue, Is.GreaterThan(50000m), $"{name} should have reasonable account value");
+            Assert.True(result.TotalTrades > 0, $"{name} should have executed some trades");
+            Assert.True(result.FinalAccountValue > 50000m, $"{name} should have reasonable account value");
         }
 
-        Assert.That(fastest.TimeMs, Is.LessThan(baselineTime * 2), "Should show reasonable performance (allow for variations)");
+        Assert.True(fastest.TimeMs < baselineTime * 2, "Should show reasonable performance (allow for variations)");
     }
 
     private async Task<(long TimeMs, BacktestResult Result)> MeasureRealBacktest(string name, Func<Task<BacktestResult>> testFunc)
@@ -160,7 +160,7 @@ public class OptimizedArchiveBacktest
             currentDate = currentDate.AddDays(1);
         }
 
-        return GenerateBacktestResult(startDate, endDate, accountValue, completedTrades);
+        return GenerateBacktestResult(startDate, endDate, accountValue, completedTrades, allBars.Count);
     }
 
     /// <summary>
@@ -195,7 +195,7 @@ public class OptimizedArchiveBacktest
             }
         }
 
-        return GenerateBacktestResult(startDate, endDate, accountValue, completedTrades);
+        return GenerateBacktestResult(startDate, endDate, accountValue, completedTrades, allBars.Count);
     }
 
     /// <summary>
@@ -231,7 +231,7 @@ public class OptimizedArchiveBacktest
             }
         }
 
-        return GenerateBacktestResult(startDate, endDate, accountValue, completedTrades);
+        return GenerateBacktestResult(startDate, endDate, accountValue, completedTrades, tradingBars.Length);
     }
 
     private async Task<List<Bar5m>> LoadAllBarsAtOnce()
@@ -243,7 +243,7 @@ public class OptimizedArchiveBacktest
 
         var sql = @"
             SELECT timestamp, open, high, low, close, volume 
-            FROM intraday_bars 
+            FROM market_data 
             WHERE symbol = 'SPY' 
             ORDER BY timestamp";
 
@@ -453,7 +453,7 @@ public class OptimizedArchiveBacktest
                timestamp.Hour >= 9 && timestamp.Hour < 16;
     }
 
-    private BacktestResult GenerateBacktestResult(DateTime startDate, DateTime endDate, decimal accountValue, List<Trade> completedTrades)
+    private BacktestResult GenerateBacktestResult(DateTime startDate, DateTime endDate, decimal accountValue, List<Trade> completedTrades, int barCount = 0)
     {
         var totalReturn = (accountValue - 100000m) / 100000m;
         var winningTrades = completedTrades.Where(t => t.PnL > 0).ToList();
@@ -461,10 +461,14 @@ public class OptimizedArchiveBacktest
 
         return new BacktestResult
         {
+            Name = "OptimizedArchive",
+            TimeMs = 0, // Timing handled at higher level
             StartDate = startDate,
             EndDate = endDate,
+            BarCount = barCount,
+            TradeCount = completedTrades.Count,
             StartingCapital = 100000m,
-            FinalAccountValue = accountValue,
+            FinalValue = accountValue,
             TotalReturn = totalReturn,
             AnnualizedReturn = totalReturn * 2, // Simplified annualization
             MaxDrawdown = Math.Abs(Math.Min(0, totalReturn)),
@@ -477,7 +481,19 @@ public class OptimizedArchiveBacktest
             ProfitFactor = losingTrades.Sum(t => Math.Abs(t.PnL)) != 0
                 ? winningTrades.Sum(t => t.PnL) / Math.Abs(losingTrades.Sum(t => t.PnL))
                 : 0m,
-            Trades = completedTrades.ToArray()
+            Trades = completedTrades.Select(t => new TradeRecord
+            {
+                Id = t.Id,
+                Timestamp = t.Timestamp,
+                StrategyName = t.StrategyName,
+                EntryTime = t.Timestamp,
+                ExitTime = t.Timestamp.AddHours(1), // Simplified
+                EntryPrice = 0m, // Would need market data
+                ExitPrice = 0m,  // Would need market data
+                PnL = t.PnL,
+                NetPremium = t.NetPremium,
+                InstrumentType = "Option"
+            }).ToArray()
         };
     }
 

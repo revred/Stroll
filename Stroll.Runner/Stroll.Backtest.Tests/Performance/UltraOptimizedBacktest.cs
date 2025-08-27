@@ -30,7 +30,7 @@ public class UltraOptimizedBacktest
         _logger = loggerFactory.CreateLogger<UltraOptimizedBacktest>();
     }
 
-    [Test]
+    [Fact]
     public async Task Ultimate_Performance_Test()
     {
         _logger.LogInformation("⚡ ULTRA-OPTIMIZED BACKTEST PERFORMANCE TEST");
@@ -39,7 +39,7 @@ public class UltraOptimizedBacktest
         
         if (!File.Exists(_archivePath))
         {
-            Assert.Fail($"Archive not found: {_archivePath}");
+            throw new FileNotFoundException($"Archive not found: {_archivePath}");
         }
 
         // Measure baseline
@@ -85,8 +85,8 @@ public class UltraOptimizedBacktest
             _logger.LogInformation("🎯 EXCELLENT: Very close to ChatGPT performance!");
         }
         
-        Assert.That(ultraTime, Is.LessThan(baselineTime));
-        Assert.That(speedup, Is.GreaterThan(50), "Should achieve massive speedup");
+        Assert.True(ultraTime < baselineTime);
+        Assert.True(speedup > 50, "Should achieve massive speedup");
     }
 
     private async Task<long> MeasureBaseline()

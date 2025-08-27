@@ -57,6 +57,16 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -226,17 +236,17 @@
               "target": "Package",
               "version": "[17.8.0, )"
             },
-            "NUnit": {
-              "target": "Package",
-              "version": "[4.0.1, )"
-            },
-            "NUnit3TestAdapter": {
-              "target": "Package",
-              "version": "[4.5.0, )"
-            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.6.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
             }
           },
           "imports": [

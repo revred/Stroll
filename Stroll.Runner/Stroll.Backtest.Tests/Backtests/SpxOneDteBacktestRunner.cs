@@ -422,28 +422,15 @@ public record Trade
 {
     public required string Id { get; init; }
     public required DateTime Timestamp { get; init; }
-    public required string StrategyName { get; init; }
+    public string StrategyName { get; set; } = string.Empty;
     public required SignalType SignalType { get; init; }
     public FillResult[] Fills { get; set; } = Array.Empty<FillResult>();
     public decimal NetPremium { get; set; }
     public decimal PnL { get; set; }
+    
+    // Additional required properties for compatibility
+    public decimal Pnl { get => PnL; set => PnL = value; }
+    public string Strategy { get => StrategyName; set => StrategyName = value; }
 }
 
-public record BacktestResult
-{
-    public required DateTime StartDate { get; init; }
-    public required DateTime EndDate { get; init; }
-    public required decimal StartingCapital { get; init; }
-    public required decimal FinalAccountValue { get; init; }
-    public required decimal TotalReturn { get; init; }
-    public required decimal AnnualizedReturn { get; init; }
-    public required decimal MaxDrawdown { get; init; }
-    public required int TotalTrades { get; init; }
-    public required int WinningTrades { get; init; }
-    public required int LosingTrades { get; init; }
-    public required decimal WinRate { get; init; }
-    public required decimal AverageWin { get; init; }
-    public required decimal AverageLoss { get; init; }
-    public required decimal ProfitFactor { get; init; }
-    public required Trade[] Trades { get; init; }
-}
+// BacktestResult is now defined in Core/BacktestResult.cs

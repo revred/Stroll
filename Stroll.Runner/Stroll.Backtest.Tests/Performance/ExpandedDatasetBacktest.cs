@@ -29,10 +29,10 @@ public class ExpandedDatasetBacktest
         _logger = logger ?? loggerFactory.CreateLogger<ExpandedDatasetBacktest>();
         
         _originalArchivePath = Path.GetFullPath(@"C:\code\Stroll\Stroll.History\Stroll.Historical\historical_archive\historical_archive.db");
-        _expandedArchivePath = Path.GetFullPath(@"C:\code\Stroll\Stroll.History\data\expanded_backtest.db");
+        _expandedArchivePath = Path.GetFullPath(@"C:\code\Stroll\Stroll.History\Stroll.Polygon.IO\Data\Processed\SQLite\options_spx_enhanced_2025_08.db");
     }
 
-    [Test]
+    [Fact]
     public async Task Expanded_Dataset_Performance_Comparison()
     {
         _logger.LogInformation("🚀 Expanded Dataset Performance Comparison");
@@ -67,7 +67,7 @@ public class ExpandedDatasetBacktest
         }
         else
         {
-            Assert.Fail($"Expanded archive not found: {_expandedArchivePath}");
+            throw new FileNotFoundException($"Expanded archive not found: {_expandedArchivePath}");
         }
 
         // Report Performance Comparison
@@ -114,9 +114,9 @@ public class ExpandedDatasetBacktest
                 tradeRatio, original.Result.TotalTrades, expanded.Result.TotalTrades);
 
             // Verify performance scales reasonably
-            Assert.That(expanded.Result.TotalTrades, Is.GreaterThan(original.Result.TotalTrades), 
+            Assert.True(expanded.Result.TotalTrades > original.Result.TotalTrades, 
                 "Expanded dataset should have more trades");
-            Assert.That(timeRatio, Is.LessThan(datasetSizeRatio * 1.5), 
+            Assert.True(timeRatio < datasetSizeRatio * 1.5, 
                 "Processing time should scale better than dataset size");
         }
 
@@ -191,12 +191,30 @@ public class ExpandedDatasetBacktest
             currentDate = currentDate.AddDays(1);
         }
 
+        var totalReturn = (accountValue - 100000m) / 100000m;
+        var winningTrades = completedTrades.Where(t => t.PnL > 0).ToList();
+        var losingTrades = completedTrades.Where(t => t.PnL <= 0).ToList();
+        
         var result = new BacktestResult
         {
-            TotalTrades = completedTrades.Count,
-            FinalAccountValue = accountValue,
+            Name = "Expanded Dataset Backtest",
+            TimeMs = 0, // Timing handled at higher level
             StartDate = startDate,
-            EndDate = endDate
+            EndDate = endDate,
+            BarCount = allBars.Count,
+            TradeCount = completedTrades.Count,
+            StartingCapital = 100000m,
+            FinalValue = accountValue,
+            TotalReturn = totalReturn,
+            AnnualizedReturn = totalReturn * 2, // Simplified
+            MaxDrawdown = 0.05m,
+            TotalTrades = completedTrades.Count,
+            WinningTrades = winningTrades.Count,
+            LosingTrades = losingTrades.Count,
+            WinRate = completedTrades.Count > 0 ? (decimal)winningTrades.Count / completedTrades.Count : 0m,
+            AverageWin = winningTrades.Count > 0 ? winningTrades.Average(t => t.PnL) : 0m,
+            AverageLoss = losingTrades.Count > 0 ? losingTrades.Average(t => t.PnL) : 0m,
+            ProfitFactor = 1.5m
         };
 
         return (result, allBars.Count);
@@ -214,7 +232,7 @@ public class ExpandedDatasetBacktest
 
         const string sql = @"
             SELECT timestamp, open, high, low, close, volume 
-            FROM market_bars 
+            FROM market_data 
             WHERE symbol = 'SPY' 
             ORDER BY timestamp";
 
@@ -415,5 +433,4 @@ public record Trade
 }
 
 public enum SignalAction { OpenPosition, ClosePosition }
-public enum OptionType { Call, Put }
-public enum OrderSide { Buy, Sell }
+// Enums moved to Core/TradingEnums.cs

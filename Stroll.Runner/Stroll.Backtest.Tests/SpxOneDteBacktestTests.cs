@@ -31,7 +31,7 @@ public class SpxOneDteBacktestTests : IDisposable
             loggerFactory.CreateLogger<SpxOneDteBacktestRunner>());
     }
 
-    [Test]
+    [Fact]
     public async Task SpxOneDteBacktest_ShouldCompleteSuccessfully()
     {
         // Act
@@ -51,7 +51,7 @@ public class SpxOneDteBacktestTests : IDisposable
         result.MaxDrawdown.Should().BeGreaterOrEqualTo(0m, "Max drawdown should be non-negative");
     }
 
-    [Test]
+    [Fact]
     public async Task SpxOneDteBacktest_ShouldReportDetailedMetrics()
     {
         // Act
@@ -90,7 +90,7 @@ public class SpxOneDteBacktestTests : IDisposable
         _logger.LogInformation("🏁 Final Account Value: ${FinalAccountValue:N0}", result.FinalAccountValue);
     }
 
-    [Test]
+    [Fact]
     public async Task SpxOneDteBacktest_ShouldHandleDataGapsGracefully()
     {
         // This test ensures the backtest continues even when market data is missing for certain dates
@@ -110,7 +110,7 @@ public class SpxOneDteBacktestTests : IDisposable
         result.FinalAccountValue.Should().NotBe(0m, "Account should have some value at end");
     }
 
-    [Test]
+    [Fact]
     public async Task SpxOneDteBacktest_ShouldHaveReasonableRiskMetrics()
     {
         // Act
@@ -133,7 +133,7 @@ public class SpxOneDteBacktestTests : IDisposable
         _logger.LogInformation("✅ Risk metrics validation passed");
     }
 
-    [Test]
+    [Fact]
     public void RealFillEngine_ShouldSimulateRealisticFills()
     {
         // Arrange
@@ -201,7 +201,7 @@ public class SpxOneDteBacktestTests : IDisposable
 /// </summary>
 public class BacktestPerformanceTests
 {
-    [Test]
+    [Fact]
     public async Task BacktestRunner_ShouldCompleteInReasonableTime()
     {
         // Arrange

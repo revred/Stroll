@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stroll.PrettyTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfbce670b0bce5daec123218f565f554d74cd48e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5df3cec727bc2acb2f3c3d266ef3da1b0d42391")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stroll.PrettyTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stroll.PrettyTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

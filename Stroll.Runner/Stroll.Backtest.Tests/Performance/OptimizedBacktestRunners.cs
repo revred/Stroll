@@ -71,7 +71,7 @@ public class OptimizedHistoricalBacktestRunner
 
         var sql = @"
             SELECT timestamp, open, high, low, close, volume 
-            FROM intraday_bars 
+            FROM market_data 
             WHERE symbol = 'SPY' 
               AND timestamp >= @startDate 
               AND timestamp <= @endDate 
@@ -179,7 +179,7 @@ public class OptimizedHistoricalBacktestRunner
 
         var sql = @"
             SELECT MIN(timestamp), MAX(timestamp), COUNT(*) 
-            FROM intraday_bars WHERE symbol = 'SPY'";
+            FROM market_data WHERE symbol = 'SPY'";
 
         using var command = new SqliteCommand(sql, connection);
         using var reader = await command.ExecuteReaderAsync();
@@ -247,24 +247,41 @@ public class OptimizedHistoricalBacktestRunner
     {
         var totalReturn = (_accountValue - 100000m) / 100000m;
         var winningTrades = _completedTrades.Where(t => t.PnL > 0).ToList();
+        var losingTrades = _completedTrades.Where(t => t.PnL <= 0).ToList();
         
         return new BacktestResult
         {
+            Name = "Optimized Historical Backtest",
+            TimeMs = 0, // Will be set by caller
             StartDate = startDate,
             EndDate = endDate,
+            BarCount = 0, // Will be set by caller 
+            TradeCount = _completedTrades.Count,
             StartingCapital = 100000m,
-            FinalAccountValue = _accountValue,
+            FinalValue = _accountValue,
             TotalReturn = totalReturn,
             AnnualizedReturn = totalReturn * 2, // Simplified
             MaxDrawdown = 0.05m,
             TotalTrades = _completedTrades.Count,
             WinningTrades = winningTrades.Count,
-            LosingTrades = _completedTrades.Count - winningTrades.Count,
+            LosingTrades = losingTrades.Count,
             WinRate = _completedTrades.Count > 0 ? (decimal)winningTrades.Count / _completedTrades.Count : 0m,
             AverageWin = winningTrades.Count > 0 ? winningTrades.Average(t => t.PnL) : 0m,
-            AverageLoss = 0m,
+            AverageLoss = losingTrades.Count > 0 ? losingTrades.Average(t => t.PnL) : 0m,
             ProfitFactor = 1.5m,
-            Trades = _completedTrades.ToArray()
+            Trades = _completedTrades.Select(t => new TradeRecord
+            {
+                Id = t.Id,
+                Timestamp = t.Timestamp,
+                StrategyName = t.StrategyName,
+                EntryTime = t.Timestamp,
+                ExitTime = t.Timestamp.AddMinutes(30),
+                EntryPrice = 0m,
+                ExitPrice = 0m,
+                PnL = t.PnL,
+                NetPremium = t.NetPremium,
+                InstrumentType = "Options"
+            }).ToArray()
         };
     }
 }
@@ -322,7 +339,7 @@ public class FastHistoricalBacktestRunner
 
         var sql = @"
             SELECT timestamp, open, high, low, close, volume 
-            FROM intraday_bars 
+            FROM market_data 
             WHERE symbol = 'SPY' 
               AND timestamp >= @startDate 
               AND timestamp <= @endDate 
@@ -399,7 +416,7 @@ public class FastHistoricalBacktestRunner
     {
         using var connection = new SqliteConnection($"Data Source={_archivePath}");
         await connection.OpenAsync();
-        var sql = "SELECT MIN(timestamp), MAX(timestamp), COUNT(*) FROM intraday_bars WHERE symbol = 'SPY'";
+        var sql = "SELECT MIN(timestamp), MAX(timestamp), COUNT(*) FROM market_data WHERE symbol = 'SPY'";
         using var command = new SqliteCommand(sql, connection);
         using var reader = await command.ExecuteReaderAsync();
         if (await reader.ReadAsync())
@@ -409,23 +426,42 @@ public class FastHistoricalBacktestRunner
 
     private BacktestResult GenerateBacktestResult(DateTime startDate, DateTime endDate)
     {
+        var winningTrades = _completedTrades.Where(t => t.PnL > 0).ToList();
+        var losingTrades = _completedTrades.Where(t => t.PnL <= 0).ToList();
+        
         return new BacktestResult
         {
+            Name = "Fast Historical Backtest",
+            TimeMs = 0, // Will be set by caller
             StartDate = startDate,
             EndDate = endDate,
+            BarCount = 0, // Will be set by caller 
+            TradeCount = _completedTrades.Count,
             StartingCapital = 100000m,
-            FinalAccountValue = _accountValue,
+            FinalValue = _accountValue,
             TotalReturn = (_accountValue - 100000m) / 100000m,
             AnnualizedReturn = 0.1m,
             MaxDrawdown = 0.05m,
             TotalTrades = _completedTrades.Count,
-            WinningTrades = _completedTrades.Count(t => t.PnL > 0),
-            LosingTrades = _completedTrades.Count(t => t.PnL <= 0),
-            WinRate = _completedTrades.Count > 0 ? (decimal)_completedTrades.Count(t => t.PnL > 0) / _completedTrades.Count : 0m,
-            AverageWin = 100m,
-            AverageLoss = -50m,
+            WinningTrades = winningTrades.Count,
+            LosingTrades = losingTrades.Count,
+            WinRate = _completedTrades.Count > 0 ? (decimal)winningTrades.Count / _completedTrades.Count : 0m,
+            AverageWin = winningTrades.Count > 0 ? winningTrades.Average(t => t.PnL) : 100m,
+            AverageLoss = losingTrades.Count > 0 ? losingTrades.Average(t => t.PnL) : -50m,
             ProfitFactor = 1.5m,
-            Trades = _completedTrades.ToArray()
+            Trades = _completedTrades.Select(t => new TradeRecord
+            {
+                Id = t.Id,
+                Timestamp = t.Timestamp,
+                StrategyName = t.StrategyName,
+                EntryTime = t.Timestamp,
+                ExitTime = t.Timestamp.AddMinutes(30),
+                EntryPrice = 0m,
+                ExitPrice = 0m,
+                PnL = t.PnL,
+                NetPremium = t.NetPremium,
+                InstrumentType = "Options"
+            }).ToArray()
         };
     }
 }
@@ -452,7 +488,7 @@ public class UltraFastBacktestRunner
         using var connection = new SqliteConnection($"Data Source={_archivePath}");
         await connection.OpenAsync();
 
-        var sql = "SELECT COUNT(*) FROM intraday_bars WHERE symbol = 'SPY' AND timestamp >= @start AND timestamp <= @end";
+        var sql = "SELECT COUNT(*) FROM market_data WHERE symbol = 'SPY' AND timestamp >= @start AND timestamp <= @end";
         using var command = new SqliteCommand(sql, connection);
         command.Parameters.AddWithValue("@start", startDate.ToString("yyyy-MM-dd"));
         command.Parameters.AddWithValue("@end", endDate.ToString("yyyy-MM-dd"));
@@ -462,10 +498,14 @@ public class UltraFastBacktestRunner
 
         return new BacktestResult
         {
+            Name = "Ultra Fast Backtest",
+            TimeMs = 1, // Ultra fast
             StartDate = startDate,
             EndDate = endDate,
+            BarCount = (int)barCount,
+            TradeCount = estimatedTrades,
             StartingCapital = 100000m,
-            FinalAccountValue = 99500m, // Simulated result
+            FinalValue = 99500m, // Simulated result
             TotalReturn = -0.005m,
             AnnualizedReturn = -0.01m,
             MaxDrawdown = 0.02m,
@@ -476,7 +516,7 @@ public class UltraFastBacktestRunner
             AverageWin = 50m,
             AverageLoss = -75m,
             ProfitFactor = 1.0m,
-            Trades = Array.Empty<Trade>()
+            Trades = Array.Empty<TradeRecord>()
         };
     }
 
@@ -484,7 +524,7 @@ public class UltraFastBacktestRunner
     {
         using var connection = new SqliteConnection($"Data Source={_archivePath}");
         await connection.OpenAsync();
-        var sql = "SELECT MIN(timestamp), MAX(timestamp), COUNT(*) FROM intraday_bars WHERE symbol = 'SPY'";
+        var sql = "SELECT MIN(timestamp), MAX(timestamp), COUNT(*) FROM market_data WHERE symbol = 'SPY'";
         using var command = new SqliteCommand(sql, connection);
         using var reader = await command.ExecuteReaderAsync();
         if (await reader.ReadAsync())
