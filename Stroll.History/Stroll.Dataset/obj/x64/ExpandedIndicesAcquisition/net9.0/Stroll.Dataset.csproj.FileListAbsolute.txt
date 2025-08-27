@@ -1,0 +1,6 @@
+C:\code\Stroll\Stroll.History\Stroll.Dataset\obj\x64\ExpandedIndicesAcquisition\net9.0\Stroll.Dataset.csproj.AssemblyReference.cache
+C:\code\Stroll\Stroll.History\Stroll.Dataset\obj\x64\ExpandedIndicesAcquisition\net9.0\Stroll.Dataset.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Stroll\Stroll.History\Stroll.Dataset\obj\x64\ExpandedIndicesAcquisition\net9.0\Stroll.Dataset.AssemblyInfoInputs.cache
+C:\code\Stroll\Stroll.History\Stroll.Dataset\obj\x64\ExpandedIndicesAcquisition\net9.0\Stroll.Dataset.AssemblyInfo.cs
+C:\code\Stroll\Stroll.History\Stroll.Dataset\obj\x64\ExpandedIndicesAcquisition\net9.0\Stroll.Dataset.csproj.CoreCompileInputs.cache
+C:\code\Stroll\Stroll.History\Stroll.Dataset\obj\x64\ExpandedIndicesAcquisition\net9.0\Stroll.Dataset.sourcelink.json

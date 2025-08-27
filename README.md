@@ -11,6 +11,17 @@ A blazing-fast backtesting framework for SPX 1DTE (One Day To Expiration) option
 
 ## 📁 Project Structure
 
+```
+Stroll/
+├── docs/              # Consolidated documentation
+├── scripts/           # Build and utility scripts  
+├── tools/             # Development tools and utilities
+├── Stroll.History/    # Historical data system
+├── Stroll.Runner/     # Backtesting engine
+├── Stroll.Runtime/    # Runtime services
+└── Stroll.Strategy/   # Trading strategies (future)
+```
+
 ### Core Modules
 
 #### Stroll.History
@@ -19,17 +30,35 @@ Historical data acquisition and storage system with SQLite-based archive.
 - **Stroll.History.Mcp**: MCP server implementation for AI assistant integration
 - **Stroll.Dataset**: Data packaging and distribution
 - **Stroll.Storage**: Composite storage layer supporting ODTE and custom formats
+- **Stroll.Polygon.IO**: Optional Git subproject for data acquisition (only needed for new data ingestion)
 
 #### Stroll.Runner
 Backtesting execution engine and test suites.
 - **Stroll.Backtest.Tests**: Comprehensive backtest implementations and performance benchmarks
 - **Stroll.History.Integrity.Tests**: Data integrity verification
 
-#### Stroll.Strategy
+#### Stroll.Runtime
+Runtime services and process management.
+- **Stroll.Process**: Process lifecycle management
+- **Stroll.Watchdog**: Service monitoring and recovery
+- **Stroll.PrettyTest**: Enhanced test reporting
+- **Stroll.TestMcp**: MCP integration testing
+
+#### Stroll.Strategy  
 Trading strategy components and signals.
 - **Stroll.Model**: Core domain models
 - **Stroll.Signal**: Signal generation framework
 - **Stroll.Revset**: Review and revision tracking
+
+### Optional Components
+
+#### Stroll.Polygon.IO
+**Note**: This is a Git subproject located in `Stroll.History/Stroll.Polygon.IO/` and is only activated when:
+- New data acquisition from Polygon.io is needed
+- Data ingestion tasks are required
+- Expanding historical coverage beyond existing datasets
+
+The system works completely without this component using existing historical archives.
 
 ## ⚡ Key Features
 
@@ -141,13 +170,21 @@ Performance benchmarks only:
 dotnet test --filter "Category=Performance"
 ```
 
+## 📚 Documentation
+
+- **[Main Documentation](docs/README.md)**: Consolidated documentation index
+- **[Coding Guidelines](docs/CODING_GUIDELINES.md)**: Development standards and conventions
+- **[Scripts](scripts/README.md)**: Build and utility scripts documentation
+- **[Tools](tools/README.md)**: Development tools and utilities
+- **Module Documentation**: Each Stroll.* module contains its own README.md
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please ensure:
 - All tests pass
-- Performance benchmarks show no regression
-- Code follows existing patterns
-- Documentation is updated
+- Performance benchmarks show no regression  
+- Code follows the [coding guidelines](docs/CODING_GUIDELINES.md)
+- Documentation is updated accordingly
 
 ## 📝 License
 

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tubXx4eM5bM=",
+  "dgSpecHash": "WflhzLwXOpc=",
   "success": true,
   "projectFilePath": "C:\\code\\Stroll\\Stroll.History\\Stroll.Historical\\Stroll.Historical.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\revanur\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\revanur\\.nuget\\packages\\microsoft.data.sqlite\\9.0.0\\microsoft.data.sqlite.9.0.0.nupkg.sha512",
     "C:\\Users\\revanur\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.0\\microsoft.data.sqlite.core.9.0.0.nupkg.sha512",
     "C:\\Users\\revanur\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0\\microsoft.extensions.configuration.9.0.0.nupkg.sha512",

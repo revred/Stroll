@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9CnANSrqVo0=",
+  "dgSpecHash": "+1VbXZDbrlc=",
   "success": true,
   "projectFilePath": "C:\\code\\Stroll\\Stroll.History\\Stroll.Historical.Tests\\Stroll.Historical.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\revanur\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\revanur\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\revanur\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\revanur\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
     "C:\\Users\\revanur\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
     "C:\\Users\\revanur\\.nuget\\packages\\microsoft.data.sqlite\\9.0.0\\microsoft.data.sqlite.9.0.0.nupkg.sha512",

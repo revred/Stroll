@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stroll.Storage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c873a77954de4581c2fe2a101d556b789ef0855")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfbce670b0bce5daec123218f565f554d74cd48e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stroll.Storage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stroll.Storage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

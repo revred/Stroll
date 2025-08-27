@@ -1,0 +1,7 @@
+C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\bin\x64\Debug\net9.0\.msCoverageSourceRootsMapping_Stroll.History.Integrity.Tests
+C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\obj\x64\Debug\net9.0\Stroll.History.Integrity.Tests.csproj.AssemblyReference.cache
+C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\obj\x64\Debug\net9.0\Stroll.History.Integrity.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\obj\x64\Debug\net9.0\Stroll.History.Integrity.Tests.AssemblyInfoInputs.cache
+C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\obj\x64\Debug\net9.0\Stroll.History.Integrity.Tests.AssemblyInfo.cs
+C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\obj\x64\Debug\net9.0\Stroll.History.Integrity.Tests.csproj.CoreCompileInputs.cache
+C:\code\Stroll\Stroll.History\Stroll.History.Integrity.Tests\obj\x64\Debug\net9.0\Stroll.History.Integrity.Tests.sourcelink.json

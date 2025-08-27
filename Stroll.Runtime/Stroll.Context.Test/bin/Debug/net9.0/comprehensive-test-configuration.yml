@@ -1,0 +1,404 @@
+# Comprehensive MCP Service Test Configuration
+# Decoupled testing of MCP services without physical dependencies on implementation
+# Tests MCP API interfaces, data quality, and service functionality
+
+test_suites:
+  # Core MCP Service API Tests
+  - name: "MCP Protocol Validation"
+    description: "Comprehensive testing of MCP protocol implementation and API compliance"
+    project_path: "../Stroll.Context.Test/Stroll.Context.Test.csproj"
+    category: "mcp-protocol"
+    timeout_minutes: 10
+    parallel: false
+    environment:
+      STROLL_TEST_MODE: "mcp-protocol"
+      MCP_VALIDATION_MODE: "strict"
+    tags:
+      - "mcp"
+      - "protocol"
+      - "api"
+      - "critical"
+      - "compliance"
+
+  - name: "MCP Tools Discovery & Metadata"
+    description: "Test MCP tools discovery, metadata accuracy, and schema validation"
+    project_path: "../Stroll.Context.Test/Stroll.Context.Test.csproj"
+    category: "mcp-discovery"
+    timeout_minutes: 5
+    parallel: true
+    environment:
+      STROLL_TEST_MODE: "mcp-discovery"
+      VALIDATE_SCHEMAS: "true"
+    tags:
+      - "mcp"
+      - "discovery"
+      - "metadata"
+      - "schemas"
+      - "tools"
+
+  - name: "MCP Data Quality Assurance"
+    description: "Validate data quality, completeness, and accuracy through MCP interfaces"
+    project_path: "../Stroll.Context.Test/Stroll.Context.Test.csproj"
+    category: "mcp-data-quality"
+    timeout_minutes: 15
+    parallel: false
+    environment:
+      STROLL_TEST_MODE: "mcp-data-quality"
+      DATA_VALIDATION_DEPTH: "comprehensive"
+      SAMPLE_SIZE: "10000"
+    tags:
+      - "mcp"
+      - "data-quality"
+      - "validation"
+      - "accuracy"
+      - "completeness"
+      - "critical"
+
+  - name: "MCP Service Integration"
+    description: "Test MCP service interactions, cross-service communication, and workflows"
+    project_path: "../Stroll.Context.Test/Stroll.Context.Test.csproj"
+    category: "mcp-integration"
+    timeout_minutes: 12
+    parallel: true
+    environment:
+      STROLL_TEST_MODE: "mcp-integration"
+      INTEGRATION_DEPTH: "full"
+    tags:
+      - "mcp"
+      - "integration"
+      - "workflows"
+      - "cross-service"
+      - "communication"
+
+  - name: "MCP Performance & Scalability"
+    description: "Performance testing of MCP services under load and stress conditions"
+    project_path: "../Stroll.Context.Test/Stroll.Context.Test.csproj"
+    category: "mcp-performance"
+    timeout_minutes: 20
+    parallel: true
+    environment:
+      STROLL_TEST_MODE: "mcp-performance"
+      LOAD_TEST_DURATION: "300"
+      CONCURRENT_CLIENTS: "50"
+    tags:
+      - "mcp"
+      - "performance"
+      - "scalability"
+      - "load-testing"
+      - "stress-testing"
+
+  - name: "MCP Error Handling & Resilience"
+    description: "Test MCP service error handling, fault tolerance, and recovery mechanisms"
+    project_path: "../Stroll.Context.Test/Stroll.Context.Test.csproj"
+    category: "mcp-resilience"
+    timeout_minutes: 8
+    parallel: true
+    environment:
+      STROLL_TEST_MODE: "mcp-resilience"
+      FAULT_INJECTION: "enabled"
+    tags:
+      - "mcp"
+      - "error-handling"
+      - "resilience"
+      - "fault-tolerance"
+      - "recovery"
+
+  - name: "MCP Security & Authentication"
+    description: "Validate MCP service security measures, authentication, and authorization"
+    project_path: "../Stroll.Context.Test/Stroll.Context.Test.csproj"
+    category: "mcp-security"
+    timeout_minutes: 10
+    parallel: false
+    environment:
+      STROLL_TEST_MODE: "mcp-security"
+      SECURITY_VALIDATION: "comprehensive"
+    tags:
+      - "mcp"
+      - "security"
+      - "authentication"
+      - "authorization"
+      - "critical"
+
+  - name: "MCP Streaming & Real-time"
+    description: "Test MCP streaming capabilities, real-time data flow, and notification systems"
+    project_path: "../Stroll.Context.Test/Stroll.Context.Test.csproj"
+    category: "mcp-streaming"
+    timeout_minutes: 15
+    parallel: false
+    environment:
+      STROLL_TEST_MODE: "mcp-streaming"
+      STREAMING_DURATION: "600"
+      REAL_TIME_VALIDATION: "enabled"
+    tags:
+      - "mcp"
+      - "streaming"
+      - "real-time"
+      - "notifications"
+      - "data-flow"
+
+  - name: "MCP Configuration & Settings"
+    description: "Test MCP service configuration management and settings validation"
+    project_path: "../Stroll.Context.Test/Stroll.Context.Test.csproj"
+    category: "mcp-configuration"
+    timeout_minutes: 6
+    parallel: true
+    environment:
+      STROLL_TEST_MODE: "mcp-configuration"
+      CONFIG_VALIDATION: "strict"
+    tags:
+      - "mcp"
+      - "configuration"
+      - "settings"
+      - "validation"
+
+# Test Categories for MCP Service Testing
+test_categories:
+  critical:
+    description: "Critical MCP tests that must pass for service deployment"
+    includes: ["mcp-protocol", "mcp-data-quality", "mcp-security"]
+    
+  api:
+    description: "MCP API and protocol compliance tests"
+    includes: ["mcp-protocol", "mcp-discovery", "mcp-configuration"]
+    tags: ["mcp", "protocol", "api", "compliance"]
+    
+  data-quality:
+    description: "MCP data validation and quality assurance tests"
+    includes: ["mcp-data-quality"]
+    tags: ["data-quality", "validation", "accuracy", "completeness"]
+    
+  integration:
+    description: "MCP service integration and workflow tests"
+    includes: ["mcp-integration", "mcp-streaming"]
+    tags: ["integration", "workflows", "streaming", "real-time"]
+    
+  performance:
+    description: "MCP performance, scalability and load testing"
+    includes: ["mcp-performance"]
+    tags: ["performance", "scalability", "load-testing"]
+    
+  resilience:
+    description: "MCP fault tolerance and error handling tests"
+    includes: ["mcp-resilience", "mcp-security"]
+    tags: ["resilience", "error-handling", "security"]
+
+# Enhanced execution settings for MCP testing
+execution_settings:
+  build_configuration: "Debug"
+  build_before_test: true
+  parallel_suites: true
+  max_concurrent_suites: 3
+  default_timeout_minutes: 15
+  continue_on_failure: true
+  artifacts_directory: ".testartifacts"
+  collect_coverage: false
+  
+  # MCP-specific settings
+  enable_mcp_validation: true
+  mcp_protocol_version: "2024-11-05"
+  strict_schema_validation: true
+  enable_api_tracing: true
+  
+  # Decoupled testing settings
+  decouple_from_implementation: true
+  interface_only_testing: true
+  no_physical_dependencies: true
+  
+  # Pick and choose settings
+  enable_interactive_selection: true
+  enable_category_filtering: true
+  enable_tag_filtering: true
+  enable_individual_test_selection: true
+  
+  # Performance monitoring
+  enable_streaming: true
+  stream_progress_interval_ms: 1000
+  detailed_progress_reporting: true
+  real_time_notifications: true
+
+# Output settings for MCP testing
+output_settings:
+  use_colors: true
+  console_verbosity: "detailed"
+  show_build_output: false
+  show_test_output: true
+  generate_html_report: true
+  generate_json_report: true
+  save_detailed_logs: true
+  
+  # MCP-specific reporting
+  generate_mcp_compliance_report: true
+  include_api_coverage_metrics: true
+  track_service_interactions: true
+  
+  # Pick and choose UI settings
+  show_selection_menu: true
+  show_progress_bars: true
+  show_live_updates: true
+  
+  # Report formats
+  report_formats: ["html", "json", "markdown", "mcp-compliance"]
+  include_performance_metrics: true
+  include_trend_analysis: true
+  include_failure_analysis: true
+
+# MCP-focused filtering options
+filters:
+  # Default selections (empty = show all)
+  default_categories: []
+  default_tags: []
+  
+  # Exclude non-MCP tests
+  exclude_tags:
+    - "physical-dependency"
+    - "implementation-specific"
+    - "binary-coupling"
+    - "legacy"
+  exclude_patterns:
+    - "*Implementation*"
+    - "*Physical*"
+    - "*Binary*"
+    - "*Legacy*"
+  
+  # MCP-focused presets
+  presets:
+    mcp_smoke_tests:
+      description: "Quick MCP API smoke tests"
+      categories: ["api"]
+      tags: ["mcp", "protocol", "critical"]
+      
+    mcp_full_validation:
+      description: "Complete MCP service validation suite"
+      categories: ["critical", "api", "data-quality", "integration", "performance", "resilience"]
+      
+    mcp_compliance_suite:
+      description: "MCP protocol compliance and API correctness"
+      categories: ["api"]
+      tags: ["protocol", "compliance", "api"]
+      
+    mcp_data_quality_suite:
+      description: "MCP data quality and accuracy validation"
+      categories: ["data-quality"]
+      tags: ["data-quality", "validation", "accuracy"]
+      
+    mcp_performance_suite:
+      description: "MCP performance and scalability testing"
+      categories: ["performance"]
+      tags: ["performance", "scalability", "load-testing"]
+
+# Advanced failure handling for MCP testing
+failure_handling:
+  fail_fast: false
+  max_failures: 20
+  retry_failed: true
+  retry_count: 3
+  retry_delay_seconds: 10
+  save_failure_logs: true
+  
+  # MCP-specific failure categorization
+  failure_categories:
+    protocol_violations: ["protocol-error", "schema-violation", "api-non-compliance"]
+    service_unavailable: ["connection-refused", "service-timeout", "discovery-failed"]
+    data_quality_issues: ["data-corruption", "incomplete-data", "accuracy-failure"]
+    performance_degradation: ["timeout", "slow-response", "resource-exhaustion"]
+    
+  # Auto-retry settings for different MCP failure types
+  auto_retry:
+    protocol_violations: false
+    service_unavailable: true
+    data_quality_issues: false
+    performance_degradation: true
+
+# MCP-focused notifications and alerts
+notifications:
+  enabled: true
+  channels: ["console", "file", "mcp-events"]
+  
+  # MCP-specific event notifications
+  notify_on:
+    - "mcp_service_started"
+    - "mcp_service_failed"
+    - "protocol_violation_detected"
+    - "data_quality_issue_found"
+    - "performance_threshold_exceeded"
+    - "compliance_test_failed"
+    - "api_coverage_incomplete"
+  
+  # MCP performance thresholds
+  performance_alerts:
+    slow_mcp_call_threshold_ms: 5000
+    mcp_discovery_timeout_ms: 2000
+    data_quality_failure_rate_percent: 5
+    api_compliance_threshold_percent: 95
+
+# MCP Analytics and compliance tracking
+analytics:
+  enabled: true
+  retention_days: 365
+  track_metrics:
+    - "mcp_api_coverage"
+    - "protocol_compliance_rate"
+    - "data_quality_scores"
+    - "service_availability"
+    - "performance_characteristics"
+    - "error_patterns"
+    - "usage_patterns"
+  
+  # MCP-specific trend analysis
+  trend_analysis:
+    enabled: true
+    comparison_periods: [7, 30, 90, 365]
+    alert_on_compliance_regression: true
+    track_api_evolution: true
+    monitor_data_quality_trends: true
+    
+  # MCP compliance reporting
+  generate_compliance_dashboard: true
+  compliance_report_frequency: "daily"
+  include_api_recommendations: true
+
+# MCP Integration Settings
+mcp_integration:
+  service_name: "Stroll.Context.Test"
+  service_description: "Comprehensive MCP service testing with decoupled validation"
+  protocol_version: "2024-11-05"
+  
+  # MCP testing capabilities
+  capabilities:
+    - protocol_validation
+    - schema_compliance
+    - data_quality_assurance
+    - performance_testing
+    - integration_validation
+    - security_testing
+    - streaming_validation
+    - configuration_testing
+    
+  # Available MCP testing tools
+  tools:
+    - validate_mcp_protocol
+    - test_api_compliance  
+    - check_data_quality
+    - validate_schemas
+    - test_performance
+    - test_integration
+    - validate_security
+    - test_streaming
+    - run_compliance_suite
+    - generate_coverage_report
+    
+  # Decoupled testing configuration
+  decoupling:
+    no_implementation_dependencies: true
+    interface_only_validation: true
+    mcp_api_focused: true
+    data_contract_testing: true
+    service_boundary_respect: true
+    
+  # Streaming capabilities for test execution
+  streaming:
+    enabled: true
+    real_time_progress: true
+    live_notifications: true
+    interactive_selection: true
+    compliance_monitoring: true

@@ -444,26 +444,29 @@ Trades/
 
     private async Task<SqliteConnection> GetPooledConnection(string dbName)
     {
-        return _connectionPool.GetOrAdd(dbName, async _ =>
+        if (_connectionPool.TryGetValue(dbName, out var existingConnection))
         {
-            var dbPath = Path.Combine(_datasetPath, "Indices", dbName);
-            var connectionString = $"Data Source={dbPath};Password={_dbPassword};Cache Size=100000;Journal Mode=WAL;Synchronous=NORMAL";
-            
-            var connection = new SqliteConnection(connectionString);
-            await connection.OpenAsync();
-            
-            // Enable performance optimizations
-            using var pragma = connection.CreateCommand();
-            pragma.CommandText = @"
-                PRAGMA cache_size = 100000;
-                PRAGMA temp_store = memory;
-                PRAGMA mmap_size = 268435456;
-                PRAGMA optimize;
-            ";
-            await pragma.ExecuteNonQueryAsync();
-            
-            return connection;
-        });
+            return existingConnection;
+        }
+
+        var dbPath = Path.Combine(_datasetPath, "Indices", dbName);
+        var connectionString = $"Data Source={dbPath};Password={_dbPassword};Cache Size=100000;Journal Mode=WAL;Synchronous=NORMAL";
+        
+        var connection = new SqliteConnection(connectionString);
+        await connection.OpenAsync();
+        
+        // Enable performance optimizations
+        using var pragma = connection.CreateCommand();
+        pragma.CommandText = @"
+            PRAGMA cache_size = 100000;
+            PRAGMA temp_store = memory;
+            PRAGMA mmap_size = 268435456;
+            PRAGMA optimize;
+        ";
+        await pragma.ExecuteNonQueryAsync();
+        
+        _connectionPool.TryAdd(dbName, connection);
+        return connection;
     }
 
     private string GetOptimizedQuery<T>(string granularity)
