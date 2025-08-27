@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stroll.Dataset")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfbce670b0bce5daec123218f565f554d74cd48e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b57cd37375c8e99491838da62fa38035f3f29668")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stroll.Dataset")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stroll.Dataset")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

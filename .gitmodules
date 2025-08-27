@@ -1,0 +1,3 @@
+[submodule "Stroll.History/Stroll.Polygon.IO"]
+	path = Stroll.History/Stroll.Polygon.IO
+	url = https://github.com/revred/Stroll.Polygon.IO.git

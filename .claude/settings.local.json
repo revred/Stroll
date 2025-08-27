@@ -134,7 +134,8 @@
       "Bash(move \"Stroll.History.Mcp.csproj\" \"Stroll.History.Market.csproj\")",
       "Bash(tasklist)",
       "Bash(POLYGON_API_KEY=\"demo\" timeout 60 dotnet run --project Acquisition/ExpandedIndicesAcquisition.cs)",
-      "Read(/C:\\c\\code/**)"
+      "Read(/C:\\c\\code/**)",
+      "Bash(git submodule add:*)"
     ],
     "deny": [],
     "ask": [],
