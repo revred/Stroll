@@ -351,6 +351,30 @@ using (var connection = new SqlConnection(connectionString))
 }
 ```
 
+## 🎨 Documentation Formatting
+
+### Unicode Icons
+Always include a space after Unicode icons for better readability in both console and documentation:
+
+**✅ Correct:**
+```markdown
+## 🚀 Performance Achievements
+- ✅ Build successful
+- ❌ Test failed
+```
+
+**❌ Incorrect:**
+```markdown  
+## 🚀Performance Achievements
+- ✅Build successful
+- ❌Test failed
+```
+
+### Consistent Icon Usage
+- Use meaningful icons that enhance readability
+- Maintain consistency across related documentation
+- Prefer widely supported Unicode characters
+
 ## 📖 IDE Configuration
 
 ### Visual Studio Settings
